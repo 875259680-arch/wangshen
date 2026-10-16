@@ -1,3 +1,4 @@
+// 历史身份兼容算法测试；生产作用域还需 scoped-memory 层验证。
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -35,20 +36,7 @@ test('新内置固定回答分板块并按 row 存储，转换记忆不分 row',
   assert.equal(Mem.lookup({ [mapped.id]: mapped }, 'job51', { ...base, row: 5 }, '全日制'), '统招全日制');
 });
 
-test('自定义字段跨平台同名回答一致才复用，跨经历 row 不复用', () => {
-  const f = { id: 'x_ext_1', label: '住宿类型', section: '基本信息', row: 0 };
-  const a = Mem.make({ ...f, platform: 'beisen', after: '学校宿舍' }, 'a');
-  const b = Mem.make({ ...f, platform: 'moka', after: '学校宿舍' }, 'b');
-  assert.equal(Mem.lookup({ [a.id]: a }, 'moka', { ...f, id: 'other_ext_1' }, null), '学校宿舍');
-  const c = Mem.make({ ...f, platform: 'hotjob', after: '校外租房' }, 'c');
-  assert.equal(Mem.lookup({ [a.id]: a, [c.id]: c }, 'moka', f, null), null);
-  assert.equal(Mem.lookup({ [a.id]: a, [b.id]: b }, 'moka', { ...f, row: 1 }, null), null);
-});
-
-test('基本信息与个人信息可兼容，项目、校园、未知板块保持隔离', () => {
-  const personal = Mem.make({ platform: 'moka', id: 1, label: '宗教信仰', section: '个人信息', after: '无' }, 'a');
-  const pStore = { [personal.id]: personal };
-  assert.equal(Mem.lookup(pStore, 'beisen', { id: 2, label: '宗教信仰', section: '基本信息', row: 0 }, null), '无');
+test('项目、校园、未知板块保持隔离', () => {
   const project = Mem.make({ platform: 'moka', id: 'x_ext', label: '职务', section: '项目经历', after: '负责人' }, 'a');
   assert.equal(Mem.lookup({ [project.id]: project }, 'moka', { ...project, section: '在校经历' }, null), null);
   const unknown = Mem.make({ platform: 'moka', id: 'u_ext', label: '住宿类型', section: '其他信息', after: '宿舍' }, 'a');
@@ -103,17 +91,6 @@ test('Hotjob SU 租户和 Moka 招聘 slug 成为 scope，其他路径回退 hos
   assert.equal(Mem.pageScope({ host: 'wecruit.hotjob.cn', path: '/SU12/web/apply' }), 'wecruit.hotjob.cn:su12');
   assert.equal(Mem.pageScope({ host: 'app.mokahr.com', path: '/campus_apply/Company-X/123' }), 'app.mokahr.com:company-x');
   assert.equal(Mem.pageScope({ host: 'app.mokahr.com', path: '/profile/resume-1', search: '?resumeid=resume-1' }), 'app.mokahr.com');
-});
-
-test('scope only applies to explicit company-dependent questions, not personal questions', () => {
-  assert.equal(Mem.needsScope('您希望应聘本公司哪个岗位'), true);
-  assert.equal(Mem.needsScope('您通过何种渠道获知招聘信息'), true);
-  assert.equal(Mem.needsScope('住宿类型'), false);
-  assert.equal(Mem.needsScope('宗教信仰'), false);
-  const f = { platform: 'moka', id: 'x_ext', label: '宗教信仰', section: '个人信息', scope: 'tenant-a' };
-  const m = Mem.make({ ...f, after: '无' }, 'a');
-  assert.equal(m.scope, null);
-  assert.equal(Mem.lookup({ [m.id]: m }, 'beisen', { ...f, scope: 'tenant-b' }, null), '无');
 });
 
 test('conversion and map identities require the same scope for company questions', () => {

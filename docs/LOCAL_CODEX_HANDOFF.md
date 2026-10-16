@@ -2,7 +2,7 @@
 
 ## 当前交付
 
-分支：`refactor/modular-foundation`，插件版本 3.9.0。
+默认分支：`main`，插件版本 3.9.1。直接使用仓库首页下载的 ZIP 即可。
 
 已经实现并接线：
 
@@ -25,14 +25,15 @@
 
 ```bash
 git fetch origin
-git switch refactor/modular-foundation
+git switch main
+git pull --ff-only origin main
 npm run check
 # 以下由本地 Codex 在用户安排的测试阶段运行：
 npm test
 python3 tools/devserver.py
 ```
 
-扩展仍从根目录加载。保留原安装路径和原浏览器配置以保留数据；更新前用设置页导出备份。先阅读 npm test 的失败原因，不要立刻运行需要真实个人数据的 tools/offline.mjs。该工具会读取本地 data/，仅在用户明确需要使用该资料和 API 时运行。
+扩展仍从根目录加载。保留原安装路径和原浏览器配置以保留数据；更新前用设置页导出备份。过时的 offline/shim 调试链路已移除；后续调试使用真实扩展、开发服务和脱敏样本。
 
 ## 回归矩阵（本轮全部待验证）
 
@@ -56,7 +57,7 @@ python3 tools/devserver.py
 3. 逐字段兜底只处理唯一定位、标量资料和已有 DOM 控件能力。复合地区、附件、未知组件不会因为框架存在就自动获得适配能力。
 4. registry 当前统一外观仍调用旧纯函数；后台 AI 服务尚未进一步拆分。修复网站优先不动这些公共入口。
 5. MEM_EDIT/MEM_BIND/MEM_PROMOTE 后台已提供；独立学习规则导入导出、编辑及推广的友好 UI 尚待补齐。现有完整备份可迁移全部学习记录。
-6. 旧测试中“跨站同名答案复用”的预期与新要求不同。保留 legacy 匹配器测试作为算法记录，增加 scoped-memory 和后台入口的隔离用例，不能只测试旧算法就宣称新隔离通过。
+6. 跨站共享答案的旧正向断言已删除，剩余身份兼容测试明确命名为 memory-legacy.test.mjs。后续增加 scoped-memory 的生产入口隔离用例，不能只测试旧算法就宣称新隔离通过。
 7. 页面类型自动判断来自区块，未识别区块退到路径；新增实际页面类型应明确赋 pageType。公司专用 alias 或 iframe 租户信息需根据真实页面补充。
 
 ## 每次交付记录

@@ -221,14 +221,6 @@ test('公司自定的问题不让 AI 猜，只有开放题（多行文字）交�
   assert.deepEqual(plain(AF.mapping.byLabel('是否退伍军人')), { sem: 'declareNo' });
 });
 
-test('学习：公司招聘来源问题只在同公司范围跨平台复用', () => {
-  const f = { key: 'X_ext|0', id: 'RecruitmentApplicantAdditionalInfo_extCHTJ_613441_1', label: '从何途径得悉此职员招聘', row: 0, scope: 'job51:ctmid=company-a' };
-  const m = AF.memory.make({ ...f, platform: 'beisen', from: null, after: '招聘网站' }, 'h');
-  assert.equal(AF.memory.lookup({ [m.id]: m }, 'beisen', { ...f, id: 'RecruitmentApplicantAdditionalInfo_extCHTJ_999_2' }, null), '招聘网站');
-  assert.equal(AF.memory.lookup({ [m.id]: m }, 'moka', { key: 'a|0|9', id: 12345, label: f.label, row: 0, scope: f.scope }, null), '招聘网站');
-  assert.equal(AF.memory.lookup({ [m.id]: m }, 'moka', { key: 'a|0|9', id: 12345, label: f.label, row: 0, scope: 'job51:ctmid=company-b' }, null), null);
-});
-
 test('北森（景瑞）：每个字段要么对应资料，要么属于“公司自定 / 开放题”，没有内置字段漏掉', () => {
   const { fields } = cases('beisen/jingrui.json');
   const B = AF.platforms.beisen;
@@ -255,7 +247,7 @@ test('AI 认题结果存成规则：只记对应哪一项，值从资料取；�
   assert.equal(AF.memory.lookup(store, 'beisen', interview, null), null);    // 对应规则不当成固定回答
 });
 
-test('乱学压力测试：随机学习、改主意、改资料、跨段落、跨平台 2000 轮，记忆永远不互搏', () => {
+test('历史匹配器：随机学习与资料转换的身份一致性（不代表生产作用域验证）', () => {
   // 简化的存储：和 background MEM_SAVE 同样的规则（同 id 只留最新，旧值进历史）
   const save = (store, m) => { const old = store[m.id]; store[m.id] = { ...m, history: old && old.to !== m.to ? [{ to: old.to }, ...(old.history || [])].slice(0, 5) : old?.history || [] }; };
   let seed = 7; const rnd = n => (seed = (seed * 1103515245 + 12345) % 2147483648) % n;
@@ -402,7 +394,7 @@ test('51job 新版卡片：colName 对应、字典编码、两级地区存市、
   assert.equal(V.encode(f('cc1|0|cce1'), '上海').raw, '020000');
 });
 
-test('2026-10-15 日志：手填过的题自动答、资料补充、跨段落记忆、其他语种不拿英语顶', () => {
+test('资料语义与补充：毕业届别、学科门类、其他语种不拿英语顶', () => {
   const by = (l, list) => plain(AF.mapping.byLabel(l, list));
   assert.deepEqual(by('毕业届别（按最高学历毕业年份填写）'), { sem: 'classOf' });
   assert.equal(facts.classOf, '2027届');
@@ -423,11 +415,5 @@ test('2026-10-15 日志：手填过的题自动答、资料补充、跨段落记
   const f2 = AF.profile.facts(profile, { 'edu.0.gpa': '3.7', 'sem.name': '别人' });
   assert.equal(f2.lists.edu[0].gpa, '3.7');
   assert.equal(f2.name, profile.personal.fullName);
-  // 跨网站、跨段落名：同一句话答过且一致才用；答过两种说法不猜；经历块里不用
-  const m1 = AF.memory.make({ platform: 'moka', id: 1, label: '宗教信仰', section: '个人信息', after: '无' }, 'a');
-  const mem = { [m1.id]: m1 };
-  assert.equal(AF.memory.lookup(mem, 'beisen', { id: 'X_ext_1', label: '宗教信仰', section: '基本信息', row: 0 }, null), '无');
-  const m2 = AF.memory.make({ platform: 'hotjob', id: 2, label: '宗教信仰', section: '其他', after: '佛教' }, 'b');
-  assert.equal(AF.memory.lookup({ ...mem, [m2.id]: m2 }, 'beisen', { id: 'X_ext_1', label: '宗教信仰', section: '基本信息', row: 0 }, null), null);
-  assert.equal(AF.memory.lookup(mem, 'beisen', { id: 'X_ext_1', label: '宗教信仰', section: '教育经历', row: 0 }, null), null);
+
 });

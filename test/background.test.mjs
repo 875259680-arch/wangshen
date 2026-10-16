@@ -37,7 +37,7 @@ function makeBackground(initial = {}) {
     setTimeout, clearTimeout,
     importScripts(...paths) {
       for (const path of paths) {
-        assert.match(path, /^core\/(?:text|memory|diag)\.js$/);
+        assert.ok(['core/text.js', 'runtime/context.js', 'learning/memory.js', 'learning/scoped-memory.js', 'diagnostics/diagnostics.js'].includes(path));
         const source = fs.readFileSync(new URL(`../src/${path}`, import.meta.url), 'utf8');
         vm.runInContext(source, context, { filename: path });
       }
@@ -84,14 +84,14 @@ test('MEM_SAVE records prior target in bounded history when the rule changes', a
   assert.deepEqual(harness.state.memories.rule.history[1], { to: '更早答案' });
 });
 
-test('LEARN and REMEMBERED isolate project and campus answers while reading legacy answer entries', async () => {
+test('LEARN and REMEMBERED isolate sections and preserve legacy entries in storage', async () => {
   const question = '请描述你在该项目或校园活动中的具体贡献';
   const harness = makeBackground({ answers: { legacyAnswerKey: { label: question, section: '项目经历', row: 0, value: '旧项目回答', updatedAt: 1 } } });
   await harness.send({ type: 'LEARN', page: { host: 'example.test' }, items: [
     { label: question, section: '校园经历', row: 0, value: '校园活动回答' },
     { label: question, section: '项目经历', row: 0, value: '新项目回答' },
   ] });
-  const result = await harness.send({ type: 'REMEMBERED', fields: [
+  const result = await harness.send({ type: 'REMEMBERED', page: { host: 'example.test' }, fields: [
     { key: 'p', label: question, section: '项目经历', row: 0 },
     { key: 'c', label: question, section: '校园经历', row: 0 },
   ] });
@@ -102,7 +102,7 @@ test('LEARN and REMEMBERED isolate project and campus answers while reading lega
 
 test('cacheKey scopes resolved cache by host and profile revision', async () => {
   const field = { key: 'custom', label: '自定义长问题', section: '项目经历', row: 0, part: 0, kind: 'text', options: [] };
-  const cache = { 'one.example|7|项目经历|自定义长问题|0|0|text|': 'cached answer' };
+  const cache = { 'v2|["generic","one.example","project"]|7|项目经历|自定义长问题|0|0|text|': 'cached answer' };
   const harness = makeBackground({ cache, profileRev: 7 });
   const samePage = await harness.send({ type: 'RESOLVE', fields: [field], page: { host: 'one.example' } });
   const otherPage = await harness.send({ type: 'RESOLVE', fields: [field], page: { host: 'two.example' } });

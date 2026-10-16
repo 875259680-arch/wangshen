@@ -1,5 +1,7 @@
-本目录不进 git。首次安装时插件会读取：
-- seed.json：{"profile": {...}, "resumeName": "xxx.pdf"}
-- config.json：{"apiKey": "...", "baseUrl": "https://api.deepseek.com", "model": "deepseek-flash"}
-- resume.pdf：简历附件
-都可以之后在“资料与设置”页里修改。
+# 本地个人资料（不随源码分发）
+
+插件不会在安装时读取 seed.json/config.json 或导入此目录；资料通过扩展设置页导入，运行时存放于 chrome.storage.local。
+
+本目录可在本机暂存私人文件，除本说明外已被 .gitignore 排除。3.9.1 已从当前源码移除旧 seed、API 配置、简历、照片、完整备份。原文件仍在旧 Git 提交中；此操作不删除浏览器资料，也没有清除 Git 历史。
+
+完整备份请使用设置页“备份与迁移”导出，不要随项目上传。

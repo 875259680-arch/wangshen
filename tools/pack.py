@@ -23,7 +23,7 @@ name = f'wangshen-autofill-{version}-nodata'
 dist = root / 'dist'
 out = dist / name
 
-INCLUDE = ['manifest.json', 'README.md', 'icons', 'src']
+INCLUDE = ['manifest.json', 'README.md', 'AGENTS.md', 'docs', 'icons', 'src']
 SKIP = {'.DS_Store', 'Thumbs.db'}
 
 GUIDE = f"""网申助手 v{version} 安装说明（Microsoft Edge / Google Chrome，Windows 和 Mac 通用）

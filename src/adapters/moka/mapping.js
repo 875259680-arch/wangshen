@@ -1,5 +1,5 @@
 // Moka（app.mokahr.com）：字段 id、块、值格式都来自 2026-10-12 真实申请页（test/cases/moka/）。
-// 页面侧（page/moka.js）只负责列出组件原始数据、写原始值；这里决定“对应什么、写成什么格式”，全部是纯函数。
+// 页面侧（adapters/moka/page.js）只负责列出组件原始数据、写原始值；这里决定“对应什么、写成什么格式”，全部是纯函数。
 (() => {
   const AF = (globalThis.AF ||= {});
   (AF.platforms ||= {});

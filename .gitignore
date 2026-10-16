@@ -1,0 +1,11 @@
+# Runtime personal data stays local. Already tracked historical files are not removed.
+/data/*
+!/data/README.md
+/dist/
+/node_modules/
+.env
+.env.*
+*.local.json
+.DS_Store
+__pycache__/
+/test/out/*

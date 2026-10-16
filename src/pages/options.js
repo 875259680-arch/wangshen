@@ -88,7 +88,7 @@ async function loadMemories() {
     const rule = m.map ? (m.map === 'none' ? `${m.by === 'AI' ? 'AI 判断：' : ''}资料里没有，留给你填` : `${m.by === 'AI' ? 'AI 判断：' : ''}对应资料“${m.map.split('.').map(x => NAMES[x] || x).join(' · ')}”`)
       : m.from != null ? `资料是“${m.from}”时 → 填“${m.to}”` : `固定填“${m.to}”`;
     const label = m.label + (m.section ? `（${m.section}${m.row ? ` 第 ${m.row + 1} 条` : ''}）` : '');
-    tr.append(td(PLATFORM[m.platform] || m.platform || '其它网站'), td(label), td(rule), td((m.history || []).map(h => h.to).join('、')), dc);
+    tr.append(td(`${PLATFORM[m.platform] || m.platform || '其它网站'} · ${m.scopeVersion === 2 ? (m.scopeLevel === 'platform' ? '类型共享' : m.siteScope) + ' / ' + m.pageType : '旧记录：按来源兼容，范围不明需重新学习'}`), td(label), td(rule), td((m.history || []).map(h => h.to).join('、')), dc);
     return tr;
   }));
   // 资料补充（资料里空着、你在网页上补答过的项，所有网站通用）排在最前
@@ -170,7 +170,7 @@ async function loadDiagnostics() {
 $('refreshDiag').onclick = loadDiagnostics;
 $('exportDiag').onclick = async () => {
   const { diag = [] } = await get('diag');
-  const data = { version: chrome.runtime.getManifest().version, exportedAt: new Date().toISOString(), items: diag.map(AF.diag.sanitizeItem), groups: AF.diag.aggregate(diag) };
+  const data = { ...AF.diag.bundle(diag, chrome.runtime.getManifest().version), groups: AF.diag.aggregate(diag) };
   const url = URL.createObjectURL(new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' }));
   const a = document.createElement('a'); a.href = url; a.download = 'wangshen-diagnostics.json'; a.click();
   setTimeout(() => URL.revokeObjectURL(url), 1000);

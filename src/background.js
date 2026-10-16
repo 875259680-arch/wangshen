@@ -16,25 +16,25 @@ async function initializeDefaults() {
 }
 chrome.runtime.onInstalled.addListener(initializeDefaults);
 chrome.runtime.onStartup.addListener(initializeDefaults);
-importScripts('core/text.js', 'core/memory.js', 'core/diag.js');
+importScripts('core/text.js', 'runtime/context.js', 'learning/memory.js', 'learning/scoped-memory.js', 'diagnostics/diagnostics.js');
 let mutationQueue = Promise.resolve();
-const MUTATIONS = new Set(['DIAG', 'LEARN', 'MEM_SAVE', 'MEM_DELETE', 'SUPPLEMENT_SAVE', 'SUPPLEMENT_DELETE', 'CITY_ADD', 'DEV_SET']);
+const MUTATIONS = new Set(['DIAG', 'LEARN', 'MEM_SAVE', 'MEM_EDIT', 'MEM_PROMOTE', 'MEM_BIND', 'MEM_DELETE', 'SUPPLEMENT_SAVE', 'SUPPLEMENT_DELETE', 'CITY_ADD', 'DEV_SET']);
 
 // ---------- 记忆与缓存的 key ----------
 // 每个回答都按“板块 + 问题 + 第几条”存，长题目也不能跨经历复用。
-// 段落名归到通用类别：京东“基本信息”和扬子江“个人信息”是同一类，记忆才能跨站复用。
+// 段落名归到通用类别，但回答与缓存仍必须满足网站/租户和页面类型隔离。
 const BUCKETS = [[/家庭|家属|亲属|紧急/, '家庭'], [/教育|学历|学习经历/, '教育'], [/实习.*工作|工作.*实习/, '工作实习'], [/实习/, '实习'], [/工作|职业|任职/, '工作'], [/项目|科研/, '项目'],
   [/校园|学生|社团|社会实践|活动/, '校园'], [/证书|技能|语言|外语|资格/, '技能'], [/获奖|荣誉|奖励/, '获奖'], [/个人|基本|基础|联系|身份/, '个人']];
 const bucket = sec => (BUCKETS.find(([re]) => re.test(sec || '')) || [0, 'section:' + norm(sec)])[1];
-const scopeField = (f, page = {}) => ({ ...f, scope: AF.memory.pageScope(page) });
-const answerKey = f => `${norm(f.label)}#${f.row || 0}#${f.part || 0}@${bucket(f.section)}${AF.memory.needsScope(f.label) && f.scope ? `@scope:${f.scope}` : ''}`;
+const scopeField = (f, page = {}) => AF.context.field(f, page);
+const answerKey = f => `${AF.context.key(f)}:${norm(f.label)}#${f.row || 0}#${f.part || 0}@${bucket(f.section)}`;
 const rememberedAnswer = (answers, f) => Object.values(answers).filter(a =>
   norm(a.label) === norm(f.label) && bucket(a.section) === bucket(f.section) &&
   (a.row || 0) === (f.row || 0) && (a.part || 0) === (f.part || 0) &&
-  (!AF.memory.needsScope(f.label) || (!!f.scope && a.scope === f.scope))
+  AF.context.matches(a, f)
 ).sort((a,b) => (b.updatedAt || 0) - (a.updatedAt || 0))[0];
 const cacheKey = (f, rev, page = {}) => {
-  const parts = [page.host || '', rev, norm(f.section), norm(f.label), f.row, f.part, f.kind, norm((f.options || []).join('|')).slice(0, 200)];
+  const parts = ['v2', AF.context.key(f), rev, norm(f.section), norm(f.label), f.row, f.part, f.kind, norm((f.options || []).join('|')).slice(0, 200)];
   if (AF.memory.needsScope(f.label)) parts.push(AF.memory.pageScope(page));
   return parts.join('|');
 };
@@ -150,10 +150,12 @@ async function resolve(fields, page, phase) {
   fields = fields.map(f => scopeField(f, page));
   const { profile = {}, profileRev = 0, answers = {}, cache = {}, settings = {} } = await store.get(['profile', 'profileRev', 'answers', 'cache', 'settings']);
   const values = {}, source = {}, rest = [];
+  const currentFacts = localGuess(fields.filter(sureLocal), profile);
   for (const f of fields) {
     const a = rememberedAnswer(answers, f);
     const c = cache[cacheKey(f, profileRev, page)];
-    if (a && (!f.options?.length || f.options.some(o => norm(o) === norm(a.value)))) { values[f.key] = a.value; source[f.key] = '记忆'; }
+    if (currentFacts[f.key] != null) { values[f.key] = currentFacts[f.key]; source[f.key] = '本地规则'; }
+    else if (a && (!f.options?.length || f.options.some(o => norm(o) === norm(a.value)))) { values[f.key] = a.value; source[f.key] = '记忆'; }
     else if (c !== undefined) { values[f.key] = c; source[f.key] = '缓存'; }
     else rest.push(f);
   }
@@ -182,7 +184,7 @@ async function resolve(fields, page, phase) {
       useLocal(rest);
     } else {
       const { profile: safe, secrets } = redact(profile);
-      const remembered = Object.values(answers).slice(-200).map(a => ({ section: a.section, label: a.label, row: a.row, value: a.value }));
+      const remembered = Object.values(answers).filter(a => fields.some(f => AF.context.matches(a, f))).slice(-200).map(a => ({ section: a.section, label: a.label, row: a.row, value: a.value }));
       const today = new Date().toISOString().slice(0, 10);
       const batches = [];
       for (let i = 0; i < rest.length; i += 45) batches.push(rest.slice(i, i + 45));
@@ -372,7 +374,7 @@ async function pickOption(field, value, options) {
 
   const { settings = {}, profile = {}, profileRev = 0, picks = {} } = await store.get(['settings', 'profile', 'profileRev', 'picks']);
   // 同样的问题 + 同样的选项，直接用上次 AI 选的那一项。
-  const pk = [profileRev, norm(field.label), norm(value), norm(options.join('|')).slice(0, 300)].join('|');
+  const pk = ['v2', AF.context.key(field), profileRev, norm(field.label), norm(value), norm(options.join('|')).slice(0, 300)].join('|');
   if (picks[pk] !== undefined) { const i = options.indexOf(picks[pk]); if (i >= 0 || picks[pk] === null) return i; }
   const remember = async i => {
     picks[pk] = i >= 0 ? options[i] : null;
@@ -397,7 +399,7 @@ async function learn(items, page) {
     if (!f.value || /^(请选择|请输入|必填)/.test(f.value) || f.kind === 'file') continue;
     const k = answerKey(f);
     if (answers[k]?.value === f.value) continue;
-    answers[k] = { label: f.label, section: f.section, row: f.row || 0, part: f.part || 0, kind: f.kind, value: f.value, host: page?.host, scope: AF.memory.needsScope(f.label) ? f.scope || null : null, updatedAt: Date.now() };
+    answers[k] = { label: f.label, section: f.section, row: f.row || 0, part: f.part || 0, kind: f.kind, value: f.value, host: page?.host, scopeVersion: 2, scopeLevel: 'site', platform: f.platform, siteScope: f.siteScope, pageType: f.pageType, scope: f.siteScope, updatedAt: Date.now() };
     saved++;
   }
   await store.set({ answers });
@@ -435,7 +437,7 @@ chrome.runtime.onMessage.addListener((msg, sender, reply) => {
       }
       case 'RESOLVE': return resolve(msg.fields, msg.page, msg.phase);
       case 'CLASSIFY': return classify(msg.fields || []);
-      case 'PICK': return { index: await pickOption(msg.field, msg.value, msg.options) };
+      case 'PICK': return { index: await pickOption(scopeField(msg.field, msg.page || { url: sender.url }), msg.value, msg.options) };
       case 'LEARN': return { saved: await learn(msg.items, msg.page) };
       // 诊断：只存字段元数据和失败原因（不含资料值），最多 500 条，导出给开发者补适配。
       case 'DIAG': {
@@ -444,7 +446,7 @@ chrome.runtime.onMessage.addListener((msg, sender, reply) => {
         await store.set({ diag: merged });
         return { saved: msg.items?.length || 0 };
       }
-      // 学到的规则（core/memory.js 生成记录）：同一 id 只留一条，旧值进历史
+      // 学到的规则（learning/memory.js 生成记录）：同一 id 只留一条，旧值进历史
       case 'MEM_SAVE': {
         const { memories = {} } = await store.get('memories');
         let next = memories;
@@ -477,8 +479,28 @@ chrome.runtime.onMessage.addListener((msg, sender, reply) => {
         return { saved: msg.items?.length || 0 };
       }
       case 'SUPPLEMENT_DELETE': { const { supplement = {} } = await store.get('supplement'); delete supplement[msg.key]; await store.set({ supplement }); return {}; }
+      // Management hooks for local Codex / a future rule editor. Old records are retained on bind/promote.
+      case 'MEM_EDIT':
+      case 'MEM_PROMOTE':
+      case 'MEM_BIND': {
+        const { memories = {} } = await store.get('memories');
+        const old = memories[msg.id];
+        if (!old) throw Error('学习记录不存在');
+        let record;
+        if (msg.type === 'MEM_PROMOTE') record = AF.memory.promote(old);
+        else if (msg.type === 'MEM_BIND') record = AF.memory.bind(old, msg.context || {});
+        else {
+          if (typeof msg.to !== 'string' || msg.to.length > 10000) throw Error('无效的学习内容');
+          if (old.map != null && !/^(none|[A-Za-z][\w]*(?:\.[A-Za-z][\w]*)?)$/.test(msg.to)) throw Error('无效的资料字段路径');
+          record = { ...old, to: msg.to, ...(old.map != null ? { map: msg.to } : {}) };
+        }
+        record.updatedAt = Date.now();
+        record.history = [{ to: old.to, at: old.updatedAt, host: old.host }, ...(old.history || [])].slice(0, 5);
+        await store.set({ memories: { ...memories, [record.id]: record } });
+        return { id: record.id };
+      }
       case 'MEM_DELETE': { const { memories = {} } = await store.get('memories'); delete memories[msg.id]; await store.set({ memories }); return {}; }
-      case 'DIAG_EXPORT': { const { diag = [] } = await store.get('diag'); return { version: chrome.runtime.getManifest().version, exportedAt: new Date().toISOString(), items: diag.map(AF.diag.sanitizeItem) }; }
+      case 'DIAG_EXPORT': { const { diag = [] } = await store.get('diag'); return AF.diag.bundle(diag, chrome.runtime.getManifest().version); }
       case 'REMEMBERED': {
         const { answers = {} } = await store.get('answers');
         const values = {};

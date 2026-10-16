@@ -3,6 +3,7 @@
   if (globalThis.AF?.diag) return;
   const AF = (globalThis.AF ||= {});
 
+  const FAILURE_CODES = Object.freeze({ unmapped: 'FIELD_UNRECOGNIZED', unknown: 'FIELD_UNRECOGNIZED', nodata: 'PROFILE_UNMATCHED', missing: 'PROFILE_MISSING', ambiguous: 'AMBIGUOUS_MATCH', encode: 'FORMAT_INCOMPATIBLE', dom: 'CONTROL_FAILED', upload: 'CONTROL_FAILED', verify: 'VALIDATION_FAILED', error: 'CONTROL_FAILED' });
   const text = value => String(value ?? '').slice(0, 500);
   function sanitizePath(path) {
     let value = text(path).split(/[?#]/, 1)[0] || '/';
@@ -31,6 +32,10 @@
   function sanitizeItem(item = {}) {
     const page = item.page || {};
     return {
+      schemaVersion: 2, moduleId: text(item.moduleId || item.platform || 'generic'), moduleVersion: text(item.moduleVersion || 'legacy'), pageType: text(item.pageType || 'unknown'),
+      failureCode: /^[A-Z_]{1,40}$/.test(item.failureCode || '') ? item.failureCode : FAILURE_CODES[item.stage] || 'REVIEW_REQUIRED',
+      candidateSources: (Array.isArray(item.candidateSources) ? item.candidateSources : []).filter(x => typeof x === 'string' && /^[A-Za-z][\w.]{0,80}$/.test(x)).slice(0, 10),
+      operation: text(item.operation || item.stage),
       platform: text(item.platform), key: text(item.key), id: text(item.id), type: text(item.type), kind: text(item.kind),
       label: text(item.label), section: text(item.section), row: Number.isFinite(item.row) ? item.row : null,
       stage: text(item.stage), reason: sanitizeReason(item.reason), optionsCount: Number.isFinite(item.optionsCount) ? item.optionsCount : 0,
@@ -75,5 +80,11 @@
     const at = new Date().toISOString();
     try { chrome.runtime.sendMessage({ type: 'DIAG', items: items.map(x => sanitizeItem({ ...x, ...extra, page, at })) }, () => void chrome.runtime.lastError); } catch (_) {}
   }
-  AF.diag = { record, pageSignature, sanitizePath, sanitizeReason, sanitizeItem, aggregate };
+  function bundle(items, version = '') {
+    const clean = items.map(sanitizeItem);
+    return { schemaVersion: 2, version, exportedAt: new Date().toISOString(),
+      instructions: '按 moduleId 定位 src/adapters/<id>/；generic 定位 src/fallback/。先复现字段，再改该模块，最后本地浏览器读回校验。网址不含查询参数，记录不包含资料值。',
+      modules: [...new Set(clean.map(x => x.moduleId))], items: clean };
+  }
+  AF.diag = { bundle, FAILURE_CODES, record, pageSignature, sanitizePath, sanitizeReason, sanitizeItem, aggregate };
 })();

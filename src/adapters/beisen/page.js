@@ -1,5 +1,5 @@
 // 北森页面侧：字段组件带 cmp_id / cmp_name / cmp_type / cmp_data / value / text / onChange，写入统一是 onChange({text, value})。
-// 这里只列原始数据、写原始值；对应关系和值格式在 core/platform-beisen.js。
+// 这里只列原始数据、写原始值；对应关系和值格式在 adapters/beisen/mapping.js。
 (() => {
   const P = window.__afPage;
   if (!P) return;

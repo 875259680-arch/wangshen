@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import backup from '../src/core/backup.js';
+import backup from '../src/storage/backup.js';
 
 const completeData = () => ({
   profile: { name: '示例', experiences: ['A', 'B'] },

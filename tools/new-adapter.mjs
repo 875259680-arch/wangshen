@@ -1,0 +1,16 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const [id, host] = process.argv.slice(2);
+if (!/^[a-z][a-z0-9_]{1,40}$/.test(id || '') || !/^[a-z0-9.-]+\.[a-z]{2,}$/.test(host || '')) throw Error('用法：npm run adapter:new -- example careers.example.com');
+const dir = path.join(root, 'src/adapters', id);
+if (fs.existsSync(dir)) throw Error('模块已存在，不覆盖');
+const file = path.join(root, 'src/adapters/catalog.json');
+const catalog = JSON.parse(fs.readFileSync(file, 'utf8'));
+if (catalog.some(m => m.id === id)) throw Error('模块 ID 已登记');
+fs.mkdirSync(dir);
+for (const name of ['mapping.js', 'page.js']) fs.writeFileSync(path.join(dir, name), fs.readFileSync(path.join(root, 'templates/adapter', name), 'utf8').replaceAll('__ID__', id));
+catalog.push({ id, enabled: false, version: '0.1.0', priority: 10, hosts: [host], mapping: `src/adapters/${id}/mapping.js`, page: `src/adapters/${id}/page.js` });
+fs.writeFileSync(file, JSON.stringify(catalog, null, 2) + '\n');
+console.log(`已生成 ${id}，默认禁用。完成真实页面适配后设置 enabled: true，再运行 npm run sync。`);

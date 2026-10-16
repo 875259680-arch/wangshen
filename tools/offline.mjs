@@ -14,6 +14,7 @@ globalThis.chrome = {
   commands: { onCommand: noop },
   storage: { local: { get: async k => Object.fromEntries([].concat(k).map(x => [x, mem[x]])), set: async o => Object.assign(mem, o) } },
 };
+globalThis.importScripts = (...paths) => { for (const p of paths) new Function(fs.readFileSync(path.join(root, 'src', p), 'utf8'))(); };
 const code = fs.readFileSync(path.join(root, 'src/background.js'), 'utf8');
 const api = new Function(code + '\nreturn { resolve, pickOption };')();
 const [cmd, file] = process.argv.slice(2);

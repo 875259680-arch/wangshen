@@ -1,4 +1,4 @@
-// 插件隔离环境 ⇄ 页面侧（page/runtime.js）的调用。两边只交换 JSON 字符串。
+// 插件隔离环境 ⇄ 页面侧（runtime/page-runtime.js）的调用。两边只交换 JSON 字符串。
 (() => {
   if (globalThis.AF?.rpc) return;
   const AF = (globalThis.AF ||= {});
@@ -8,7 +8,7 @@
   function inject() {
     if (injected || !globalThis.chrome?.runtime?.getURL) return false;
     injected = true;
-    for (const f of ['src/page/runtime.js', 'src/page/moka.js', 'src/page/beisen.js', 'src/page/hotjob.js', 'src/page/feishu.js', 'src/page/job51.js', 'src/page/job51v.js']) {
+    for (const f of globalThis.AF_PAGE_SCRIPTS) {
       const s = document.createElement('script');
       s.src = chrome.runtime.getURL(f); s.async = false;
       (document.head || document.documentElement).append(s);

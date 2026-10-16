@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import '../src/core/diag.js';
+import '../src/diagnostics/diagnostics.js';
 
 const diag = globalThis.AF.diag;
 

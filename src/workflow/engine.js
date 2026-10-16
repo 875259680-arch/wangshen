@@ -19,14 +19,17 @@
 
   const COMPANY = '资料里没有对应内容，请自己填；填完点“记住”，以后自动填';
   const pageContext = () => ({ host: location.host, path: location.pathname, search: location.search });
+  const adapterFor = id => id && AF.adapters.resolve(id, pageContext());
   async function detect() { try { return await AF.rpc('detect'); } catch (_) { return null; } }
 
   // 旧后台的“控件种类”叫法（RESOLVE 的本地规则和 AI 提示词按它理解字段）
   const LEGACY_KIND = { text: 'text', textarea: 'textarea', number: 'text', select: 'select', bool: 'radio', date: 'date', range: 'daterange', region: 'select', multi: 'checkbox' };
-  const plainOf = (plat, f) => ({ key: f.key, section: plat.section(f), label: f.label, scope: f.scope || AF.memory.pageScope(pageContext()), kind: LEGACY_KIND[plat.kind(f)] || 'text', row: f.row, part: 0,
+  const plainOf = (plat, f) => ({ key: f.key, platform: f.platform, host: f.host, siteScope: f.siteScope, pageType: f.pageType, section: plat.section(f), label: f.label, scope: f.scope || AF.memory.pageScope(pageContext()), kind: LEGACY_KIND[plat.kind(f)] || 'text', row: f.row, part: 0,
     options: plat.options(f).map(o => o.text).slice(0, 300), required: f.required || undefined });
   // 空数组、每项都空的数组也算空（飞书“期望工作地点”空着是 []；51job 的“省 + 市”空着是 ['', '']）
   const empty = raw => raw == null || raw === '' || (Array.isArray(raw) ? raw.every(x => x == null || x === '') : typeof raw === 'object' && !Object.values(raw).some(v => v != null && v !== ''));
+
+  const { resumeFirst, uploadFiles, parseZones, domUpload } = AF.attachments.create({ send, emit, sleep, empty, isCancelled: () => cancelled });
 
   const areaCache = new Map();
   async function areaTree(url) {
@@ -36,7 +39,7 @@
   }
 
   // 字段对应资料哪一项：平台字段表 / 问题文字 → 段落兜底（“英语能力”段的“得分”）
-  const targetOf = (plat, f) => plat.target(f) || AF.mapping.bySection(f.label, plat.section(f));
+  const targetOf = (plat, f) => plat.mapField(f);
 
   // 地区选择框只能对到地区类资料（2026-10-13 中交、英诺赛科：AI 把“实习地点”认成了实习单位名称，地区表里当然找不到）
   const fitsKind = (plat, f, tgt) => plat.kind(f) !== 'region' || (!!tgt.sem && (AF.mapping.REGION_SEM.has(tgt.sem) || tgt.sem === 'cityPref'));
@@ -48,7 +51,7 @@
     const entryOf = f => ({ key: f.key, label: f.label, section: plat.section(f), required: f.required });
     emit({ results, status: `识别到 ${plat.name} 招聘系统，读取资料…`, done: 0, total: 0, running: true, warning: '', elapsed: 0 });
     // 北森地区表约 280KB，第一次取要一两秒：先发出去，和读资料、补条目并行。
-    let early = await AF.rpc('list');
+    let early = await plat.parse();
     const areaUrl = early.find(f => plat.kind(f) === 'region' && f.areaUrl)?.areaUrl;
     const areaJob = areaUrl ? areaTree(areaUrl) : null;
     const state = await send({ type: 'STATE' });
@@ -58,10 +61,10 @@
     if (plat.initialize && !opts.only) {
       emit({ status: '展开表单板块，读取条件字段…' });
       results.push(...await plat.initialize(facts, opts));
-      early = await AF.rpc('list');
+      early = await plat.parse();
     }
     const resumeHandled = opts.only ? new Set() : await resumeFirst(plat, early, state.files || [], results);
-    if (resumeHandled.size || results.some(r => r.key === 'resume-parse' && r.state === 'ok')) early = await AF.rpc('list');   // 网站解析可能自己加了条目
+    if (resumeHandled.size || results.some(r => r.key === 'resume-parse' && r.state === 'ok')) early = await plat.parse();   // 网站解析可能自己加了条目
     // 变通：网页只有“工作经历”、没有“实习经历”，而资料里没有正式工作 → 应届生把实习经历填进工作经历。
     // 还没有条目的段落（飞书的“实习经历”开头只有“添加”）也算网页上有。
     const empties = plat.listOfGroup ? await AF.rpc('emptyGroups').catch(() => []) : [];
@@ -75,7 +78,7 @@
       if (await AF.rpc('markNone', plat.markNone('work')).catch(() => false)) {
         results.push({ key: 'none-work', label: '工作经历', section: '工作经历', state: 'ok', value: '已勾选“没有工作经历”', source: '资料' });
         await sleep(200);
-        early = await AF.rpc('list');
+        early = await plat.parse();
       }
     }
     // 资料条目比网页多：点该块的“添加”补条目（平台自己的按钮，和用户点的是同一个）。
@@ -107,8 +110,8 @@
       }
       if (added.length) emit({ status: `已添加条目：${[...new Set(added)].join('、')}` });
     }
-    // 段落名挂到字段上：记忆按“段落 + 问题”分区（core/memory.js）
-    let fields = (await AF.rpc('list')).map(f => ({ ...f, section: plat.section(f), scope: AF.memory.pageScope(pageContext()) }));
+    // 段落名挂到字段上：记忆按“段落 + 问题”分区（learning/memory.js）
+    let fields = (await plat.parse()).map(f => AF.context.field({ ...f, section: plat.section(f) }, pageContext(), id));
     const d0 = new Date();
     const ctx = { facts, fields, areaTree: areaJob ? await areaJob : null, today: `${d0.getFullYear()}-${String(d0.getMonth() + 1).padStart(2, '0')}-${String(d0.getDate()).padStart(2, '0')}` };
     // 平台自己的选项表（Hotjob 的地区、职能树）先取好，后面的编码、比对都是同步的
@@ -125,7 +128,7 @@
       if (k === 'consent' || f.disabled) continue;
       if (plat.companion?.(f)) continue;
       if (k === 'unknown') {
-        results.push({ ...entryOf(f), state: 'nodata', reason: '尚未适配该控件类型，已记录诊断' });
+        results.push({ ...entryOf(f), state: 'nodata', failureCode: 'CONTROL_UNSUPPORTED', reason: '尚未适配该控件类型，已记录诊断' });
         continue;
       }
       if (!empty(f.raw) && !opts.overwrite) {
@@ -153,18 +156,18 @@
       }
       if (tgt.sem === 'cityPref') { planned.set(f.key, { mapped: true, city: true }); cityFields.push(f); continue; }
       if (tgt.sem && f.row > 0 && tgt.sem !== 'cityPref' && !tgt.perRow) { results.push({ ...entryOf(f), state: 'nodata', reason: COMPANY }); continue; }   // 单值资料只填第 1 条
-      const v = AF.mapping.valueOf(tgt, facts, f.row);
+      const v = plat.resolveValue(tgt, facts, f.row);
       planned.set(f.key, { mapped: true, from: v != null && typeof v !== 'object' ? v : null, objectValue: !!v && typeof v === 'object' });
       // 网页上这一条经历资料里没有（如网页有“工作经历”而你只有实习）：整条合并成一项提示，不逐个字段列
       if (v === undefined) {
         const g = `${f.group}|${f.row}`, cur = missingRows.get(g);
         if (cur) cur.required ||= f.required;
-        else missingRows.set(g, { key: f.key, label: `${plat.section(f) || '经历'} 第 ${f.row + 1} 条`, section: plat.section(f), required: f.required, state: 'nodata', reason: '资料里没有这一条，留空即可（也可以在网页上删掉这一条）' });
+        else missingRows.set(g, { key: f.key, label: `${plat.section(f) || '经历'} 第 ${f.row + 1} 条`, section: plat.section(f), required: f.required, state: 'nodata', failureCode: 'PROFILE_MISSING', reason: '资料里没有这一条，留空即可（也可以在网页上删掉这一条）' });
         continue;
       }
       if (v === '' || v == null) {
         const m = AF.memory.lookup(memories, id, f, null);
-        if (m != null) direct.push({ f, value: m, source: '记忆' }); else results.push({ ...entryOf(f), state: 'nodata' });
+        if (m != null) direct.push({ f, value: m, source: '记忆' }); else results.push({ ...entryOf(f), state: 'nodata', failureCode: 'PROFILE_MISSING', reason: '资料中缺少此字段的值' });
         continue;
       }
       const m = AF.memory.lookup(memories, id, f, v);
@@ -199,7 +202,7 @@
       for (const it of items) {
         // 只能从网站字典里选的（Hotjob 的学校、专业）：先按值去网站搜，候选给 encode 挑
         if (plat.lookup) await plat.lookup(it.f, it.value, ctx);
-        let enc = plat.encode(it.f, it.value, ctx);
+        let enc = plat.convertValue(it.f, it.value, ctx);
         // 对不上时先退一级（工商管理类 → 管理学），再请 AI 挑
         if (enc.pick && it.tgt) for (const alt of AF.mapping.alternatives(it.tgt, facts, it.f.row)) {
           const e2 = plat.encode(it.f, alt, ctx);
@@ -221,17 +224,17 @@
         else { results.push({ ...entryOf(it.f), state: 'fail', value: String(it.value), reason: enc.error || '无法转换' }); diagItems.push(diagOf(it.f, 'encode', enc.error)); }
       }
     };
-    const diagOf = (f, stage, reason) => ({ platform: id, key: f.key, id: f.id, type: f.type, kind: plat.kind(f), label: f.label, section: plat.section(f), row: f.row, stage, reason, optionsCount: (f.options || []).length });
+    const diagOf = (f, stage, reason) => ({ platform: id, pageType: f.pageType, moduleId: plat.moduleId, moduleVersion: plat.moduleVersion, candidateSources: [targetOf(plat, f)].filter(Boolean).map(t => t.sem || `${t.list}.${t.prop}`), key: f.key, id: f.id, type: f.type, kind: plat.kind(f), label: f.label, section: plat.section(f), row: f.row, stage, reason, optionsCount: (f.options || []).length });
     const flush = async () => {
       if (!pending.length || cancelled) return;
       const batch = pending.splice(0);
-      const res = await AF.rpc('writeMany', batch.map(x => ({ key: x.f.key, raw: x.raw })));
+      const res = await plat.execute(batch.map(x => ({ key: x.f.key, raw: x.raw })));
       const errs = new Map(res.filter(r => !r.ok).map(r => [r.key, r.error]));
       await sleep(120);   // 等 React 把新值渲染回组件 props，再回读
-      const fresh = new Map((await AF.rpc('list')).map(f => [f.key, f]));
+      const fresh = new Map((await plat.parse()).map(f => [f.key, f]));
       for (const x of batch) {
         const now = fresh.get(x.f.key);
-        const ok = !errs.has(x.f.key) && now && plat.same(now, now.raw, x.raw);
+        const ok = !errs.has(x.f.key) && now && plat.verify(now, x.raw);
         if (ok) { written.set(x.f.key, now.raw); results.push({ ...entryOf(x.f), state: 'ok', value: plat.decode(now, now.raw), want: x.value, source: x.source, reason: x.note }); }
         else {
           const reason = errs.get(x.f.key) || (now ? `网页没有接受该值（现在是“${plat.decode(now, now.raw).slice(0, 20) || '空'}”）` : '字段不见了');
@@ -261,7 +264,7 @@
         planned.set(f.key, { mapped: true, ai: key });
         let v = tgt.sem === 'cityPref'
           ? AF.mapping.pickCity(plat.kind(f), plat.options(f).map(o => o.text), facts.cityPrefs, usedCities, plat.kind(f) === 'region' ? ctx.areaTree || AF.region.gb() : null)
-          : AF.mapping.valueOf(tgt, facts, f.row);
+          : plat.resolveValue(tgt, facts, f.row);
         if (v == null || v === '') { results.push({ ...entryOf(f), state: 'nodata', reason: `AI 认为这题是“${key}”，但资料里没有` }); continue; }
         items.push({ f, value: v, source: 'AI 认题' });
       }
@@ -291,9 +294,14 @@
       await flush();
     }
 
+    // Field-level fallback: only unresolved fields, never restart the whole form.
+    await AF.fieldFallback.run({ fields, results, adapter: plat, facts, cancelled: () => cancelled });
+
     // 4. 标出需要人工处理的，记诊断，记基准（之后用户手改的才算“学习”）
     const need = results.filter(r => r.state === 'fail' || (r.state === 'nodata' && r.required)).map(r => r.key);
     AF.rpc('mark', need).catch(() => {});
+    // A failed platform attempt remains useful even if the field fallback recovered it.
+    for (const d of diagItems) { const r = results.find(x => x.key === d.key); if (r?.state === 'ok') d.reason = '专用模块失败，通用字段兜底已恢复'; }
     const logged = new Set(diagItems.map(x => x.key));
     for (const r of results) {
       if (logged.has(r.key) || !['nodata', 'fail', 'diff', 'extra'].includes(r.state)) continue;
@@ -301,7 +309,8 @@
       diagItems.push(f ? diagOf(f, r.state === 'fail' ? 'error' : 'nodata', r.state === 'diff' ? '网页已有内容与资料不一致' : r.reason || '资料中没有对应内容')
         : { platform: id, key: r.key, label: r.label, section: r.section, stage: r.state === 'fail' ? 'error' : 'nodata', reason: r.reason });
     }
-    AF.diag.record(diagItems, { host: location.host });
+    for (const d of diagItems) { const r = results.find(x => x.key === d.key); if (r?.failureCode) d.failureCode = r.failureCode; }
+    AF.diag.record(diagItems, { host: location.host, moduleId: plat.moduleId, moduleVersion: plat.moduleVersion });
     await snapshot(plat);
     const ok = results.filter(r => r.state === 'ok').length, bad = results.filter(r => r.state === 'fail').length, nodata = results.filter(r => r.state === 'nodata').length;
     const elapsed = +((performance.now() - t0) / 1000).toFixed(1);
@@ -320,7 +329,7 @@
     if (tgt.sem === 'cityPref' || tgt.sem === 'declareNo') return null;   // 多答案 / 默认值：不算错
     // 证书是一堆没有先后的条目，网页上多一张资料里没写的（CET-6 写在资料的语言能力里）不是填错了
     if (tgt.list === 'cert') return null;
-    let v = AF.mapping.valueOf(tgt, facts, f.row);
+    let v = plat.resolveValue(tgt, facts, f.row);
     if (v == null || v === '') return null;
     const m = typeof v === 'object' ? null : AF.memory.lookup(memories, id, f, v);
     if (m != null) v = m;
@@ -342,96 +351,11 @@
     return plat.decode(f, enc.raw) || String(v);
   }
 
-  // ---------- 简历：先传、等网站解析完再填 ----------
-  // 很多网申页顶部有“上传简历，帮你快速解析”，Moka 的简历字段也写着“上传后会自动解析、填充申请表”。
-  // 这类上传会让网站用简历改写表单，必须排在最前面：先传、等解析完，插件再补空白、列出解析错的值。
-  // 3.3.0 把顶部这个入口漏了（它不是表单字段），“上传材料”在这类页面上直接说“没有上传框”。
-  const RESUME = /简历|resume|\bcv\b/i, PARSES = /解析|自动填|快速填写|导入简历|识别/;
-  function parseZones() {
-    return [...document.querySelectorAll('input[type=file]')].filter(i => {
-      if (i.disabled || i.files.length || i.closest('#af-panel-host')) return false;
-      let t = '';
-      for (let c = i.parentElement, k = 0; c && k < 6 && !t.trim(); c = c.parentElement, k++) t = c.innerText || '';
-      return RESUME.test(t) && PARSES.test(t);
-    });
-  }
-  function domUpload(input, file) {
-    const bin = Uint8Array.from(atob(file.base64), c => c.charCodeAt(0));
-    const dt = new DataTransfer(); dt.items.add(new File([bin], file.name, { type: file.mime }));
-    input.files = dt.files;
-    input.dispatchEvent(new Event('input', { bubbles: true }));
-    input.dispatchEvent(new Event('change', { bubbles: true }));
-  }
-  const filledCount = (plat, list) => list.filter(f => !['file', 'consent', 'unknown'].includes(plat.kind(f)) && !empty(f.raw)).length;
-  async function resumeFirst(plat, early, files, results) {
-    const fields = early.filter(f => plat.kind(f) === 'file' && empty(f.raw) && RESUME.test(f.label) && PARSES.test(f.hint || ''));
-    const zones = parseZones();
-    const handled = new Set(fields.map(f => f.key));
-    if (!fields.length && !zones.length) return handled;
-    const key = fields[0]?.key || 'resume-parse', label = fields[0]?.label || '上传简历（网站自动解析）';
-    const resume = files.find(f => f.kind === '简历');
-    if (!resume) { results.push({ key, label, section: '', required: true, state: 'nodata', reason: '还没有存简历：在“资料与设置 → 材料”里添加' }); return handled; }
-    // Hotjob 的“上传文件简历”解析完直接存进你在网站上的简历（不用点保存），会把已存的学校、专业、证书改掉
-    // （2026-10-13 实测踩过）。这类网站一键填写绝不自动传，要用网站解析请自己点“上传材料”。
-    if (plat.parseSaves) {
-      results.push({ key, label, section: '', state: 'nodata', reason: '这个网站解析简历后会直接改写你存在网站上的简历，插件不自动上传；需要时点“上传材料”' });
-      return handled;
-    }
-    const before = filledCount(plat, early);
-    if (before > 3) {
-      results.push({ key, label, section: '', state: 'nodata', reason: '网页已有内容，没有自动上传简历（网站解析会改写已填的内容）；需要时点“上传材料”' });
-      return handled;
-    }
-    emit({ status: '先上传简历，等网站解析…' });
-    const file = await send({ type: 'GET_FILE', id: resume.id });
-    if (!file?.base64) { results.push({ key, label, section: '', state: 'fail', reason: '简历文件读不出来' }); return handled; }
-    for (const f of fields) await AF.rpc('upload', f.key, { name: file.name, mime: file.mime, base64: file.base64 }).catch(() => {});
-    for (const z of parseZones()) domUpload(z, file);   // 平台字段和顶部入口是同一个上传框时，上一步已经放了文件，这里自动跳过
-    // 等解析：已填字段数涨上去、并稳定 1.5 秒；最长 15 秒
-    let last = before, stable = 0, grew = false;
-    for (let t = 0; t < 30 && !cancelled; t++) {
-      await sleep(500);
-      const n = filledCount(plat, await AF.rpc('list').catch(() => []));
-      if (n > before) grew = true;
-      stable = n === last ? stable + 1 : 0; last = n;
-      if (grew && stable >= 3) break;
-    }
-    results.push({ key, label, section: '', state: 'ok', value: grew ? `已上传 ${file.name}，网站解析填了 ${last - before} 项` : `已上传 ${file.name}（网站没有解析出内容）`, source: '材料' });
-    return handled;
-  }
-
-  // ---------- 材料上传 ----------
-  // 按上传框的名称匹配你在“资料与设置 → 材料”里放的文件（core/files.js），文件内容按需从后台取。
-  async function uploadFiles(plat, list, results, entryOf, files) {
-    emit({ status: `上传材料（${list.length} 个上传框）…` });
-    const started = [];
-    for (const f of list) {
-      if (cancelled) break;
-      const m = AF.files.match(f.label, files);
-      if (!m) { results.push({ ...entryOf(f), state: 'nodata', reason: AF.files.kindOf(f.label) ? `还没有上传“${AF.files.kindOf(f.label)}”，可在“资料与设置 → 材料”里添加` : '没有对应的材料' }); continue; }
-      try {
-        const file = await send({ type: 'GET_FILE', id: m.id });
-        if (!file?.base64) throw Error('材料文件读不出来');
-        await AF.rpc('upload', f.key, { name: file.name, mime: file.mime, base64: file.base64 });
-        started.push({ f, name: file.name });
-      } catch (e) { results.push({ ...entryOf(f), state: 'fail', reason: `上传失败：${e.message || e}` }); }
-    }
-    // 网页收到文件后要传到它自己的服务器，几秒后字段里才有值：全部发出后一起等，以字段真的有值为准
-    const pending = new Map(started.map(x => [x.f.key, x]));
-    const uploadWaitMs = plat.uploadTimeoutMs || 15000;
-    for (let t = 0; t < Math.ceil(uploadWaitMs / 500) && pending.size && !cancelled; t++) {
-      await sleep(500);
-      const now = new Map((await AF.rpc('list').catch(() => [])).map(f => [f.key, f]));
-      for (const [k, x] of pending) if (now.get(k) && !empty(now.get(k).raw)) { results.push({ ...entryOf(x.f), state: 'ok', value: `已上传 ${x.name}`, source: '材料' }); pending.delete(k); }
-    }
-    for (const x of pending.values()) results.push({ ...entryOf(x.f), state: 'nodata', reason: `已交给网站，${uploadWaitMs / 1000} 秒内尚未收到上传完成回执；状态未确认，再次填写会重新检查` });
-    emit({ results });
-  }
   async function uploadOnly() {
-    const id = await detect(), plat = id && AF.platforms[id];
+    const id = await detect(), plat = adapterFor(id);
     if (!plat) return dom.uploadResume();
     const state = await send({ type: 'STATE' });
-    const fields = (await AF.rpc('list')).filter(f => plat.kind(f) === 'file' && empty(f.raw));
+    const fields = (await plat.parse()).filter(f => plat.kind(f) === 'file' && empty(f.raw));
     const results = [];
     await uploadFiles(plat, fields, results, f => ({ key: f.key, label: f.label, section: plat.section(f), required: f.required }), state.files || []);
     const zones = parseZones(), resume = (state.files || []).find(f => f.kind === '简历');
@@ -451,9 +375,9 @@
     let id = await detect();
     // 认得的招聘网站上表单还没渲染出来（页面刚打开就点了）：等一会儿再认，最多 15 秒（飞书投递页实测 10.6 秒才出表单）。
     // 以前这时会静悄悄地“填 0 项”。
-    const known = /(^|\.)(zhiye\.com|mokahr\.com|hotjob\.cn|jobs\.feishu\.cn|51job\.com)$/.test(location.hostname);
+    const known = AF.adapters.knownHost(location.hostname);
     for (let i = 0; !id && known && i < 30 && !cancelled; i++) { emit({ status: `等网页加载完…（${Math.ceil((30 - i) / 2)} 秒）`, running: true }); await sleep(500); id = await detect(); }
-    const plat = id && AF.platforms[id];
+    const plat = adapterFor(id);
     if (!plat) {
       if (known) emit({ running: false, status: '' });
       mode = 'dom';
@@ -476,19 +400,19 @@
   }
 
   // ---------- 学习：用户在我们填完后亲手改的字段 ----------
-  // 逐条列出“原来 → 现在”，用户一条条点“记住/忽略”。记成什么由 core/memory.js 决定。
+  // 逐条列出“原来 → 现在”，用户一条条点“记住/忽略”。记成什么由 learning/memory.js 决定。
   async function snapshot(plat) {
-    const now = await AF.rpc('list').catch(() => []);
+    const now = await plat.parse().catch(() => []);
     baseline = new Map(now.map(f => [f.key, JSON.stringify(f.raw)]));
     baseText = new Map(now.map(f => [f.key, plat.decode(f, f.raw)]));
   }
   async function edits() {
     if (mode === 'dom') return dom.edits();
     if (!baseline) return [];
-    const id = await detect(), plat = id && AF.platforms[id];
+    const id = await detect(), plat = adapterFor(id);
     if (!plat) return [];
     lastPlatform = id;
-    const now = (await AF.rpc('list').catch(() => [])).map(f => ({ ...f, section: plat.section(f), scope: AF.memory.pageScope(pageContext()) }));
+    const now = (await plat.parse().catch(() => [])).map(f => AF.context.field({ ...f, section: plat.section(f) }, pageContext(), id));
     // 上传框不算“手动修改”：材料上传是异步完成的，会晚于填完时的快照
     return now.filter(f => !empty(f.raw) && baseline.get(f.key) !== JSON.stringify(f.raw) && !['file', 'consent', 'unknown'].includes(plat.kind(f)))
       .map(f => {
@@ -496,7 +420,7 @@
         // 以前这样会把“资料是 X 时填 Y”错存成固定回答，换算规则永远不生效）
         const p = mappingOf(plat, id, f);
         const after = plat.decode(f, f.raw);
-        return { key: f.key, platform: id, id: f.id, label: f.label, section: plat.section(f), scope: f.scope, row: f.row, kind: plat.kind(f),
+        return { key: f.key, platform: id, id: f.id, label: f.label, section: plat.section(f), scope: f.scope, host: f.host, siteScope: f.siteScope, pageType: f.pageType, row: f.row, kind: plat.kind(f),
           before: baseText.get(f.key) || '', after, value: after, from: p.mapped ? p.from : null,
           // 起止时间这类对应资料里一整段经历的，改了说明资料本身要改，不记成规则
           city: !!p.city, fill: p.fill || null, learnable: !p.objectValue && !!after, why: p.objectValue ? '这是资料里的经历时间，请直接改资料' : '' };
@@ -509,7 +433,7 @@
     if (!tgt) { const mp = AF.memory.lookupMap(memories, id, f); if (mp && !(mp.sem && plat.listOf(f))) tgt = mp; }
     if (!tgt || !facts) return { mapped: false };
     if (tgt.sem === 'cityPref') return { mapped: true, city: true };
-    const v = AF.mapping.valueOf(tgt, facts, f.row);
+    const v = plat.resolveValue(tgt, facts, f.row);
     // 资料这项是空的（GPA 没填）：你在网页上填了，就补进资料（所有网站通用）；对到“没有”这类的照旧记固定回答
     if (v === '' && tgt.sem !== 'none' && tgt.sem !== 'declareNo' && !(tgt.list && !(facts.lists[tgt.list] || [])[tgt.row ?? f.row])) {
       return { mapped: false, fill: tgt.sem ? `sem.${tgt.sem}` : `${tgt.list}.${tgt.row ?? f.row}.${tgt.prop}` };

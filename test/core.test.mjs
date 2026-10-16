@@ -11,7 +11,7 @@ import { fileURLToPath } from 'node:url';
 const here = path.dirname(fileURLToPath(import.meta.url));
 const src = f => fs.readFileSync(path.join(here, '../src/core', f), 'utf8');
 const ctx = vm.createContext({ console });
-for (const f of ['text.js', 'regions-gb.js', 'region.js', 'convert.js', 'profile.js', 'mapping.js', 'memory.js', 'platform-moka.js', 'platform-beisen.js', 'platform-hotjob.js', 'platform-feishu.js', 'platform-job51.js', 'platform-job51v.js']) vm.runInContext(src(f), ctx, { filename: f });
+for (const f of ['text.js', 'regions-gb.js', 'region.js', 'convert.js', 'profile.js', 'mapping.js', '../learning/memory.js', '../adapters/moka/mapping.js', '../adapters/beisen/mapping.js', '../adapters/hotjob/mapping.js', '../adapters/feishu/mapping.js', '../adapters/job51/mapping.js', '../adapters/job51v/mapping.js']) vm.runInContext(src(f), ctx, { filename: f });
 const AF = ctx.AF;
 const cases = p => JSON.parse(fs.readFileSync(path.join(here, 'cases', p), 'utf8'));
 const plain = x => JSON.parse(JSON.stringify(x));

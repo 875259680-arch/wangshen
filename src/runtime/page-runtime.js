@@ -4,10 +4,10 @@
 (() => {
   if (window.__afPage) return;
   const adapters = [];
-  Object.defineProperty(window, '__afPage', { value: { register: a => adapters.push(a) } });
+  Object.defineProperty(window, '__afPage', { value: { register: a => { if (!a.id || typeof a.detect !== 'function' || typeof a.list !== 'function') throw Error('无效页面适配器'); if (adapters.some(x => x.id === a.id)) throw Error('重复页面适配器'); adapters.push(a); } } });
 
   const reply = (id, data) => document.dispatchEvent(new CustomEvent('af:page-reply', { detail: JSON.stringify({ id, ...data }) }));
-  const detect = () => adapters.find(a => { try { return a.detect(); } catch (_) { return false; } }) || null;
+  const detect = () => [...adapters].sort((a, b) => ((globalThis.AF_MODULES || []).find(m => m.id === b.id)?.priority || 0) - ((globalThis.AF_MODULES || []).find(m => m.id === a.id)?.priority || 0)).find(a => { try { return a.detect(); } catch (_) { return false; } }) || null;
 
   document.addEventListener('af:page', async e => {
     let msg;

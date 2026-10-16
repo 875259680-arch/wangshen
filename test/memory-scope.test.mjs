@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import vm from 'node:vm';
 
 const ctx = vm.createContext({ console, URL, URLSearchParams });
-for (const file of ['text.js', 'memory.js']) {
+for (const file of ['text.js', '../learning/memory.js']) {
   vm.runInContext(fs.readFileSync(new URL(`../src/core/${file}`, import.meta.url), 'utf8'), ctx, { filename: file });
 }
 const Mem = ctx.AF.memory;

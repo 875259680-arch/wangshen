@@ -1,0 +1,13 @@
+{
+  "name": "wangshen-autofill",
+  "version": "3.9.0",
+  "private": true,
+  "description": "Classic-script Chrome/Edge extension; no bundler required",
+  "scripts": {
+    "sync": "node tools/sync-manifest.mjs",
+    "check": "node tools/check-architecture.mjs",
+    "test": "node --test",
+    "adapter:new": "node tools/new-adapter.mjs",
+    "pack": "python3 tools/pack.py"
+  }
+}

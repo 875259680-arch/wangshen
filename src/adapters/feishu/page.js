@@ -3,7 +3,7 @@
 // 和 onChange——用户在界面上选完也是走它，所以直接调它写值，校验、联动都和手填一样。
 // 值的格式（2026-10-13 多点 DMALL 真实投递页）：文字、学校、专业、公司是字符串；下拉是选项 value（性别 1/2/3）；
 // 起止时间是 [moment, moment]，“至今”存的是点选那一刻的 moment()；手机号是 {tel, code}；期望工作地点是城市编码数组。
-// 这里只列原始数据、写原始值；对应关系和值格式在 core/platform-feishu.js。
+// 这里只列原始数据、写原始值；对应关系和值格式在 adapters/feishu/mapping.js。
 (() => {
   const P = window.__afPage;
   if (!P) return;

@@ -97,7 +97,7 @@
   }
 
   // ---------- 主流程 ----------
-  async function run({ overwrite = false, expand = true } = {}) {
+  async function run({ overwrite = false, expand = true, only = null } = {}) {
     if (running) return report;
     running = true; cancelled = false;
     const results = [];
@@ -107,18 +107,16 @@
       if (document.hidden) throw Error('请先切换到这个网页（保持在前台）再填写');
       const state = await send({ type: 'STATE' });
       if (state?.error) throw Error(state.error);
-      if (expand && state.autoExpand) {
+      if (!only && expand && state.autoExpand) {
         emit({ status: '检查需要补充的条目…' });
         const added = await expandRows(state.profile || {});
         if (added.length) emit({ status: `已添加条目：${added.join('、')}` });
       }
       const attempted = new Set();
       for (let pass = 0; pass < 3 && !cancelled; pass++) {
-        const all = scan();
+        const all = scan().filter(f => !only || only.has(f.key));
         // 你亲手改过并记住的问题：网页上已有的值（多为网站自动解析）和记忆不同，就以记忆为准。
-        const filled = all.filter(f => f.value && f.kind !== 'file' && !attempted.has(f.key));
-        const mem = !overwrite && filled.length ? await send({ type: 'REMEMBERED', fields: filled.map(plain), page: { host: location.host, path: location.pathname, search: location.search } }) : null;
-        const fix = new Set(Object.entries(mem?.values || {}).filter(([k, v]) => { const f = filled.find(x => x.key === k); return f && !matches(f, f.value, v); }).map(([k]) => k));
+        const fix = new Set(); // nonempty values require explicit overwrite
         const todo = all.filter(f => f.kind !== 'file' && !attempted.has(f.key) && (overwrite || !f.value || fix.has(f.key)));
         for (const f of all) if (f.value && !overwrite && !fix.has(f.key) && !attempted.has(f.key) && pass === 0) results.push({ key: f.key, label: f.label, section: f.section, state: 'kept' });
         if (!todo.length) break;

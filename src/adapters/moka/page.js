@@ -1,5 +1,5 @@
 // Moka 页面侧：每个字段组件都带 fieldInfo + _get_/_set_（读值/写值），起止时间组件带 onStartChange/onEndChange。
-// 这里只列原始数据、写原始值；对应关系和值格式在 core/platform-moka.js。
+// 这里只列原始数据、写原始值；对应关系和值格式在 adapters/moka/mapping.js。
 (() => {
   const P = window.__afPage;
   if (!P) return;

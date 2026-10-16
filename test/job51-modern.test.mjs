@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import vm from 'node:vm';
 
 const ctx = vm.createContext({ console });
-for (const file of ['text.js', 'convert.js', 'profile.js', 'mapping.js', 'platform-job51v.js']) {
+for (const file of ['text.js', 'convert.js', 'profile.js', 'mapping.js', '../adapters/job51v/mapping.js']) {
   vm.runInContext(fs.readFileSync(new URL(`../src/core/${file}`, import.meta.url), 'utf8'), ctx, { filename: file });
 }
 const AF = ctx.AF, J = AF.platforms.job51v;

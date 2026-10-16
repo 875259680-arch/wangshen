@@ -1,7 +1,7 @@
 // 前程无忧 51job 校招“简历录入”页（xyz.51job.com/External/MyResume/FillInResume.aspx，分步：基本信息 → 教育 → …）页面侧。
 // 每个字段是 <dl dlcolname="Gender"><dt>性别 *</dt><dd>原生 select / input</dd></dl>，dlcolname 是系统字段名（各公司一样）。
 // 两级下拉（省 → 市）是 ddl_X 选完触发内联 onchange 才把下一级选项填出来；生日是两个没有 id 的年、月下拉。
-// 这里只列原始数据、按文字选项写；对应关系和值格式在 core/platform-job51.js。
+// 这里只列原始数据、按文字选项写；对应关系和值格式在 adapters/job51/mapping.js。
 (() => {
   const P = window.__afPage;
   if (!P) return;

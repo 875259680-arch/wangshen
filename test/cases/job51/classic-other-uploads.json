@@ -1,0 +1,165 @@
+{
+  "fields": [
+    {
+      "editStyle": "4",
+      "group": "其他",
+      "groupTitle": "其他",
+      "id": "Family",
+      "idx": 0,
+      "key": "Family|1|0",
+      "label": "是否有亲属受雇于中国电气装备及其下属企业",
+      "options": [
+        {
+          "children": [],
+          "text": "是",
+          "value": "是"
+        },
+        {
+          "children": [],
+          "text": "否",
+          "value": "否"
+        }
+      ],
+      "required": true,
+      "row": 0,
+      "type": "s"
+    },
+    {
+      "editStyle": "4",
+      "group": "其他",
+      "groupTitle": "其他",
+      "id": "WillingAssign",
+      "idx": 1,
+      "key": "WillingAssign|1|0",
+      "label": "是否愿意服从公司分配",
+      "options": [
+        {
+          "children": [],
+          "text": "是",
+          "value": "是"
+        },
+        {
+          "children": [],
+          "text": "否",
+          "value": "否"
+        }
+      ],
+      "required": false,
+      "row": 0,
+      "type": "s"
+    },
+    {
+      "editStyle": "4",
+      "group": "其他",
+      "groupTitle": "其他",
+      "id": "CCA23",
+      "idx": 2,
+      "key": "CCA23|1|0",
+      "label": "有无病史",
+      "options": [
+        {
+          "children": [],
+          "text": "有",
+          "value": "有"
+        },
+        {
+          "children": [],
+          "text": "无",
+          "value": "无"
+        }
+      ],
+      "required": true,
+      "row": 0,
+      "type": "s"
+    },
+    {
+      "editStyle": "4",
+      "group": "其他",
+      "groupTitle": "其他",
+      "id": "CCA24",
+      "idx": 3,
+      "key": "CCA24|1|0",
+      "label": "是否受过行政、刑事处罚",
+      "options": [
+        {
+          "children": [],
+          "text": "是",
+          "value": "是"
+        },
+        {
+          "children": [],
+          "text": "否",
+          "value": "否"
+        }
+      ],
+      "required": true,
+      "row": 0,
+      "type": "s"
+    },
+    {
+      "editStyle": "6",
+      "group": "其他",
+      "groupTitle": "其他",
+      "id": "SelfAssessment",
+      "idx": 4,
+      "key": "SelfAssessment|6|0",
+      "label": "自我评价",
+      "options": [],
+      "required": false,
+      "row": 0,
+      "type": "a"
+    },
+    {
+      "editStyle": "7",
+      "group": "其他",
+      "groupTitle": "其他",
+      "id": "CCE4",
+      "idx": 5,
+      "key": "CCE4|5|0",
+      "label": "上传个人简历",
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "file"
+    },
+    {
+      "editStyle": "7",
+      "group": "其他",
+      "groupTitle": "其他",
+      "id": "CCE5",
+      "idx": 6,
+      "key": "CCE5|5|0",
+      "label": "学信网《教育部学籍在线验证报告》",
+      "options": [],
+      "required": false,
+      "row": 0,
+      "type": "file"
+    },
+    {
+      "editStyle": "7",
+      "group": "其他",
+      "groupTitle": "其他",
+      "id": "CCE13",
+      "idx": 7,
+      "key": "CCE13|5|0",
+      "label": "学士学位证",
+      "options": [],
+      "required": false,
+      "row": 0,
+      "type": "file"
+    },
+    {
+      "editStyle": "7",
+      "group": "其他",
+      "groupTitle": "其他",
+      "id": "CCE6",
+      "idx": 8,
+      "key": "CCE6|5|0",
+      "label": "上传成绩单",
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "file"
+    }
+  ]
+}

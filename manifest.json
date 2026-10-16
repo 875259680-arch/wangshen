@@ -1,0 +1,113 @@
+{
+  "manifest_version": 3,
+  "name": "网申助手",
+  "description": "通用网申自动填表：本地资料 + AI 理解表单，适配任意网站。",
+  "version": "3.8.0",
+  "minimum_chrome_version": "88",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_popup": "src/pages/popup.html",
+    "default_title": "网申助手"
+  },
+  "options_page": "src/pages/options.html",
+  "permissions": [
+    "storage",
+    "unlimitedStorage",
+    "webNavigation"
+  ],
+  "host_permissions": [
+    "https://api.deepseek.com/*"
+  ],
+  "optional_host_permissions": [
+    "https://*/*"
+  ],
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "src/core/text.js",
+        "src/core/util.js",
+        "src/core/regions-gb.js",
+        "src/core/region.js",
+        "src/core/convert.js",
+        "src/core/profile.js",
+        "src/core/mapping.js",
+        "src/core/memory.js",
+        "src/core/files.js",
+        "src/core/platform-moka.js",
+        "src/core/platform-beisen.js",
+        "src/core/platform-hotjob.js",
+        "src/core/platform-feishu.js",
+        "src/core/platform-job51.js",
+        "src/core/platform-job51v.js",
+        "src/core/rpc.js",
+        "src/core/diag.js",
+        "src/fallback/scan.js",
+        "src/fallback/controls.js",
+        "src/fallback/dates.js",
+        "src/fallback/engine.js",
+        "src/core/engine.js",
+        "src/ui/panel.js"
+      ],
+      "run_at": "document_idle",
+      "all_frames": true,
+      "match_about_blank": true
+    },
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "src/page/runtime.js",
+        "src/page/moka.js",
+        "src/page/beisen.js",
+        "src/page/hotjob.js",
+        "src/page/feishu.js",
+        "src/page/job51.js",
+        "src/page/job51v.js",
+        "src/fallback/bridge.js"
+      ],
+      "world": "MAIN",
+      "run_at": "document_start",
+      "all_frames": true,
+      "match_about_blank": true
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "src/fallback/bridge.js",
+        "src/page/runtime.js",
+        "src/page/moka.js",
+        "src/page/beisen.js",
+        "src/page/hotjob.js",
+        "src/page/feishu.js",
+        "src/page/job51.js",
+        "src/page/job51v.js"
+      ],
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ]
+    }
+  ],
+  "commands": {
+    "fill": {
+      "suggested_key": {
+        "default": "Alt+Shift+F"
+      },
+      "description": "填写当前页面空白字段"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "fields": [
+    {
+      "editStyle": "6",
+      "group": "6",
+      "groupTitle": "专业技能",
+      "id": "CCF3",
+      "idx": 0,
+      "key": "CCF3|6|0",
+      "label": "专业技能",
+      "options": [],
+      "required": false,
+      "row": 0,
+      "type": "a"
+    }
+  ]
+}

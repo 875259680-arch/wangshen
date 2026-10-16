@@ -1,0 +1,22 @@
+{
+  "source": "duodian.jobs.feishu.cn 投递页，2026-10-13 抓取（只有字段结构）",
+  "fields": [
+    { "key": "name", "id": "name", "group": "basic", "row": 0, "type": "text", "label": "姓名" },
+    { "key": "mobile", "id": "mobile", "group": "basic", "row": 0, "type": "mobile", "label": "手机号码", "raw": { "tel": "", "code": "CN_1" } },
+    { "key": "age", "id": "age", "group": "basic", "row": 0, "type": "text", "label": "年龄" },
+    { "key": "gender", "id": "gender", "group": "basic", "row": 0, "type": "select", "label": "性别", "options": [{ "text": "男", "value": 1 }, { "text": "女", "value": 2 }, { "text": "保密", "value": 3 }] },
+    { "key": "preferredCityCodeList", "id": "preferredCityCodeList", "group": "basic", "row": 0, "type": "city", "label": "期望工作地点" },
+    { "key": "education[0].school", "id": "education.school", "group": "education", "row": 0, "type": "text", "label": "学校名称" },
+    { "key": "education[0].degree", "id": "education.degree", "group": "education", "row": 0, "type": "select", "label": "学历", "options": [{ "text": "博士", "value": 8 }, { "text": "MBA", "value": 11 }, { "text": "硕士", "value": 7 }, { "text": "本科", "value": 6 }, { "text": "大专", "value": 5 }] },
+    { "key": "education[0].fieldOfStudy", "id": "education.fieldOfStudy", "group": "education", "row": 0, "type": "text", "label": "专业" },
+    { "key": "education[0].period", "id": "education.period", "group": "education", "row": 0, "type": "period", "label": "起止时间", "hasNow": false },
+    { "key": "education[0].education_type", "id": "education.education_type", "group": "education", "row": 0, "type": "select", "label": "学历类型", "options": [{ "text": "海外及港澳台", "value": 1 }, { "text": "统招全日制", "value": 2 }, { "text": "统招非全日制", "value": 3 }, { "text": "自考", "value": 4 }, { "text": "其他", "value": 5 }] },
+    { "key": "internship[0].period", "id": "internship.period", "group": "internship", "row": 0, "type": "period", "label": "起止时间", "hasNow": true },
+    { "key": "6932773077378484488[0].7694293915604437284", "id": "6932773077378484488.7694293915604437284", "group": "6932773077378484488", "row": 0, "type": "select", "label": "您从哪个渠道获取此招聘信息？（校招）" }
+  ],
+  "citySample": [
+    { "id": "CN_1", "name": "中国大陆", "parent": null }, { "id": "ST_25", "name": "上海", "parent": "CN_1" }, { "id": "CT_125", "name": "上海", "parent": "ST_25" },
+    { "id": "ST_30", "name": "浙江", "parent": "CN_1" }, { "id": "CT_200", "name": "杭州", "parent": "ST_30" }, { "id": "CT_201", "name": "宁波", "parent": "ST_30" },
+    { "id": "US_1", "name": "美国", "parent": null }
+  ]
+}

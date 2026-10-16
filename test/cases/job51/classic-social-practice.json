@@ -1,0 +1,208 @@
+{
+  "fields": [
+    {
+      "editStyle": "3",
+      "group": "社会实践经历",
+      "groupTitle": "社会实践经历",
+      "id": "CCC1",
+      "idx": 0,
+      "key": "CCC1|3|0",
+      "label": "开始日期",
+      "options": [],
+      "required": false,
+      "row": 0,
+      "type": "t"
+    },
+    {
+      "editStyle": "3",
+      "group": "社会实践经历",
+      "groupTitle": "社会实践经历",
+      "id": "CCC2",
+      "idx": 1,
+      "key": "CCC2|3|0",
+      "label": "结束日期",
+      "options": [],
+      "required": false,
+      "row": 0,
+      "type": "t"
+    },
+    {
+      "editStyle": "4",
+      "group": "社会实践经历",
+      "groupTitle": "社会实践经历",
+      "id": "CCA1",
+      "idx": 2,
+      "key": "CCA1|1|0",
+      "label": "工作类型",
+      "options": [
+        {
+          "children": [],
+          "text": "兼职",
+          "value": "兼职"
+        },
+        {
+          "children": [],
+          "text": "全职",
+          "value": "全职"
+        }
+      ],
+      "required": false,
+      "row": 0,
+      "type": "s"
+    },
+    {
+      "editStyle": "1",
+      "group": "社会实践经历",
+      "groupTitle": "社会实践经历",
+      "id": "CCA2",
+      "idx": 3,
+      "key": "CCA2|1|0",
+      "label": "工作单位",
+      "options": [],
+      "required": false,
+      "row": 0,
+      "type": "t"
+    },
+    {
+      "editStyle": "1",
+      "group": "社会实践经历",
+      "groupTitle": "社会实践经历",
+      "id": "CCE1",
+      "idx": 4,
+      "key": "CCE1|1|0",
+      "label": "部门",
+      "options": [],
+      "required": false,
+      "row": 0,
+      "type": "t"
+    },
+    {
+      "editStyle": "1",
+      "group": "社会实践经历",
+      "groupTitle": "社会实践经历",
+      "id": "CCE2",
+      "idx": 5,
+      "key": "CCE2|1|0",
+      "label": "职位",
+      "options": [],
+      "required": false,
+      "row": 0,
+      "type": "t"
+    },
+    {
+      "editStyle": "6",
+      "group": "社会实践经历",
+      "groupTitle": "社会实践经历",
+      "id": "CCF1",
+      "idx": 6,
+      "key": "CCF1|6|0",
+      "label": "社会实践内容描述",
+      "options": [],
+      "required": false,
+      "row": 0,
+      "type": "a"
+    },
+    {
+      "editStyle": "3",
+      "group": "社会实践经历",
+      "groupTitle": "社会实践经历",
+      "id": "CCC1",
+      "idx": 7,
+      "key": "CCC1|3|1",
+      "label": "开始日期",
+      "options": [],
+      "required": false,
+      "row": 1,
+      "type": "t"
+    },
+    {
+      "editStyle": "3",
+      "group": "社会实践经历",
+      "groupTitle": "社会实践经历",
+      "id": "CCC2",
+      "idx": 8,
+      "key": "CCC2|3|1",
+      "label": "结束日期",
+      "options": [],
+      "required": false,
+      "row": 1,
+      "type": "t"
+    },
+    {
+      "editStyle": "4",
+      "group": "社会实践经历",
+      "groupTitle": "社会实践经历",
+      "id": "CCA1",
+      "idx": 9,
+      "key": "CCA1|1|1",
+      "label": "工作类型",
+      "options": [
+        {
+          "children": [],
+          "text": "兼职",
+          "value": "兼职"
+        },
+        {
+          "children": [],
+          "text": "全职",
+          "value": "全职"
+        }
+      ],
+      "required": false,
+      "row": 1,
+      "type": "s"
+    },
+    {
+      "editStyle": "1",
+      "group": "社会实践经历",
+      "groupTitle": "社会实践经历",
+      "id": "CCA2",
+      "idx": 10,
+      "key": "CCA2|1|1",
+      "label": "工作单位",
+      "options": [],
+      "required": false,
+      "row": 1,
+      "type": "t"
+    },
+    {
+      "editStyle": "1",
+      "group": "社会实践经历",
+      "groupTitle": "社会实践经历",
+      "id": "CCE1",
+      "idx": 11,
+      "key": "CCE1|1|1",
+      "label": "部门",
+      "options": [],
+      "required": false,
+      "row": 1,
+      "type": "t"
+    },
+    {
+      "editStyle": "1",
+      "group": "社会实践经历",
+      "groupTitle": "社会实践经历",
+      "id": "CCE2",
+      "idx": 12,
+      "key": "CCE2|1|1",
+      "label": "职位",
+      "options": [],
+      "required": false,
+      "row": 1,
+      "type": "t"
+    },
+    {
+      "editStyle": "6",
+      "group": "社会实践经历",
+      "groupTitle": "社会实践经历",
+      "id": "CCF1",
+      "idx": 13,
+      "key": "CCF1|6|1",
+      "label": "社会实践内容描述",
+      "options": [],
+      "required": false,
+      "row": 1,
+      "type": "a"
+    }
+  ]
+}

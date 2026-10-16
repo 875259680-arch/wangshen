@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>网申助手 · 资料与记忆</title>
+<link rel="stylesheet" href="pages.css">
+</head>
+<body>
+<main>
+  <h1>网申助手 · 资料与记忆</h1>
+  <nav>
+    <button data-tab="profile" class="on">我的资料</button>
+    <button data-tab="answers">记住的回答</button>
+    <button data-tab="files">材料</button>
+    <button data-tab="strategy">填写策略</button>
+    <button data-tab="ai">AI 设置</button>
+    <button data-tab="diagnostics">网站诊断</button>
+    <button data-tab="backup">备份与迁移</button>
+  </nav>
+
+  <section id="profile">
+    <label>意向城市优先级（按顺序，用顿号分隔；可以写省，如“浙江”表示浙江的城市都行）
+      <input id="cityPrefs" placeholder="上海、深圳、北京、浙江"></label>
+    <div class="bar" style="margin-top:0;margin-bottom:16px"><button id="saveCities">保存城市优先级</button><span id="cityMsg"></span></div>
+    <p class="hint">所有网站都从这一份资料取值。改完点保存，之前的 AI 缓存会自动失效。</p>
+    <textarea id="profileText" spellcheck="false"></textarea>
+    <div class="bar"><button id="saveProfile" class="primary">保存资料</button><span id="profileMsg"></span></div>
+  </section>
+
+  <section id="answers" hidden>
+    <p class="hint">你在网页上手动填写、点“记住”的内容。下次遇到同样的问题会直接使用，优先于 AI。</p>
+    <input id="answerFilter" placeholder="搜索问题或答案">
+    <table><thead><tr><th>段落</th><th>问题</th><th>第几条</th><th>答案</th><th></th></tr></thead><tbody id="answerRows"></tbody></table>
+    <div class="bar"><button id="clearCache">清空 AI 缓存</button><span id="answerMsg"></span></div>
+    <h3>学到的规则（Moka、北森等已适配平台）</h3>
+    <p class="hint">每个问题只留一条规则，新的替换旧的，旧值留在“以前填过”。“资料是 X 时填 Y”的规则只在资料还是 X 时生效，改了资料就不会再用。</p>
+    <table><thead><tr><th>平台</th><th>问题</th><th>规则</th><th>以前填过</th><th></th></tr></thead><tbody id="memRows"></tbody></table>
+    <div class="bar"><span id="memMsg"></span></div>
+  </section>
+
+  <section id="files" hidden>
+    <p class="hint">网申页面上的上传框按名称自动配对这里的材料（“简历附件”→简历，“身份证正面”→身份证正面……）。每种放一个文件，文件只存在本机浏览器。</p>
+    <table><thead><tr><th>材料</th><th>当前文件</th><th></th></tr></thead><tbody id="fileRows"></tbody></table>
+    <div class="bar"><span id="fileMsg"></span></div>
+  </section>
+
+  <section id="strategy" hidden>
+    <p class="hint">同一类字段在不同网页上有不同的写法，插件按下表处理。实际情况和默认处理不同时，在网页上改一次、在面板里点“记住”即可。</p>
+    <div id="stratList"></div>
+  </section>
+
+  <section id="ai" hidden>
+    <p class="hint">兼容 OpenAI 格式的接口。身份证号、电话、邮箱不会发给 AI（用占位符代替，回填时在本地还原）。</p>
+    <label>接口地址<input id="baseUrl"></label>
+    <label>模型<input id="model" list="models"></label>
+    <datalist id="models"><option value="deepseek-flash"><option value="deepseek-v4-pro"></datalist>
+    <label>API Key<input id="apiKey" type="password"></label>
+    <label class="check"><input id="autoExpand" type="checkbox"> 资料比网页条目多时，自动点击“添加”补齐条目</label>
+    <div class="bar"><button id="saveAi" class="primary">保存</button><button id="testAi">测试连接</button><span id="aiMsg"></span></div>
+  </section>
+  <section id="backup" hidden>
+    <p class="hint">迁移到新电脑或浏览器：在旧设备导出完整备份，在新设备导入后会完整替换本机的资料、记住的回答、学习规则及历史、资料补充、附件、简历、证件照、设置和 AI 缓存。导入前会保存本机当前数据，可撤销最近一次导入。</p>
+    <label class="check"><input id="withKey" type="checkbox" checked> 备份包含 API Key（文件请妥善保管）</label>
+    <div class="bar"><button id="exportBtn" class="primary">导出备份</button><span id="exportMsg"></span></div>
+    <p style="margin-top:24px">导入会完整替换本机上述数据。未勾选 API Key 时，导入后本机 API Key 也会清空。网站诊断记录单独通过“网站诊断 → 导出诊断”导出，不包含在个人资料备份中。</p>
+    <input type="file" id="importFile" accept=".json,application/json">
+    <span id="importMsg"></span>
+    <div class="bar"><button id="undoImport" hidden>撤销上次导入</button><span id="undoMsg"></span></div>
+  </section>
+  <section id="diagnostics" hidden>
+    <p class="hint">按网站和页面汇总最近的填写失败与未匹配字段。诊断导出只包含页面、字段元数据和原因，不包含资料值。</p>
+    <div class="bar"><button id="exportDiag" class="primary">导出诊断</button><button id="refreshDiag">刷新</button><span id="diagMsg"></span></div>
+    <div id="diagRows"></div>
+  </section>
+</main>
+<script src="../core/files.js"></script>
+<script src="../core/strategy.js"></script>
+<script src="../core/diag.js"></script>
+<script src="../core/backup.js"></script>
+<script src="options.js"></script>
+</body>
+</html>

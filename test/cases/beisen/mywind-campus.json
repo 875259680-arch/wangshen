@@ -1,0 +1,397 @@
+{
+ "platform": "beisen",
+ "site": "明阳智慧能源 mywind.zhiye.com 校招申请表",
+ "capturedAt": "2026-10-12",
+ "fields": [
+  {
+   "name": "DeliveryIntentionCustom_InterviewSiteId",
+   "type": "BC_DropDownList",
+   "label": "面试站点",
+   "parId": "22841d10"
+  },
+  {
+   "name": "RecommendCodeCustom_RecommendCode",
+   "type": "BC_TextBox",
+   "label": "推荐码",
+   "parId": "22841d10"
+  },
+  {
+   "name": "RecruitmentPersonProfile_Name",
+   "type": "BC_TextBox",
+   "label": "姓名",
+   "parId": "5e10ea89"
+  },
+  {
+   "name": "RecruitmentPersonProfile_Mobile",
+   "type": "BC_TextBox",
+   "label": "手机号码",
+   "parId": "5e10ea89"
+  },
+  {
+   "name": "RecruitmentPersonProfile_Email",
+   "type": "BC_Email",
+   "label": "邮箱",
+   "parId": "5e10ea89"
+  },
+  {
+   "name": "RecruitmentPersonProfile_Gender",
+   "type": "BC_RadioList",
+   "label": "性别",
+   "parId": "5e10ea89"
+  },
+  {
+   "name": "RecruitmentPersonProfile_Birthday",
+   "type": "BC_DateTime",
+   "label": "出生日期",
+   "parId": "5e10ea89"
+  },
+  {
+   "name": "RecruitmentPersonProfile_Nation",
+   "type": "BC_PopConstant",
+   "label": "民族",
+   "parId": "5e10ea89"
+  },
+  {
+   "name": "RecruitmentPersonProfile_NativeArea",
+   "type": "BC_PopArea",
+   "label": "籍贯",
+   "parId": "5e10ea89"
+  },
+  {
+   "name": "RecruitmentPersonProfile_Polity",
+   "type": "BC_DropDownList",
+   "label": "政治面貌",
+   "parId": "5e10ea89"
+  },
+  {
+   "name": "RecruitmentPersonProfile_IsFreshGraduated",
+   "type": "BC_RadioList",
+   "label": "应届/往届",
+   "parId": "5e10ea89"
+  },
+  {
+   "name": "RecruitmentPersonProfile_extDYZY_103508_1624756066",
+   "type": "BC_TextBox",
+   "label": "第一志愿",
+   "parId": "5e10ea89"
+  },
+  {
+   "name": "RecruitmentPersonProfile_extDEZY_103508_1930629587",
+   "type": "BC_TextBox",
+   "label": "第二志愿",
+   "parId": "5e10ea89"
+  },
+  {
+   "name": "RecruitmentPersonProfile_extZW_103508_510295085",
+   "type": "BC_DropDownList",
+   "label": "职位调剂",
+   "parId": "5e10ea89"
+  },
+  {
+   "name": "RecruitmentPersonProfile_extDDTJ_103508_465864866",
+   "type": "BC_DropDownList",
+   "label": "地点调剂",
+   "parId": "5e10ea89"
+  },
+  {
+   "name": "RecruitmentApplicantObjective_extqwgzcs_103508_2102675517",
+   "type": "BC_DropDownList",
+   "label": "期望工作城市",
+   "parId": "d6f8a7d0"
+  },
+  {
+   "name": "RecruitmentApplicantObjective_ExpectAnnualSalary",
+   "type": "BC_TextBox",
+   "label": "期望年薪",
+   "parId": "d6f8a7d0"
+  },
+  {
+   "name": "RecruitmentApplicantEducation_SchoolName",
+   "type": "BC_PopConstant",
+   "label": "学校名称",
+   "parId": "86f88232"
+  },
+  {
+   "name": "RecruitmentApplicantEducation_CollegeName",
+   "type": "BC_TextBox",
+   "label": "学院名称",
+   "parId": "86f88232"
+  },
+  {
+   "name": "RecruitmentApplicantEducation_MajorName",
+   "type": "BC_TextBox",
+   "label": "专业名称",
+   "parId": "86f88232"
+  },
+  {
+   "name": "RecruitmentApplicantEducation_EducationLevel",
+   "type": "BC_DropDownList",
+   "label": "学历",
+   "parId": "86f88232"
+  },
+  {
+   "name": "RecruitmentApplicantEducation_StartDate",
+   "type": "BC_DateTime",
+   "label": "开始时间",
+   "parId": "86f88232"
+  },
+  {
+   "name": "RecruitmentApplicantEducation_EndDate",
+   "type": "BC_DateTime",
+   "label": "结束时间",
+   "parId": "86f88232"
+  },
+  {
+   "name": "RecruitmentApplicantEducation_LearningForm",
+   "type": "BC_DropDownList",
+   "label": "学习形式",
+   "parId": "86f88232"
+  },
+  {
+   "name": "RecruitmentApplicantEducation_GPA",
+   "type": "BC_TextBox",
+   "label": "成绩(GPA)",
+   "parId": "86f88232"
+  },
+  {
+   "name": "RecruitmentApplicantEducation_MajorRank",
+   "type": "BC_DropDownList",
+   "label": "专业排名",
+   "parId": "86f88232"
+  },
+  {
+   "name": "RecruitmentApplicantWorkExperience_CompanyName",
+   "type": "BC_TextBox",
+   "label": "公司名称",
+   "parId": "f3dc7656"
+  },
+  {
+   "name": "RecruitmentApplicantWorkExperience_JobTitle",
+   "type": "BC_TextBox",
+   "label": "职位名称",
+   "parId": "f3dc7656"
+  },
+  {
+   "name": "RecruitmentApplicantWorkExperience_StartDate",
+   "type": "BC_DateTime",
+   "label": "开始时间",
+   "parId": "f3dc7656"
+  },
+  {
+   "name": "RecruitmentApplicantWorkExperience_EndDate",
+   "type": "BC_DateTime",
+   "label": "结束时间",
+   "parId": "f3dc7656"
+  },
+  {
+   "name": "RecruitmentApplicantWorkExperience_JobDuty",
+   "type": "BC_TextArea",
+   "label": "工作职责",
+   "parId": "f3dc7656"
+  },
+  {
+   "name": "RecruitmentApplicantProject_ProjectName",
+   "type": "BC_TextBox",
+   "label": "项目名称",
+   "parId": "c35b1ce4"
+  },
+  {
+   "name": "RecruitmentApplicantProject_Position",
+   "type": "BC_TextBox",
+   "label": "职务",
+   "parId": "c35b1ce4"
+  },
+  {
+   "name": "RecruitmentApplicantProject_StartDate",
+   "type": "BC_DateTime",
+   "label": "开始时间",
+   "parId": "c35b1ce4"
+  },
+  {
+   "name": "RecruitmentApplicantProject_EndDate",
+   "type": "BC_DateTime",
+   "label": "结束时间",
+   "parId": "c35b1ce4"
+  },
+  {
+   "name": "RecruitmentApplicantProject_ProjectInfo",
+   "type": "BC_TextArea",
+   "label": "项目描述",
+   "parId": "c35b1ce4"
+  },
+  {
+   "name": "RecruitmentApplicantInternship_CompanyName",
+   "type": "BC_TextBox",
+   "label": "单位名称",
+   "parId": "5c86dc2c"
+  },
+  {
+   "name": "RecruitmentApplicantInternship_JobTitle",
+   "type": "BC_TextBox",
+   "label": "职位名称",
+   "parId": "5c86dc2c"
+  },
+  {
+   "name": "RecruitmentApplicantInternship_StartDate",
+   "type": "BC_DateTime",
+   "label": "开始时间",
+   "parId": "5c86dc2c"
+  },
+  {
+   "name": "RecruitmentApplicantInternship_EndDate",
+   "type": "BC_DateTime",
+   "label": "结束时间",
+   "parId": "5c86dc2c"
+  },
+  {
+   "name": "RecruitmentApplicantInternship_Duty",
+   "type": "BC_TextArea",
+   "label": "实习内容",
+   "parId": "5c86dc2c"
+  },
+  {
+   "name": "RecruitmentSchoolPractice_PracticeName",
+   "type": "BC_TextBox",
+   "label": "实践名称",
+   "parId": "06b96b6f"
+  },
+  {
+   "name": "RecruitmentSchoolPractice_PracticeStartDateTime",
+   "type": "BC_DateTime",
+   "label": "开始时间",
+   "parId": "06b96b6f"
+  },
+  {
+   "name": "RecruitmentSchoolPractice_PracticeEndDateTime",
+   "type": "BC_DateTime",
+   "label": "结束时间",
+   "parId": "06b96b6f"
+  },
+  {
+   "name": "RecruitmentSchoolPractice_PracticeDescription",
+   "type": "BC_TextArea",
+   "label": "实践描述",
+   "parId": "06b96b6f"
+  },
+  {
+   "name": "RecruitmentSchoolCadre_CadreName",
+   "type": "BC_TextBox",
+   "label": "职务名称",
+   "parId": "9662ba8e"
+  },
+  {
+   "name": "RecruitmentSchoolCadre_CadreStartDateTime",
+   "type": "BC_DateTime",
+   "label": "开始时间",
+   "parId": "9662ba8e"
+  },
+  {
+   "name": "RecruitmentSchoolCadre_CadreEndDateTime",
+   "type": "BC_DateTime",
+   "label": "结束时间",
+   "parId": "9662ba8e"
+  },
+  {
+   "name": "RecruitmentSchoolCadre_CadreDescription",
+   "type": "BC_TextArea",
+   "label": "职务描述",
+   "parId": "9662ba8e"
+  },
+  {
+   "name": "RecruitmentSkill_SkillName",
+   "type": "BC_TextBox",
+   "label": "技能名称",
+   "parId": "3ba8da8b"
+  },
+  {
+   "name": "RecruitmentSkill_SkillLevel",
+   "type": "BC_DropDownList",
+   "label": "掌握程度",
+   "parId": "3ba8da8b"
+  },
+  {
+   "name": "RecruitmentSkill_UseTime",
+   "type": "BC_TextBox",
+   "label": "使用时间总计",
+   "parId": "3ba8da8b"
+  },
+  {
+   "name": "RecruitmentSkill_SkillDescription",
+   "type": "BC_TextArea",
+   "label": "技能描述",
+   "parId": "3ba8da8b"
+  },
+  {
+   "name": "RecruitmentWritings_WritingsTitle",
+   "type": "BC_TextBox",
+   "label": "名称",
+   "parId": "2252d61f"
+  },
+  {
+   "name": "RecruitmentWritings_WritingsPublishDate",
+   "type": "BC_DateTime",
+   "label": "发布时间",
+   "parId": "2252d61f"
+  },
+  {
+   "name": "RecruitmentWritings_WritingsOnPeriodical",
+   "type": "BC_TextBox",
+   "label": "所属期刊",
+   "parId": "2252d61f"
+  },
+  {
+   "name": "RecruitmentWritings_WritingsAuthorOrder",
+   "type": "BC_TextBox",
+   "label": "作者顺序",
+   "parId": "2252d61f"
+  },
+  {
+   "name": "RecruitmentWritings_WritingsOnPeriodicalNumber",
+   "type": "BC_TextBox",
+   "label": "年度/期次",
+   "parId": "2252d61f"
+  },
+  {
+   "name": "RecruitmentCertificate_CertificateName",
+   "type": "BC_TextBox",
+   "label": "证书名称",
+   "parId": "47aa123a"
+  },
+  {
+   "name": "RecruitmentCertificate_ObtainDate",
+   "type": "BC_DateTime",
+   "label": "获得时间",
+   "parId": "47aa123a"
+  },
+  {
+   "name": "RecruitmentCertificate_CertificateDescription",
+   "type": "BC_TextArea",
+   "label": "证书描述",
+   "parId": "47aa123a"
+  },
+  {
+   "name": "RecruitmentResumeFile_ResumeAttachment",
+   "type": "BC_FileUploader",
+   "label": "简历附件",
+   "parId": "627f4293"
+  },
+  {
+   "name": "RecruitmentApplicantAdditionalInfo_Interest",
+   "type": "BC_TextArea",
+   "label": "兴趣爱好",
+   "parId": "5db411d8"
+  },
+  {
+   "name": "RecruitmentApplicantAdditionalInfo_Speciality",
+   "type": "BC_TextArea",
+   "label": "特长",
+   "parId": "5db411d8"
+  },
+  {
+   "name": "RecruitmentApplicantAdditionalInfo_Others",
+   "type": "BC_TextArea",
+   "label": "其他",
+   "parId": "5db411d8"
+  }
+ ]
+}

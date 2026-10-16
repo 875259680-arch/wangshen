@@ -1,0 +1,42 @@
+{
+  "source": "wecruit.hotjob.cn 编辑简历页，2026-10-13 抓取（只有字段结构，没有资料值；选项只留了用得到的）",
+  "fields": [
+    { "key": "11_2", "id": "11_2", "group": "11", "groupTitle": "个人基本信息", "row": 0, "type": "ft1", "ds": "0", "dict": "", "label": "姓名" },
+    { "key": "11_20", "id": "11_20", "group": "11", "groupTitle": "个人基本信息", "row": 0, "type": "ft3", "ds": "0/599", "dict": "", "label": "性别", "options": [{ "text": "男", "value": "0/599/604" }, { "text": "女", "value": "0/599/605" }] },
+    { "key": "11_21", "id": "11_21", "group": "11", "groupTitle": "个人基本信息", "row": 0, "type": "ft2", "ds": "", "dict": "", "label": "出生日期" },
+    { "key": "11_22", "id": "11_22", "group": "11", "groupTitle": "个人基本信息", "row": 0, "type": "ft4", "ds": "0/619", "dict": "", "label": "国籍/地区", "options": [{ "text": "中国", "value": "0/619/839" }, { "text": "中国台湾", "value": "0/619/840" }] },
+    { "key": "11_23", "id": "11_23", "group": "11", "groupTitle": "个人基本信息", "row": 0, "type": "ft4", "ds": "0/72", "dict": "", "label": "民族" },
+    { "key": "11_26", "id": "11_26", "group": "11", "groupTitle": "个人基本信息", "row": 0, "type": "ft9", "ds": "0/4", "dict": "", "label": "现居住地", "hasTree": true },
+    { "key": "11_245", "id": "11_245", "group": "11", "groupTitle": "个人基本信息", "row": 0, "type": "ft9", "ds": "0/4", "dict": "", "label": "籍贯", "hasTree": true },
+    { "key": "11_36", "id": "11_36", "group": "11", "groupTitle": "个人基本信息", "row": 0, "type": "ft1", "ds": "0", "dict": "", "label": "移动电话" },
+    { "key": "11_41", "id": "11_41", "group": "11", "groupTitle": "个人基本信息", "row": 0, "type": "ft8", "ds": "0", "dict": "", "label": "照片" },
+    { "key": "14_49_1", "id": "14_49", "group": "14", "groupTitle": "教育经历", "row": 0, "type": "ft2", "ds": "", "dict": "", "label": "开始时间" },
+    { "key": "14_50_1", "id": "14_50", "group": "14", "groupTitle": "教育经历", "row": 0, "type": "ft2", "ds": "", "dict": "", "label": "结束时间", "allowNow": true },
+    { "key": "14_51_1", "id": "14_51", "group": "14", "groupTitle": "教育经历", "row": 0, "type": "ft1", "ds": "0/20000", "dict": "school", "label": "学校" },
+    { "key": "14_52_1", "id": "14_52", "group": "14", "groupTitle": "教育经历", "row": 0, "type": "ft9", "ds": "0/4", "dict": "", "label": "城市", "hasTree": true },
+    { "key": "14_53_1", "id": "14_53", "group": "14", "groupTitle": "教育经历", "row": 0, "type": "ft4", "ds": "0/606", "dict": "", "label": "学历", "options": [{ "text": "博士研究生", "value": "0/606/614" }, { "text": "硕士研究生", "value": "0/606/615" }, { "text": "本科", "value": "0/606/612" }, { "text": "大专", "value": "0/606/613" }] },
+    { "key": "14_248_1", "id": "14_248", "group": "14", "groupTitle": "教育经历", "row": 0, "type": "ft4", "ds": "0/435", "dict": "", "label": "学位", "options": [{ "text": "学士", "value": "0/435/479" }, { "text": "硕士", "value": "0/435/486" }, { "text": "博士", "value": "0/435/487" }, { "text": "无", "value": "0/435/488" }] },
+    { "key": "14_54_1", "id": "14_54", "group": "14", "groupTitle": "教育经历", "row": 0, "type": "ft9", "ds": "0/660", "dict": "subject", "label": "专业" },
+    { "key": "14_130056_1", "id": "14_130056", "group": "14", "groupTitle": "教育经历", "row": 0, "type": "ft4", "ds": "0/4500", "dict": "", "label": "是否全日制", "options": [{ "text": "是", "value": "0/4500/4501" }, { "text": "否", "value": "0/4500/4502" }] },
+    { "key": "13_44", "id": "13_44", "group": "13", "groupTitle": "求职意向", "row": 0, "type": "ft9", "ds": "0/4", "dict": "", "label": "期望工作地点", "hasTree": true },
+    { "key": "13_45", "id": "13_45", "group": "13", "groupTitle": "求职意向", "row": 0, "type": "ft9", "ds": "0/275", "dict": "", "label": "期望职能", "hasTree": true },
+    { "key": "13_193", "id": "13_193", "group": "13", "groupTitle": "求职意向", "row": 0, "type": "ft4", "ds": "0/3210", "dict": "", "label": "期望薪酬" },
+    { "key": "123_2124_1", "id": "123_2124", "group": "123", "groupTitle": "实习经历", "row": 0, "type": "ft2", "ds": "0/230024", "dict": "", "label": "开始时间" },
+    { "key": "123_2125_1", "id": "123_2125", "group": "123", "groupTitle": "实习经历", "row": 0, "type": "ft2", "ds": "0/230024", "dict": "", "label": "结束时间" },
+    { "key": "123_2130_1", "id": "123_2130", "group": "123", "groupTitle": "实习经历", "row": 0, "type": "ft1", "ds": "0/230024", "dict": "", "label": "企业名称" },
+    { "key": "123_2127_1", "id": "123_2127", "group": "123", "groupTitle": "实习经历", "row": 0, "type": "ft1", "ds": "0/230024", "dict": "", "label": "职位名称" },
+    { "key": "123_2129_1", "id": "123_2129", "group": "123", "groupTitle": "实习经历", "row": 0, "type": "ft6", "ds": "0/230024", "dict": "", "label": "工作描述" },
+    { "key": "16_63_1", "id": "16_63", "group": "16", "groupTitle": "英语能力", "row": 0, "type": "ft4", "ds": "0/454", "dict": "", "label": "英语证书名称", "options": [{ "text": "大学英语四级考试", "value": "0/454/550" }, { "text": "大学英语六级考试", "value": "0/454/551" }, { "text": "大学生英语专业四级考试", "value": "0/454/552" }, { "text": "大学生英语专业八级考试", "value": "0/454/553" }] },
+    { "key": "16_64_1", "id": "16_64", "group": "16", "groupTitle": "英语能力", "row": 0, "type": "ft4", "ds": "0/457", "dict": "", "label": "成绩", "options": [{ "text": "未通过", "value": "0/457/558" }, { "text": "通过", "value": "0/457/559" }, { "text": "优秀", "value": "0/457/560" }] },
+    { "key": "44_229_1", "id": "44_229", "group": "44", "groupTitle": "证书", "row": 0, "type": "ft1", "ds": "0", "dict": "", "label": "证书名称" },
+    { "key": "44_230_1", "id": "44_230", "group": "44", "groupTitle": "证书", "row": 0, "type": "ft2", "ds": "0", "dict": "", "label": "获得时间" }
+  ],
+  "areaSample": [
+    { "id": "0/4/10", "name": "上海", "parent": null }, { "id": "0/4/10/11", "name": "上海市", "parent": "0/4/10" }, { "id": "0/4/10/11/12", "name": "黄浦区", "parent": "0/4/10/11" },
+    { "id": "0/4/57", "name": "内蒙古自治区", "parent": null }, { "id": "0/4/57/75", "name": "赤峰市", "parent": "0/4/57" }, { "id": "0/4/57/75/76", "name": "红山区", "parent": "0/4/57/75" },
+    { "id": "0/4/99", "name": "其他国家/地区", "parent": null }
+  ],
+  "subjectSearch": [
+    { "value": "0/660/-15397/-15952", "text": "物流工程与管理(管理学类专业学位)" }, { "value": "0/660/411544/411546", "text": "物流工程(物流管理与工程类)" }
+  ]
+}

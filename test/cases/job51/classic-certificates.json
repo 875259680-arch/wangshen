@@ -1,0 +1,30 @@
+{
+  "fields": [
+    {
+      "editStyle": "6",
+      "group": "6",
+      "groupTitle": "所获奖励或证书",
+      "id": "CCF4",
+      "idx": 0,
+      "key": "CCF4|6|0",
+      "label": "所获奖励或荣誉情况",
+      "options": [],
+      "required": false,
+      "row": 0,
+      "type": "a"
+    },
+    {
+      "editStyle": "6",
+      "group": "6",
+      "groupTitle": "所获奖励或证书",
+      "id": "CCF5",
+      "idx": 1,
+      "key": "CCF5|6|0",
+      "label": "所获证书",
+      "options": [],
+      "required": false,
+      "row": 0,
+      "type": "a"
+    }
+  ]
+}

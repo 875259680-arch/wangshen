@@ -1,0 +1,639 @@
+{
+ "platform": "beisen",
+ "site": "极海微电子 geehy.zhiye.com 申请表（只有工作经历、无实习；含声明题和 10 个材料上传）",
+ "capturedAt": "2026-10-12",
+ "fields": [
+  {
+   "name": "RecruitmentPersonProfile_IDPhoto",
+   "type": "BC_PictureUploader",
+   "label": "证件照",
+   "required": true,
+   "optionsCount": 0,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentPersonProfile_Name",
+   "type": "BC_TextBox",
+   "label": "姓名",
+   "required": true,
+   "optionsCount": 0,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentPersonProfile_Gender",
+   "type": "BC_RadioList",
+   "label": "性别",
+   "required": true,
+   "optionsCount": 3,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentPersonProfile_CertificateNumber",
+   "type": "BC_TextBox",
+   "label": "证件号码",
+   "required": true,
+   "optionsCount": 0,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentPersonProfile_Birthday",
+   "type": "BC_DateTime",
+   "label": "出生日期",
+   "required": true,
+   "optionsCount": 0,
+   "format": "yyyy/MM/dd"
+  },
+  {
+   "name": "RecruitmentPersonProfile_NativeArea",
+   "type": "BC_PopArea",
+   "label": "籍贯",
+   "required": true,
+   "optionsCount": 0,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentPersonProfile_Nation",
+   "type": "BC_PopConstant",
+   "label": "民族",
+   "required": true,
+   "optionsCount": 60,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentPersonProfile_Polity",
+   "type": "BC_DropDownList",
+   "label": "政治面貌",
+   "required": true,
+   "optionsCount": 15,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentPersonProfile_Height",
+   "type": "BC_DigitText",
+   "label": "身高(厘米)",
+   "required": false,
+   "optionsCount": 0,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentPersonProfile_Weight",
+   "type": "BC_DigitText",
+   "label": "体重(公斤)",
+   "required": false,
+   "optionsCount": 0,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentPersonProfile_BloodType",
+   "type": "BC_RadioList",
+   "label": "血型",
+   "required": false,
+   "optionsCount": 4,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentPersonProfile_LastSchool",
+   "type": "BC_PopConstant",
+   "label": "毕业学校",
+   "required": true,
+   "optionsCount": 12459,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentPersonProfile_EducationLevel",
+   "type": "BC_DropDownList",
+   "label": "最高学历",
+   "required": true,
+   "optionsCount": 12,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentPersonProfile_HighestDegree",
+   "type": "BC_DropDownList",
+   "label": "最高学位",
+   "required": true,
+   "optionsCount": 12,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentPersonProfile_LastDiscipline",
+   "type": "BC_TextBox",
+   "label": "专业名称",
+   "required": true,
+   "optionsCount": 0,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentPersonProfile_GraduationDate",
+   "type": "BC_DateTime",
+   "label": "毕业时间",
+   "required": true,
+   "optionsCount": 0,
+   "format": "yyyy/MM/dd"
+  },
+  {
+   "name": "RecruitmentPersonProfile_YearsOfWork",
+   "type": "BC_DropDownList",
+   "label": "工作年限",
+   "required": true,
+   "optionsCount": 13,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentPersonProfile_WedState",
+   "type": "BC_RadioList",
+   "label": "婚否",
+   "required": true,
+   "optionsCount": 5,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentPersonProfile_EmergencyContact",
+   "type": "BC_TextBox",
+   "label": "紧急联系人",
+   "required": true,
+   "optionsCount": 0,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentPersonProfile_EmergencyPhone",
+   "type": "BC_TextBox",
+   "label": "紧急联系电话",
+   "required": true,
+   "optionsCount": 0,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentPersonProfile_extjjlxrgx_606911_1878750427",
+   "type": "BC_DropDownList",
+   "label": "紧急联系人关系",
+   "required": true,
+   "optionsCount": 8,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentPersonProfile_Mobile",
+   "type": "BC_TextBox",
+   "label": "手机号码",
+   "required": true,
+   "optionsCount": 0,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentPersonProfile_Email",
+   "type": "BC_Email",
+   "label": "邮箱",
+   "required": true,
+   "optionsCount": 0,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentPersonProfile_extwxh_606911_1486758265",
+   "type": "BC_TextBox",
+   "label": "微信号",
+   "required": false,
+   "optionsCount": 0,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentPersonProfile_extqq_606911_497122594",
+   "type": "BC_TextBox",
+   "label": "QQ/Skype/领英",
+   "required": false,
+   "optionsCount": 0,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentPersonProfile_exthkxz_606911_724736087",
+   "type": "BC_DropDownList",
+   "label": "户口性质",
+   "required": true,
+   "optionsCount": 9,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentPersonProfile_AccountArea",
+   "type": "BC_PopArea",
+   "label": "户口所在地",
+   "required": true,
+   "optionsCount": 0,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentPersonProfile_LivingArea",
+   "type": "BC_PopArea",
+   "label": "现居住地",
+   "required": true,
+   "optionsCount": 0,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentPersonProfile_extaihao_606911_440506250",
+   "type": "BC_TextBox",
+   "label": "爱好",
+   "required": false,
+   "optionsCount": 0,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentPersonProfile_extsfyqqzws_606911_637457049",
+   "type": "BC_RadioList",
+   "label": "是否有亲戚在我司",
+   "required": true,
+   "optionsCount": 2,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentPersonProfile_extxmgxbm_606911_353628304",
+   "type": "BC_TextBox",
+   "label": "如有请列姓名、关系和部门",
+   "required": false,
+   "optionsCount": 0,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentApplicantObjective_ExpectSalary",
+   "type": "BC_DropDownList",
+   "label": "期望月薪(税前)",
+   "required": false,
+   "optionsCount": 14,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentApplicantObjective_ExpectRegisterTime",
+   "type": "BC_DateTime",
+   "label": "预计报到时间",
+   "required": false,
+   "optionsCount": 0,
+   "format": "yyyy/MM/dd"
+  },
+  {
+   "name": "RecruitmentLang_LanguageType",
+   "type": "BC_DropDownList",
+   "label": "语言类型",
+   "required": false,
+   "optionsCount": 14,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentLang_extdj_606911_1138410312",
+   "type": "BC_TextBox",
+   "label": "等级",
+   "required": false,
+   "optionsCount": 0,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentSkill_extjsjnl_606911_1980205362",
+   "type": "BC_TextBox",
+   "label": "计算机能力",
+   "required": false,
+   "optionsCount": 0,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentSkill_extqtjsjnl_606911_944865304",
+   "type": "BC_TextBox",
+   "label": "其他计算机能力",
+   "required": false,
+   "optionsCount": 0,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentApplicantEducation_StartDate",
+   "type": "BC_DateTime",
+   "label": "开始时间",
+   "required": true,
+   "optionsCount": 0,
+   "format": "yyyy/MM"
+  },
+  {
+   "name": "RecruitmentApplicantEducation_EndDate",
+   "type": "BC_DateTime",
+   "label": "结束时间",
+   "required": true,
+   "optionsCount": 0,
+   "format": "yyyy/MM"
+  },
+  {
+   "name": "RecruitmentApplicantEducation_SchoolName",
+   "type": "BC_PopConstant",
+   "label": "学校名称",
+   "required": true,
+   "optionsCount": 12459,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentApplicantEducation_MajorName",
+   "type": "BC_TextBox",
+   "label": "专业名称",
+   "required": true,
+   "optionsCount": 0,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentApplicantEducation_EducationLevel",
+   "type": "BC_DropDownList",
+   "label": "学历",
+   "required": true,
+   "optionsCount": 12,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentApplicantEducation_TrainingMode",
+   "type": "BC_DropDownList",
+   "label": "培养方式",
+   "required": true,
+   "optionsCount": 5,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentApplicantWorkExperience_CompanyName",
+   "type": "BC_TextBox",
+   "label": "公司名称",
+   "required": true,
+   "optionsCount": 0,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentApplicantWorkExperience_StartDate",
+   "type": "BC_DateTime",
+   "label": "开始时间",
+   "required": false,
+   "optionsCount": 0,
+   "format": "yyyy/MM"
+  },
+  {
+   "name": "RecruitmentApplicantWorkExperience_EndDate",
+   "type": "BC_DateTime",
+   "label": "结束时间",
+   "required": false,
+   "optionsCount": 0,
+   "format": "yyyy/MM"
+  },
+  {
+   "name": "RecruitmentApplicantWorkExperience_Department",
+   "type": "BC_TextBox",
+   "label": "部门",
+   "required": false,
+   "optionsCount": 0,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentApplicantWorkExperience_JobTitle",
+   "type": "BC_TextBox",
+   "label": "职位名称",
+   "required": true,
+   "optionsCount": 0,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentApplicantWorkExperience_JobArea",
+   "type": "BC_PopArea",
+   "label": "工作地点",
+   "required": false,
+   "optionsCount": 0,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentApplicantWorkExperience_Salary",
+   "type": "BC_DropDownList",
+   "label": "月薪（税前）",
+   "required": false,
+   "optionsCount": 14,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentApplicantWorkExperience_exttced_606911_775077614",
+   "type": "BC_TextBox",
+   "label": "提成额度（%）",
+   "required": false,
+   "optionsCount": 0,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentApplicantWorkExperience_extjbf_606911_278720872",
+   "type": "BC_TextBox",
+   "label": "加班费",
+   "required": false,
+   "optionsCount": 0,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentApplicantWorkExperience_extcfbt_606911_487825159",
+   "type": "BC_TextBox",
+   "label": "餐费补贴（元/月）",
+   "required": false,
+   "optionsCount": 0,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentApplicantWorkExperience_extqtbt_606911_975953693",
+   "type": "BC_TextBox",
+   "label": "其他补贴（元/月）",
+   "required": false,
+   "optionsCount": 0,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentApplicantWorkExperience_extnzj_606911_787045848",
+   "type": "BC_TextBox",
+   "label": "年终奖（元）",
+   "required": false,
+   "optionsCount": 0,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentApplicantWorkExperience_extxmjj_606911_518094549",
+   "type": "BC_TextBox",
+   "label": "项目奖金（元/年）",
+   "required": false,
+   "optionsCount": 0,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentApplicantWorkExperience_JobDuty",
+   "type": "BC_TextArea",
+   "label": "工作职责",
+   "required": true,
+   "optionsCount": 0,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentApplicantWorkExperience_ReasonOfLeaving",
+   "type": "BC_TextArea",
+   "label": "离职原因",
+   "required": true,
+   "optionsCount": 0,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentFamily_relation",
+   "type": "BC_TextBox",
+   "label": "与本人关系",
+   "required": true,
+   "optionsCount": 0,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentFamily_Name",
+   "type": "BC_TextBox",
+   "label": "姓名",
+   "required": true,
+   "optionsCount": 0,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentFamily_telephone",
+   "type": "BC_TextBox",
+   "label": "联系电话",
+   "required": true,
+   "optionsCount": 0,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentFamily_CompanyName",
+   "type": "BC_TextBox",
+   "label": "工作单位",
+   "required": false,
+   "optionsCount": 0,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentFamily_JobTitle",
+   "type": "BC_TextBox",
+   "label": "职务",
+   "required": false,
+   "optionsCount": 0,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentApplicantAdditionalInfo_extsfcfwybgs_606911_448052401",
+   "type": "BC_RadioList",
+   "label": "是否曾服务于本公司",
+   "required": true,
+   "optionsCount": 2,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentApplicantAdditionalInfo_extfwkssj_606911_1234657262",
+   "type": "BC_DateTime",
+   "label": "服务开始时间",
+   "required": false,
+   "optionsCount": 0,
+   "format": "yyyy/MM/dd"
+  },
+  {
+   "name": "RecruitmentApplicantAdditionalInfo_extfwjssj_606911_459789453",
+   "type": "BC_DateTime",
+   "label": "服务结束时间",
+   "required": false,
+   "optionsCount": 0,
+   "format": "yyyy/MM/dd"
+  },
+  {
+   "name": "RecruitmentApplicantAdditionalInfo_extypyy_606911_974716491",
+   "type": "BC_TextArea",
+   "label": "请说明您应聘本公司的原因",
+   "required": false,
+   "optionsCount": 0,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentApplicantAdditionalInfo_extgrzygh_606911_623269906",
+   "type": "BC_TextArea",
+   "label": "个人职业规划",
+   "required": false,
+   "optionsCount": 0,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentApplicantAdditionalInfo_extxwcsgw_606911_457948915",
+   "type": "BC_TextBox",
+   "label": "若内部有其他机会，您希望",
+   "required": false,
+   "optionsCount": 0,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentAttachments_extsfzzm_606911_73916366",
+   "type": "BC_PictureUploader",
+   "label": "身份证正面",
+   "required": true,
+   "optionsCount": 0,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentAttachments_extsfzfm_606911_1781438034",
+   "type": "BC_PictureUploader",
+   "label": "身份证反面",
+   "required": true,
+   "optionsCount": 0,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentAttachments_extyhk_606911_739917442",
+   "type": "BC_FileUploader",
+   "label": "银行卡(图片/PDF)",
+   "required": true,
+   "optionsCount": 0,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentAttachments_extxlxwzs_606911_208073881",
+   "type": "BC_FileUploader",
+   "label": "学历/学位证书(实习生请",
+   "required": true,
+   "optionsCount": 0,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentAttachments_extsbjnnxzm_606911_1697026512",
+   "type": "BC_FileUploader",
+   "label": "社保缴纳年限证明(图片/",
+   "required": true,
+   "optionsCount": 0,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentAttachments_extsjgslzzm_606911_961719867",
+   "type": "BC_FileUploader",
+   "label": "上家公司的离职证明(图片",
+   "required": false,
+   "optionsCount": 0,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentAttachments_exttjbg_606911_1161798929",
+   "type": "BC_FileUploader",
+   "label": "近一个月内三甲医院的体检",
+   "required": false,
+   "optionsCount": 0,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentAttachments_extxjyzbg_606911_1808209227",
+   "type": "BC_FileUploader",
+   "label": "学籍验证报告(图片/PD",
+   "required": false,
+   "optionsCount": 0,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentAttachments_exthwlxxlxwrzzm_606911_384998114",
+   "type": "BC_FileUploader",
+   "label": "海外留学学历/学位认证证",
+   "required": false,
+   "optionsCount": 0,
+   "format": ""
+  },
+  {
+   "name": "RecruitmentAttachments_extzczsdglzs_606911_1190982006",
+   "type": "BC_FileUploader",
+   "label": "职称证书等各类证书(图片",
+   "required": false,
+   "optionsCount": 0,
+   "format": ""
+  }
+ ]
+}

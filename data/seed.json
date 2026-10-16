@@ -1,0 +1,181 @@
+{
+  "profile": {
+    "personal": {
+      "fullName": "王洋",
+      "gender": "男",
+      "birthDate": "2001-05-11",
+      "phoneCountryCode": "+86",
+      "phoneNumber": "13120010419",
+      "email": "875259680@qq.com",
+      "nationality": "中国",
+      "ethnicity": "汉族",
+      "maritalStatus": "未婚",
+      "height": "180",
+      "weight": "75",
+      "healthStatus": "健康",
+      "politicalStatus": "群众",
+      "graduateType": "应届",
+      "yearsOfExperience": "在读学生",
+      "jobSearchStatus": "在校学生"
+    },
+    "contactAndLocation": {
+      "currentAddressLine1": "上海理工大学",
+      "mailingAddress": "上海理工大学",
+      "hometownCity": "内蒙古自治区/赤峰市/红山区",
+      "hukouLocation": "内蒙古自治区/赤峰市/红山区",
+      "sourceLocation": "上海市/黄浦区",
+      "emergencyContactName": "林海霞",
+      "emergencyContactPhone": "15548905446",
+      "currentCity": "上海"
+    },
+    "identityAndAuthorization": {
+      "personalIdType": "身份证",
+      "personalIdNumber": "150429200105112118",
+      "driversLicense": "是",
+      "driversLicenseType": "C1"
+    },
+    "jobPreferences": {
+      "expectedSalary": "15000",
+      "acceptAdjustment": "是",
+      "cities": [
+        "上海",
+        "深圳",
+        "北京",
+        "浙江"
+      ]
+    },
+    "skills": {
+      "primarySkills": "Excel、Python、SQL、SPSS、Power BI",
+      "programmingLanguages": "Python、SQL",
+      "aiTools": "GPT、Claude、Codex、Cursor",
+      "interests": "- 本科担任学生会体育部部长，组织院级赛事；兼任班级文体委员\n- 爱好：跑步（院运会400米第一、校运会400米第三）、篮球（管院新生赛亚军、校篮球阳光组）、吉他（本科组建乐队任节奏吉他手）\n- 特长：熟练Excel、Python、SQL、SPSS、Power BI等数据分析工具；熟悉GPT、Claude、Codex、Cursor等AI工具；计算机二级\n\n"
+    },
+    "languageFacts": {
+      "type": "英语",
+      "listening": "熟练",
+      "reading": "熟练",
+      "proficiency": "熟练",
+      "level": "六级",
+      "score": "525.00",
+      "certificate": "六级（525.00分）"
+    },
+    "additional": {
+      "awards": ""
+    },
+    "educations": [
+      {
+        "school": "上海理工大学",
+        "major": "物流工程与管理",
+        "degree": "硕士",
+        "studyMode": "统招全日制",
+        "startDate": "2025-09",
+        "endDate": "2027-06",
+        "faculty": "管理学院",
+        "ranking": "前10%",
+        "courses": "供应链制造计划与控制、运筹学、智慧供应链管理、机器人与人工智能、项目管理、大数据分析等",
+        "gpa": "",
+        "graduationStatus": "在读",
+        "majorCategory": "管理科学与工程类"
+      },
+      {
+        "school": "内蒙古科技大学",
+        "major": "市场营销",
+        "degree": "学士",
+        "studyMode": "统招全日制",
+        "startDate": "2019-09",
+        "endDate": "2023-06",
+        "faculty": "经济与管理学院",
+        "ranking": "前50%",
+        "courses": "物流管理、国际贸易实务、财务管理、经济学、市场调研与数据分析、会计学基础、市场营销学等",
+        "gpa": "2.7",
+        "graduationStatus": "已毕业",
+        "majorCategory": "工商管理类"
+      }
+    ],
+    "internships": [
+      {
+        "company": "上海哔哩哔哩科技有限公司（B站）",
+        "title": "供应链运营实习生",
+        "startDate": "2026-08",
+        "endDate": "",
+        "description": "供应商准入：按6项基础资质、类目资质核验、品牌与IP全链路授权审核新供应商；累计完成100+家准入审核，并将审核SOP沉淀为AI审核规则库，推动AI辅助初审落地，显著提高审核效率。\n供应商管理：日常处理供应商信息变更、纳税人类型变更、账号权限变更、分批补款加白；参与月度核心供应商动态评级（时效、价格、配合度），支撑部门发单策略调整与备选供应商切换建议。\n需求预测：负责会员购自营商品采购数量测算，拉取商品销量、库存、待发货等数据，按品类套四参数公式（日均销量 × 衰减系数 × 备货天数 × 超卖比例）计算采购初步数量，输出给业务方审核，推动会员购采购流程规范化落地。",
+        "isCurrent": true
+      },
+      {
+        "company": "恩福商业（上海）有限责任公司（NOK）",
+        "title": "采销实习生",
+        "startDate": "2026-02",
+        "endDate": "2026-05",
+        "description": "间接采购执行：负责代理商大会、氢能展等活动物资的间接采购，涵盖住宿、餐饮、礼品、场地4类，每类引入3家以上供应商进行询比价，综合价格、资质与服务进行综合定标；通过多方比价与集中议价，累计节省采购成本约2万元。\n样品库库存管理：负责样品的出入库登记、定期盘点及物流发货签收核对；独立搭建Excel自动化台账（含实时结存、库存预警、领用统计功能），替代人工登记方式，实现账物一致与全程可追溯。",
+        "isCurrent": false
+      },
+      {
+        "company": "山东爱联盟有限责任公司",
+        "title": "采购实习生",
+        "startDate": "2025-04",
+        "endDate": "2025-08",
+        "description": "供应商开发与准入：通过展会与线上寻源覆盖滤芯原材料、机油成品等潜在供应商40余家，按资质审查、产能评估、检测核验、实地考察四级标准筛选，准入合格供应商10家。\n采购成本分析与谈判：参与滤纸年度采购协议谈判，拆解成本结构（原纸+加工+包装+运费）来定位议价空间，结合原材料行情采用\"年度锁量议价+分批发货\"模式，综合采购成本下降约10%。\n采购执行与跟单：依据BOM清单执行询比价与订单ERP系统录入，全程跟踪交期、物流与入库核验，累计处理供货延期、货损等异常10余起，协同供应商完成应急闭环。\n供应商绩效评估：独立开发基于Python的采购数据自动化分析工具，整合采购订单、收货、质检、售后4张源表，按供应商三维加权评分，一键输出月度评分表，将月度人工统计工时从约2天压缩至分钟级，支撑月度经营会订单份额分配决策。",
+        "isCurrent": false
+      }
+    ],
+    "workExperiences": [],
+    "projects": [
+      {
+        "name": "供应链需求预测",
+        "role": "国家自然科学基金-子课题负责人",
+        "startDate": "2025-11",
+        "endDate": "2026-01",
+        "description": "项目背景：基于增材制造真实历史订单数据，承担排产前置的需求预测与产能校验，为课题排产模型提供生产需求量与产能缺口输入。\n项目内容：清洗企业历史订单数据，还原缺货与延期交付导致的需求低估；按材料与尺寸对零件族做ABC×XYZ分类，区分稳定件与间歇件并匹配预测模型，滚动回测4类模型使预测误差（WAPE）由24.3%降至19.4%；将预测件数按单件成型时间折算为各周设备工时，与设备可用产能比对识别缺口，输出分周生产需求量与产能缺口，供后续排产做组批与产能预留。\n项目收获：掌握需求预测—产能校验—排产输入完整链路，提升数据驱动决策能力。"
+      },
+      {
+        "name": "基于AI的采购跟单风险预警系统",
+        "role": "国创赛-项目负责人",
+        "startDate": "2025-09",
+        "endDate": "2025-11",
+        "description": "项目背景：面向汽车零部件采购跟单场景，针对供应商交付延迟频发、跟单效率低，设计标准化风险处置流程探索AI辅助跟单的可行性。\n项目内容：设计\"识别→方案→审核→执行→解除→回写\"六步风险处置SOP，明确各节点执行标准、责任人与时限；基于260条历史订单按QCDS四维建立供应商绩效评估体系并完成分级，按等级差异化设置跟单频次与预警阈值；将延迟归因为产能不足、缺料、物流延误、质量批退、工程变更五类并配套预案；设计AI Agent逻辑框架，由数据库精确取数计算风险等级、由RAG知识库检索历史处置案例推荐方案；搭建评测体系迭代，最终风险识别率提高30%。\n项目收获：建立采购跟单与供应商绩效管理的方法论；掌握Agent与RAG的搭建思路及评测指标体系设计。"
+      }
+    ],
+    "certificates": [
+      {
+        "name": "普通话二级甲等",
+        "issueDate": "2023-06-01",
+        "score": "二级甲等",
+        "category": "语言能力"
+      },
+      {
+        "name": "全国计算机等级考试二级",
+        "category": "计算机能力"
+      },
+      {
+        "name": "大学英语六级（CET-6）",
+        "score": "525",
+        "category": "语言能力"
+      },
+      {
+        "name": "大学英语四级（CET-4）",
+        "score": "497",
+        "category": "语言能力"
+      }
+    ],
+    "familyMembers": [
+      {
+        "name": "林海霞",
+        "relationship": "母亲",
+        "company": "个体",
+        "title": "总经理",
+        "phone": "15548905446"
+      }
+    ],
+    "campusExperiences": [
+      {
+        "organization": "内蒙古科技大学学生会",
+        "role": "体育部部长",
+        "startDate": "2021-09",
+        "endDate": "2023-06",
+        "description": "组织新生篮球杯、足球赛、运动会等院级赛事；兼任班级文体委员，负责班级文艺表演活动策划。"
+      }
+    ]
+  },
+  "resumeName": "王洋简历0913.pdf",
+  "version": 3
+}

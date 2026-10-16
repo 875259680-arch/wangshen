@@ -1,0 +1,1453 @@
+{
+  "source": "51job modern live capture",
+  "fields": [
+    {
+      "dict": "D_51JOBDEGREE",
+      "group": "sub10",
+      "groupTitle": "最高学历",
+      "hasTree": false,
+      "id": "cca1",
+      "key": "sub10|1|cca1",
+      "label": "学历层次",
+      "multi": true,
+      "options": [
+        {
+          "text": "初中及以下",
+          "value": "1"
+        },
+        {
+          "text": "高中",
+          "value": "2"
+        },
+        {
+          "text": "中技/中专",
+          "value": "4"
+        },
+        {
+          "text": "大专",
+          "value": "5"
+        },
+        {
+          "text": "本科",
+          "value": "6"
+        },
+        {
+          "text": "硕士",
+          "value": "7"
+        },
+        {
+          "text": "博士",
+          "value": "8"
+        }
+      ],
+      "required": true,
+      "row": 1,
+      "type": "es4"
+    },
+    {
+      "dict": "",
+      "group": "sub10",
+      "groupTitle": "最高学历",
+      "hasTree": false,
+      "id": "ccc1",
+      "key": "sub10|1|ccc1",
+      "label": "入学时间",
+      "multi": true,
+      "options": [],
+      "required": true,
+      "row": 1,
+      "type": "es22"
+    },
+    {
+      "dict": "",
+      "group": "sub10",
+      "groupTitle": "最高学历",
+      "hasTree": false,
+      "id": "ccc2",
+      "key": "sub10|1|ccc2",
+      "label": "毕业时间",
+      "multi": true,
+      "options": [],
+      "required": true,
+      "row": 1,
+      "type": "es22"
+    },
+    {
+      "dict": "D_51JOBSCHOOL",
+      "group": "sub10",
+      "groupTitle": "最高学历",
+      "hasTree": false,
+      "id": "cca2",
+      "key": "sub10|1|cca2",
+      "label": "毕业学校",
+      "multi": true,
+      "options": [
+        {
+          "text": "北方工业大学",
+          "value": "S_01001"
+        },
+        {
+          "text": "北京财贸职业学院",
+          "value": "S_01002"
+        },
+        {
+          "text": "北京城市学院",
+          "value": "S_01003"
+        },
+        {
+          "text": "北京大学",
+          "value": "S_01004"
+        },
+        {
+          "text": "北京第二外国语学院",
+          "value": "S_01005"
+        },
+        {
+          "text": "北京电影学院",
+          "value": "S_01006"
+        },
+        {
+          "text": "北京电子科技学院",
+          "value": "S_01007"
+        },
+        {
+          "text": "北京服装学院",
+          "value": "S_01008"
+        },
+        {
+          "text": "北京工商大学",
+          "value": "S_01009"
+        },
+        {
+          "text": "北京工业大学",
+          "value": "S_01010"
+        },
+        {
+          "text": "北京航空航天大学",
+          "value": "S_01011"
+        },
+        {
+          "text": "北京化工大学",
+          "value": "S_01012"
+        },
+        {
+          "text": "上海理工大学",
+          "value": "S_02020"
+        },
+        {
+          "text": "广西物流职业技术学院",
+          "value": "S_14081"
+        },
+        {
+          "text": "河南物流职业学院",
+          "value": "S_17076"
+        },
+        {
+          "text": "湖南现代物流职业技术学院",
+          "value": "S_19097"
+        },
+        {
+          "text": "内蒙古科技大学",
+          "value": "S_28001"
+        },
+        {
+          "text": "内蒙古科技职业学院",
+          "value": "S_28039"
+        },
+        {
+          "text": "内蒙古科技大学包头医学院",
+          "value": "S_289180"
+        },
+        {
+          "text": "内蒙古科技大学包头师范学院",
+          "value": "S_289181"
+        },
+        {
+          "text": "其他院校",
+          "value": "S_99000"
+        }
+      ],
+      "required": true,
+      "row": 1,
+      "type": "es18"
+    },
+    {
+      "dict": "D_MAJOR",
+      "group": "sub10",
+      "groupTitle": "最高学历",
+      "hasTree": false,
+      "id": "cca4",
+      "key": "sub10|1|cca4",
+      "label": "专业",
+      "multi": true,
+      "options": [
+        {
+          "text": "电子信息科学与技术",
+          "value": "0107"
+        },
+        {
+          "text": "微电子科学与工程",
+          "value": "0120"
+        },
+        {
+          "text": "光电信息科学与工程",
+          "value": "0121"
+        },
+        {
+          "text": "信息工程",
+          "value": "0122"
+        },
+        {
+          "text": "水声工程",
+          "value": "0123"
+        },
+        {
+          "text": "医学信息工程",
+          "value": "0124"
+        },
+        {
+          "text": "电磁场与无线技术",
+          "value": "0125"
+        },
+        {
+          "text": "电波传播与天线",
+          "value": "0126"
+        },
+        {
+          "text": "电信工程及管理",
+          "value": "0127"
+        },
+        {
+          "text": "应用电子技术教育",
+          "value": "0128"
+        },
+        {
+          "text": "人工智能",
+          "value": "0129"
+        },
+        {
+          "text": "海洋信息工程",
+          "value": "0130"
+        },
+        {
+          "text": "电子信息类（工学）-其他",
+          "value": "0199"
+        },
+        {
+          "text": "管理科学与工程类-其他",
+          "value": "0299"
+        },
+        {
+          "text": "市场营销（管理学）",
+          "value": "0302"
+        },
+        {
+          "text": "市场营销教育",
+          "value": "0326"
+        },
+        {
+          "text": "工商管理类（管理学）-其他",
+          "value": "0399"
+        },
+        {
+          "text": "公共管理类（管理学）-其他",
+          "value": "0499"
+        },
+        {
+          "text": "机械类-其他",
+          "value": "0599"
+        },
+        {
+          "text": "建筑类-其他",
+          "value": "0699"
+        },
+        {
+          "text": "教育学类-其他",
+          "value": "0899"
+        },
+        {
+          "text": "法学类-其他",
+          "value": "0999"
+        },
+        {
+          "text": "财务会计类-其他",
+          "value": "0A99"
+        },
+        {
+          "text": "财政税务类-其他",
+          "value": "0B99"
+        },
+        {
+          "text": "金融类-其他",
+          "value": "0C99"
+        },
+        {
+          "text": "经济贸易类-其他",
+          "value": "0D99"
+        },
+        {
+          "text": "统计类-其他",
+          "value": "0E99"
+        },
+        {
+          "text": "港口物流管理",
+          "value": "0F02"
+        },
+        {
+          "text": "工程物流管理",
+          "value": "0F03"
+        },
+        {
+          "text": "航空物流管理",
+          "value": "0F05"
+        },
+        {
+          "text": "冷链物流技术与管理",
+          "value": "0F06"
+        },
+        {
+          "text": "铁路物流管理",
+          "value": "0F07"
+        },
+        {
+          "text": "物流工程技术",
+          "value": "0F08"
+        },
+        {
+          "text": "现代物流管理",
+          "value": "0F09"
+        },
+        {
+          "text": "智能物流技术",
+          "value": "0F10"
+        },
+        {
+          "text": "物流服务与管理",
+          "value": "0F12"
+        },
+        {
+          "text": "冷链物流服务与管理",
+          "value": "0F13"
+        },
+        {
+          "text": "物流设施运行与维护",
+          "value": "0F15"
+        },
+        {
+          "text": "物流类-其他",
+          "value": "0F99"
+        },
+        {
+          "text": "经济学类-其他",
+          "value": "1099"
+        },
+        {
+          "text": "哲学类-其他",
+          "value": "1199"
+        },
+        {
+          "text": "历史学类-其他",
+          "value": "1399"
+        },
+        {
+          "text": "数学类-其他",
+          "value": "1499"
+        },
+        {
+          "text": "物理学类-其他",
+          "value": "1599"
+        },
+        {
+          "text": "化学类-其他",
+          "value": "1699"
+        },
+        {
+          "text": "地质学类-其他",
+          "value": "1799"
+        },
+        {
+          "text": "力学类-其他",
+          "value": "1899"
+        },
+        {
+          "text": "材料类-其他",
+          "value": "1999"
+        },
+        {
+          "text": "集成电路类-其他",
+          "value": "1A99"
+        },
+        {
+          "text": "通信类-其他",
+          "value": "1B99"
+        }
+      ],
+      "required": true,
+      "row": 1,
+      "type": "es18"
+    },
+    {
+      "dict": "",
+      "group": "sub10",
+      "groupTitle": "最高学历",
+      "hasTree": false,
+      "id": "cca5",
+      "key": "sub10|1|cca5",
+      "label": "其他专业",
+      "multi": true,
+      "options": [],
+      "required": false,
+      "row": 1,
+      "type": "es1"
+    },
+    {
+      "dict": "D_51JOBDEGREE",
+      "group": "cc16",
+      "groupTitle": "教育经历2",
+      "hasTree": false,
+      "id": "cca28",
+      "key": "cc16|1|cca28",
+      "label": "学历层次2",
+      "multi": false,
+      "options": [
+        {
+          "text": "初中及以下",
+          "value": "1"
+        },
+        {
+          "text": "高中",
+          "value": "2"
+        },
+        {
+          "text": "中技/中专",
+          "value": "4"
+        },
+        {
+          "text": "大专",
+          "value": "5"
+        },
+        {
+          "text": "本科",
+          "value": "6"
+        },
+        {
+          "text": "硕士",
+          "value": "7"
+        },
+        {
+          "text": "博士",
+          "value": "8"
+        }
+      ],
+      "required": false,
+      "row": 1,
+      "type": "es4"
+    },
+    {
+      "dict": "",
+      "group": "cc16",
+      "groupTitle": "教育经历2",
+      "hasTree": false,
+      "id": "ccc11",
+      "key": "cc16|1|ccc11",
+      "label": "入学时间2",
+      "multi": false,
+      "options": [],
+      "required": false,
+      "row": 1,
+      "type": "es22"
+    },
+    {
+      "dict": "",
+      "group": "cc16",
+      "groupTitle": "教育经历2",
+      "hasTree": false,
+      "id": "ccc12",
+      "key": "cc16|1|ccc12",
+      "label": "毕业时间2",
+      "multi": false,
+      "options": [],
+      "required": false,
+      "row": 1,
+      "type": "es22"
+    },
+    {
+      "dict": "D_51JOBSCHOOL",
+      "group": "cc16",
+      "groupTitle": "教育经历2",
+      "hasTree": false,
+      "id": "cce2",
+      "key": "cc16|1|cce2",
+      "label": "毕业学校2",
+      "multi": false,
+      "options": [
+        {
+          "text": "北方工业大学",
+          "value": "S_01001"
+        },
+        {
+          "text": "北京财贸职业学院",
+          "value": "S_01002"
+        },
+        {
+          "text": "北京城市学院",
+          "value": "S_01003"
+        },
+        {
+          "text": "北京大学",
+          "value": "S_01004"
+        },
+        {
+          "text": "北京第二外国语学院",
+          "value": "S_01005"
+        },
+        {
+          "text": "北京电影学院",
+          "value": "S_01006"
+        },
+        {
+          "text": "北京电子科技学院",
+          "value": "S_01007"
+        },
+        {
+          "text": "北京服装学院",
+          "value": "S_01008"
+        },
+        {
+          "text": "北京工商大学",
+          "value": "S_01009"
+        },
+        {
+          "text": "北京工业大学",
+          "value": "S_01010"
+        },
+        {
+          "text": "北京航空航天大学",
+          "value": "S_01011"
+        },
+        {
+          "text": "北京化工大学",
+          "value": "S_01012"
+        },
+        {
+          "text": "上海理工大学",
+          "value": "S_02020"
+        },
+        {
+          "text": "广西物流职业技术学院",
+          "value": "S_14081"
+        },
+        {
+          "text": "河南物流职业学院",
+          "value": "S_17076"
+        },
+        {
+          "text": "湖南现代物流职业技术学院",
+          "value": "S_19097"
+        },
+        {
+          "text": "内蒙古科技大学",
+          "value": "S_28001"
+        },
+        {
+          "text": "内蒙古科技职业学院",
+          "value": "S_28039"
+        },
+        {
+          "text": "内蒙古科技大学包头医学院",
+          "value": "S_289180"
+        },
+        {
+          "text": "内蒙古科技大学包头师范学院",
+          "value": "S_289181"
+        },
+        {
+          "text": "其他院校",
+          "value": "S_99000"
+        }
+      ],
+      "required": false,
+      "row": 1,
+      "type": "es18"
+    },
+    {
+      "dict": "D_MAJOR",
+      "group": "cc16",
+      "groupTitle": "教育经历2",
+      "hasTree": false,
+      "id": "cce11",
+      "key": "cc16|1|cce11",
+      "label": "专业2",
+      "multi": false,
+      "options": [
+        {
+          "text": "电子信息科学与技术",
+          "value": "0107"
+        },
+        {
+          "text": "微电子科学与工程",
+          "value": "0120"
+        },
+        {
+          "text": "光电信息科学与工程",
+          "value": "0121"
+        },
+        {
+          "text": "信息工程",
+          "value": "0122"
+        },
+        {
+          "text": "水声工程",
+          "value": "0123"
+        },
+        {
+          "text": "医学信息工程",
+          "value": "0124"
+        },
+        {
+          "text": "电磁场与无线技术",
+          "value": "0125"
+        },
+        {
+          "text": "电波传播与天线",
+          "value": "0126"
+        },
+        {
+          "text": "电信工程及管理",
+          "value": "0127"
+        },
+        {
+          "text": "应用电子技术教育",
+          "value": "0128"
+        },
+        {
+          "text": "人工智能",
+          "value": "0129"
+        },
+        {
+          "text": "海洋信息工程",
+          "value": "0130"
+        },
+        {
+          "text": "电子信息类（工学）-其他",
+          "value": "0199"
+        },
+        {
+          "text": "管理科学与工程类-其他",
+          "value": "0299"
+        },
+        {
+          "text": "市场营销（管理学）",
+          "value": "0302"
+        },
+        {
+          "text": "市场营销教育",
+          "value": "0326"
+        },
+        {
+          "text": "工商管理类（管理学）-其他",
+          "value": "0399"
+        },
+        {
+          "text": "公共管理类（管理学）-其他",
+          "value": "0499"
+        },
+        {
+          "text": "机械类-其他",
+          "value": "0599"
+        },
+        {
+          "text": "建筑类-其他",
+          "value": "0699"
+        },
+        {
+          "text": "教育学类-其他",
+          "value": "0899"
+        },
+        {
+          "text": "法学类-其他",
+          "value": "0999"
+        },
+        {
+          "text": "财务会计类-其他",
+          "value": "0A99"
+        },
+        {
+          "text": "财政税务类-其他",
+          "value": "0B99"
+        },
+        {
+          "text": "金融类-其他",
+          "value": "0C99"
+        },
+        {
+          "text": "经济贸易类-其他",
+          "value": "0D99"
+        },
+        {
+          "text": "统计类-其他",
+          "value": "0E99"
+        },
+        {
+          "text": "港口物流管理",
+          "value": "0F02"
+        },
+        {
+          "text": "工程物流管理",
+          "value": "0F03"
+        },
+        {
+          "text": "航空物流管理",
+          "value": "0F05"
+        },
+        {
+          "text": "冷链物流技术与管理",
+          "value": "0F06"
+        },
+        {
+          "text": "铁路物流管理",
+          "value": "0F07"
+        },
+        {
+          "text": "物流工程技术",
+          "value": "0F08"
+        },
+        {
+          "text": "现代物流管理",
+          "value": "0F09"
+        },
+        {
+          "text": "智能物流技术",
+          "value": "0F10"
+        },
+        {
+          "text": "物流服务与管理",
+          "value": "0F12"
+        },
+        {
+          "text": "冷链物流服务与管理",
+          "value": "0F13"
+        },
+        {
+          "text": "物流设施运行与维护",
+          "value": "0F15"
+        },
+        {
+          "text": "物流类-其他",
+          "value": "0F99"
+        },
+        {
+          "text": "经济学类-其他",
+          "value": "1099"
+        },
+        {
+          "text": "哲学类-其他",
+          "value": "1199"
+        },
+        {
+          "text": "历史学类-其他",
+          "value": "1399"
+        },
+        {
+          "text": "数学类-其他",
+          "value": "1499"
+        },
+        {
+          "text": "物理学类-其他",
+          "value": "1599"
+        },
+        {
+          "text": "化学类-其他",
+          "value": "1699"
+        },
+        {
+          "text": "地质学类-其他",
+          "value": "1799"
+        },
+        {
+          "text": "力学类-其他",
+          "value": "1899"
+        },
+        {
+          "text": "材料类-其他",
+          "value": "1999"
+        },
+        {
+          "text": "集成电路类-其他",
+          "value": "1A99"
+        },
+        {
+          "text": "通信类-其他",
+          "value": "1B99"
+        }
+      ],
+      "required": false,
+      "row": 1,
+      "type": "es18"
+    },
+    {
+      "dict": "",
+      "group": "cc16",
+      "groupTitle": "教育经历2",
+      "hasTree": false,
+      "id": "cca21",
+      "key": "cc16|1|cca21",
+      "label": "其他专业2",
+      "multi": false,
+      "options": [],
+      "required": false,
+      "row": 1,
+      "type": "es1"
+    },
+    {
+      "dict": "D_51JOBDEGREE",
+      "group": "cc15",
+      "groupTitle": "教育经历3",
+      "hasTree": false,
+      "id": "cca29",
+      "key": "cc15|1|cca29",
+      "label": "学历层次3",
+      "multi": false,
+      "options": [
+        {
+          "text": "初中及以下",
+          "value": "1"
+        },
+        {
+          "text": "高中",
+          "value": "2"
+        },
+        {
+          "text": "中技/中专",
+          "value": "4"
+        },
+        {
+          "text": "大专",
+          "value": "5"
+        },
+        {
+          "text": "本科",
+          "value": "6"
+        },
+        {
+          "text": "硕士",
+          "value": "7"
+        },
+        {
+          "text": "博士",
+          "value": "8"
+        }
+      ],
+      "required": false,
+      "row": 1,
+      "type": "es4"
+    },
+    {
+      "dict": "",
+      "group": "cc15",
+      "groupTitle": "教育经历3",
+      "hasTree": false,
+      "id": "ccc3",
+      "key": "cc15|1|ccc3",
+      "label": "入学时间3",
+      "multi": false,
+      "options": [],
+      "required": false,
+      "row": 1,
+      "type": "es22"
+    },
+    {
+      "dict": "",
+      "group": "cc15",
+      "groupTitle": "教育经历3",
+      "hasTree": false,
+      "id": "ccc13",
+      "key": "cc15|1|ccc13",
+      "label": "毕业时间3",
+      "multi": false,
+      "options": [],
+      "required": false,
+      "row": 1,
+      "type": "es22"
+    },
+    {
+      "dict": "D_51JOBSCHOOL",
+      "group": "cc15",
+      "groupTitle": "教育经历3",
+      "hasTree": false,
+      "id": "cce3",
+      "key": "cc15|1|cce3",
+      "label": "毕业学校3",
+      "multi": false,
+      "options": [
+        {
+          "text": "北方工业大学",
+          "value": "S_01001"
+        },
+        {
+          "text": "北京财贸职业学院",
+          "value": "S_01002"
+        },
+        {
+          "text": "北京城市学院",
+          "value": "S_01003"
+        },
+        {
+          "text": "北京大学",
+          "value": "S_01004"
+        },
+        {
+          "text": "北京第二外国语学院",
+          "value": "S_01005"
+        },
+        {
+          "text": "北京电影学院",
+          "value": "S_01006"
+        },
+        {
+          "text": "北京电子科技学院",
+          "value": "S_01007"
+        },
+        {
+          "text": "北京服装学院",
+          "value": "S_01008"
+        },
+        {
+          "text": "北京工商大学",
+          "value": "S_01009"
+        },
+        {
+          "text": "北京工业大学",
+          "value": "S_01010"
+        },
+        {
+          "text": "北京航空航天大学",
+          "value": "S_01011"
+        },
+        {
+          "text": "北京化工大学",
+          "value": "S_01012"
+        },
+        {
+          "text": "上海理工大学",
+          "value": "S_02020"
+        },
+        {
+          "text": "广西物流职业技术学院",
+          "value": "S_14081"
+        },
+        {
+          "text": "河南物流职业学院",
+          "value": "S_17076"
+        },
+        {
+          "text": "湖南现代物流职业技术学院",
+          "value": "S_19097"
+        },
+        {
+          "text": "内蒙古科技大学",
+          "value": "S_28001"
+        },
+        {
+          "text": "内蒙古科技职业学院",
+          "value": "S_28039"
+        },
+        {
+          "text": "内蒙古科技大学包头医学院",
+          "value": "S_289180"
+        },
+        {
+          "text": "内蒙古科技大学包头师范学院",
+          "value": "S_289181"
+        },
+        {
+          "text": "其他院校",
+          "value": "S_99000"
+        }
+      ],
+      "required": false,
+      "row": 1,
+      "type": "es18"
+    },
+    {
+      "dict": "D_MAJOR",
+      "group": "cc15",
+      "groupTitle": "教育经历3",
+      "hasTree": false,
+      "id": "cce12",
+      "key": "cc15|1|cce12",
+      "label": "专业3",
+      "multi": false,
+      "options": [
+        {
+          "text": "电子信息科学与技术",
+          "value": "0107"
+        },
+        {
+          "text": "微电子科学与工程",
+          "value": "0120"
+        },
+        {
+          "text": "光电信息科学与工程",
+          "value": "0121"
+        },
+        {
+          "text": "信息工程",
+          "value": "0122"
+        },
+        {
+          "text": "水声工程",
+          "value": "0123"
+        },
+        {
+          "text": "医学信息工程",
+          "value": "0124"
+        },
+        {
+          "text": "电磁场与无线技术",
+          "value": "0125"
+        },
+        {
+          "text": "电波传播与天线",
+          "value": "0126"
+        },
+        {
+          "text": "电信工程及管理",
+          "value": "0127"
+        },
+        {
+          "text": "应用电子技术教育",
+          "value": "0128"
+        },
+        {
+          "text": "人工智能",
+          "value": "0129"
+        },
+        {
+          "text": "海洋信息工程",
+          "value": "0130"
+        },
+        {
+          "text": "电子信息类（工学）-其他",
+          "value": "0199"
+        },
+        {
+          "text": "管理科学与工程类-其他",
+          "value": "0299"
+        },
+        {
+          "text": "市场营销（管理学）",
+          "value": "0302"
+        },
+        {
+          "text": "市场营销教育",
+          "value": "0326"
+        },
+        {
+          "text": "工商管理类（管理学）-其他",
+          "value": "0399"
+        },
+        {
+          "text": "公共管理类（管理学）-其他",
+          "value": "0499"
+        },
+        {
+          "text": "机械类-其他",
+          "value": "0599"
+        },
+        {
+          "text": "建筑类-其他",
+          "value": "0699"
+        },
+        {
+          "text": "教育学类-其他",
+          "value": "0899"
+        },
+        {
+          "text": "法学类-其他",
+          "value": "0999"
+        },
+        {
+          "text": "财务会计类-其他",
+          "value": "0A99"
+        },
+        {
+          "text": "财政税务类-其他",
+          "value": "0B99"
+        },
+        {
+          "text": "金融类-其他",
+          "value": "0C99"
+        },
+        {
+          "text": "经济贸易类-其他",
+          "value": "0D99"
+        },
+        {
+          "text": "统计类-其他",
+          "value": "0E99"
+        },
+        {
+          "text": "港口物流管理",
+          "value": "0F02"
+        },
+        {
+          "text": "工程物流管理",
+          "value": "0F03"
+        },
+        {
+          "text": "航空物流管理",
+          "value": "0F05"
+        },
+        {
+          "text": "冷链物流技术与管理",
+          "value": "0F06"
+        },
+        {
+          "text": "铁路物流管理",
+          "value": "0F07"
+        },
+        {
+          "text": "物流工程技术",
+          "value": "0F08"
+        },
+        {
+          "text": "现代物流管理",
+          "value": "0F09"
+        },
+        {
+          "text": "智能物流技术",
+          "value": "0F10"
+        },
+        {
+          "text": "物流服务与管理",
+          "value": "0F12"
+        },
+        {
+          "text": "冷链物流服务与管理",
+          "value": "0F13"
+        },
+        {
+          "text": "物流设施运行与维护",
+          "value": "0F15"
+        },
+        {
+          "text": "物流类-其他",
+          "value": "0F99"
+        },
+        {
+          "text": "经济学类-其他",
+          "value": "1099"
+        },
+        {
+          "text": "哲学类-其他",
+          "value": "1199"
+        },
+        {
+          "text": "历史学类-其他",
+          "value": "1399"
+        },
+        {
+          "text": "数学类-其他",
+          "value": "1499"
+        },
+        {
+          "text": "物理学类-其他",
+          "value": "1599"
+        },
+        {
+          "text": "化学类-其他",
+          "value": "1699"
+        },
+        {
+          "text": "地质学类-其他",
+          "value": "1799"
+        },
+        {
+          "text": "力学类-其他",
+          "value": "1899"
+        },
+        {
+          "text": "材料类-其他",
+          "value": "1999"
+        },
+        {
+          "text": "集成电路类-其他",
+          "value": "1A99"
+        },
+        {
+          "text": "通信类-其他",
+          "value": "1B99"
+        }
+      ],
+      "required": false,
+      "row": 1,
+      "type": "es18"
+    },
+    {
+      "dict": "",
+      "group": "cc15",
+      "groupTitle": "教育经历3",
+      "hasTree": false,
+      "id": "cca25",
+      "key": "cc15|1|cca25",
+      "label": "其他专业3",
+      "multi": false,
+      "options": [],
+      "required": false,
+      "row": 1,
+      "type": "es1"
+    },
+    {
+      "dict": "是|否",
+      "group": "sub13",
+      "groupTitle": "校园经历",
+      "hasTree": false,
+      "id": "cca4",
+      "key": "sub13|0|cca4",
+      "label": "是否有校园经历",
+      "multi": true,
+      "options": [
+        {
+          "text": "是",
+          "value": "是"
+        },
+        {
+          "text": "否",
+          "value": "否"
+        }
+      ],
+      "required": true,
+      "row": 0,
+      "type": "es4"
+    },
+    {
+      "dict": "",
+      "group": "sub13",
+      "groupTitle": "校园经历",
+      "hasTree": false,
+      "id": "ccc1",
+      "key": "sub13|0|ccc1",
+      "label": "开始时间",
+      "multi": true,
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "es22"
+    },
+    {
+      "dict": "",
+      "group": "sub13",
+      "groupTitle": "校园经历",
+      "hasTree": false,
+      "id": "ccc2",
+      "key": "sub13|0|ccc2",
+      "label": "结束时间",
+      "multi": true,
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "es22"
+    },
+    {
+      "dict": "",
+      "group": "sub13",
+      "groupTitle": "校园经历",
+      "hasTree": false,
+      "id": "cca1",
+      "key": "sub13|0|cca1",
+      "label": "担任职务",
+      "multi": true,
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "es1"
+    },
+    {
+      "dict": "",
+      "group": "sub13",
+      "groupTitle": "校园经历",
+      "hasTree": false,
+      "id": "ccf1",
+      "key": "sub13|0|ccf1",
+      "label": "贡献描述",
+      "multi": true,
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "es6"
+    },
+    {
+      "dict": "是|否",
+      "group": "cc3",
+      "groupTitle": "学术成果/发表论文",
+      "hasTree": false,
+      "id": "cca4",
+      "key": "cc3|0|cca4",
+      "label": "是否有学术成果/发表论文",
+      "multi": true,
+      "options": [
+        {
+          "text": "是",
+          "value": "是"
+        },
+        {
+          "text": "否",
+          "value": "否"
+        }
+      ],
+      "required": true,
+      "row": 0,
+      "type": "es4"
+    },
+    {
+      "dict": "是|否",
+      "group": "sub12",
+      "groupTitle": "实习/工作经验",
+      "hasTree": false,
+      "id": "cca8",
+      "key": "sub12|0|cca8",
+      "label": "是否有实习/工作经验",
+      "multi": true,
+      "options": [
+        {
+          "text": "是",
+          "value": "是"
+        },
+        {
+          "text": "否",
+          "value": "否"
+        }
+      ],
+      "required": true,
+      "row": 0,
+      "type": "es4"
+    },
+    {
+      "dict": "",
+      "group": "sub12",
+      "groupTitle": "实习/工作经验",
+      "hasTree": false,
+      "id": "ccc1",
+      "key": "sub12|0|ccc1",
+      "label": "开始时间",
+      "multi": true,
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "es22"
+    },
+    {
+      "dict": "",
+      "group": "sub12",
+      "groupTitle": "实习/工作经验",
+      "hasTree": false,
+      "id": "ccc2",
+      "key": "sub12|0|ccc2",
+      "label": "结束时间",
+      "multi": true,
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "es22"
+    },
+    {
+      "dict": "1-2个月|3-6个月|6个月以上",
+      "group": "sub12",
+      "groupTitle": "实习/工作经验",
+      "hasTree": false,
+      "id": "cca7",
+      "key": "sub12|0|cca7",
+      "label": "时长",
+      "multi": true,
+      "options": [
+        {
+          "text": "1-2个月",
+          "value": "1-2个月"
+        },
+        {
+          "text": "3-6个月",
+          "value": "3-6个月"
+        },
+        {
+          "text": "6个月以上",
+          "value": "6个月以上"
+        }
+      ],
+      "required": true,
+      "row": 0,
+      "type": "es4"
+    },
+    {
+      "dict": "",
+      "group": "sub12",
+      "groupTitle": "实习/工作经验",
+      "hasTree": false,
+      "id": "cca3",
+      "key": "sub12|0|cca3",
+      "label": "职位",
+      "multi": true,
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "es1"
+    },
+    {
+      "dict": "",
+      "group": "sub12",
+      "groupTitle": "实习/工作经验",
+      "hasTree": false,
+      "id": "ccf1",
+      "key": "sub12|0|ccf1",
+      "label": "工作描述",
+      "multi": true,
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "es6"
+    },
+    {
+      "dict": "D_ENGLISHLEVEL",
+      "group": "cc17",
+      "groupTitle": "外语能力",
+      "hasTree": true,
+      "id": "cce10",
+      "key": "cc17|1|cce10",
+      "label": "英语水平",
+      "multi": false,
+      "options": [
+        {
+          "text": "大学英语4级(CET4)",
+          "value": "0100"
+        },
+        {
+          "text": "大学英语6级(CET6)",
+          "value": "0200"
+        },
+        {
+          "text": "英语专业4级",
+          "value": "0300"
+        },
+        {
+          "text": "英语专业8级",
+          "value": "0400"
+        },
+        {
+          "text": "托福(TOEFL)",
+          "value": "0500"
+        },
+        {
+          "text": "雅思(IELTS)",
+          "value": "0600"
+        },
+        {
+          "text": "其他",
+          "value": "0700"
+        }
+      ],
+      "required": true,
+      "row": 1,
+      "type": "es11"
+    }
+  ]
+}

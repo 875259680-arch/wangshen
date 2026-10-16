@@ -1,0 +1,22 @@
+{
+  "source": "xyz.51job.com 2026-10-13：经典“简历录入”基本信息步骤（dlcolname 字段）+ 新版“简历展示页”基本信息、最高学历编辑器（只有字段结构）",
+  "classic": [
+    { "key": "Gender|1|0", "id": "Gender", "group": "1", "groupTitle": "基本信息", "row": 0, "type": "s", "label": "性别", "options": [{ "text": "男", "value": "男" }, { "text": "女", "value": "女" }] },
+    { "key": "Birthday|0|0", "id": "Birthday", "group": "0", "groupTitle": "基本信息", "row": 0, "type": "ss", "label": "出生日期", "options": [] },
+    { "key": "City|1|0", "id": "City", "group": "1", "groupTitle": "基本信息", "row": 0, "type": "ss", "label": "目前居住地", "options": [{ "text": "上海", "value": "上海" }, { "text": "内蒙古", "value": "内蒙古" }, { "text": "江苏省", "value": "江苏省" }] },
+    { "key": "MobilePhone|1|0", "id": "MobilePhone", "group": "1", "groupTitle": "基本信息", "row": 0, "type": "st", "label": "手机号码", "options": [] },
+    { "key": "EnglishLevel|5|0", "id": "EnglishLevel", "group": "5", "groupTitle": "基本信息", "row": 0, "type": "ss", "label": "英语水平", "options": [{ "text": "大学英语4级(CET4)", "value": "大学英语4级(CET4)" }, { "text": "大学英语6级(CET6)", "value": "大学英语6级(CET6)" }, { "text": "英语专业8级", "value": "英语专业8级" }] }
+  ],
+  "cards": [
+    { "key": "cc1|0|party", "id": "party", "group": "cc1", "groupTitle": "基本信息", "row": 0, "type": "es4", "label": "政治面貌", "dict": "D_Party", "options": [{ "text": "中共党员", "value": "1" }, { "text": "共青团员", "value": "2" }, { "text": "群众", "value": "3" }] },
+    { "key": "cc1|0|birthday", "id": "birthday", "group": "cc1", "groupTitle": "基本信息", "row": 0, "type": "es22", "label": "出生日期", "options": [] },
+    { "key": "cc1|0|cce1", "id": "cce1", "group": "cc1", "groupTitle": "基本信息", "row": 0, "type": "es11", "label": "户籍地", "dict": "D_NATIONALITY", "options": [] },
+    { "key": "sub10|0|cca7", "id": "cca7", "group": "sub10", "groupTitle": "最高学历", "row": 0, "type": "es4", "label": "学习成绩排名", "dict": "D_SCORE", "options": [{ "text": "前5%", "value": "1" }, { "text": "前20%", "value": "2" }, { "text": "前50%", "value": "3" }, { "text": "其他", "value": "4" }] },
+    { "key": "sub10|0|cca2", "id": "cca2", "group": "sub10", "groupTitle": "最高学历", "row": 0, "type": "es18", "label": "毕业学校", "dict": "D_51JOBSCHOOL", "options": [{ "text": "上海理工大学", "value": "1234" }, { "text": "内蒙古科技大学", "value": "5678" }] },
+    { "key": "sub12|0|cca2", "id": "cca2", "group": "sub12", "groupTitle": "教育经历3", "row": 0, "type": "es18", "label": "毕业学校", "dict": "D_51JOBSCHOOL", "options": [] }
+  ],
+  "areaSample": [
+    { "id": "p:020000", "name": "上海", "parent": null }, { "id": "020000", "name": "上海", "parent": "p:020000" },
+    { "id": "p:280000", "name": "内蒙古", "parent": null }, { "id": "280300", "name": "赤峰", "parent": "p:280000" }, { "id": "280200", "name": "呼和浩特", "parent": "p:280000" }
+  ]
+}

@@ -1,0 +1,3252 @@
+{
+  "fields": [
+    {
+      "areaUrl": "",
+      "cmpId": "c2bd89d1-40a4-42f0-a7a5-330058926bc2",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentPersonProfile",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentPersonProfile_Name",
+      "key": "RecruitmentPersonProfile_Name|0",
+      "label": "姓名",
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "BC_TextBox"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "1d152586-5261-4d76-8e1f-70cc6aa2fc47",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentPersonProfile",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentPersonProfile_Gender",
+      "key": "RecruitmentPersonProfile_Gender|0",
+      "label": "性别",
+      "options": [
+        {
+          "text": "男",
+          "value": "0"
+        },
+        {
+          "text": "女",
+          "value": "1"
+        },
+        {
+          "text": "保密",
+          "value": "2"
+        }
+      ],
+      "required": true,
+      "row": 0,
+      "type": "BC_RadioList"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "5f1b9eff-1094-4c11-b63e-7a05853ee4eb",
+      "disabled": false,
+      "format": "yyyy/MM/dd",
+      "group": "RecruitmentPersonProfile",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentPersonProfile_Birthday",
+      "key": "RecruitmentPersonProfile_Birthday|0",
+      "label": "出生日期",
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "BC_DateTime"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "0de24b9e-cf83-4b23-96e3-93993661bd8c",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentPersonProfile",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentPersonProfile_Nation",
+      "key": "RecruitmentPersonProfile_Nation|0",
+      "label": "民族",
+      "options": [
+        {
+          "text": "汉族",
+          "value": "1"
+        },
+        {
+          "text": "回族",
+          "value": "2"
+        },
+        {
+          "text": "畲族",
+          "value": "3"
+        },
+        {
+          "text": "塔塔尔族",
+          "value": "4"
+        },
+        {
+          "text": "阿昌族",
+          "value": "5"
+        },
+        {
+          "text": "哈萨克族",
+          "value": "6"
+        },
+        {
+          "text": "土家族",
+          "value": "7"
+        },
+        {
+          "text": "景颇族",
+          "value": "8"
+        },
+        {
+          "text": "哈尼族",
+          "value": "9"
+        },
+        {
+          "text": "土族",
+          "value": "10"
+        },
+        {
+          "text": "白族",
+          "value": "11"
+        },
+        {
+          "text": "维吾尔族",
+          "value": "12"
+        },
+        {
+          "text": "保安族",
+          "value": "13"
+        },
+        {
+          "text": "赫哲族",
+          "value": "14"
+        },
+        {
+          "text": "乌孜别克族",
+          "value": "15"
+        },
+        {
+          "text": "基诺族",
+          "value": "16"
+        },
+        {
+          "text": "布依族",
+          "value": "17"
+        },
+        {
+          "text": "拉祜族",
+          "value": "18"
+        },
+        {
+          "text": "锡伯族",
+          "value": "19"
+        },
+        {
+          "text": "黎族",
+          "value": "20"
+        },
+        {
+          "text": "东乡族",
+          "value": "21"
+        },
+        {
+          "text": "蒙古族",
+          "value": "22"
+        },
+        {
+          "text": "仫佬族",
+          "value": "23"
+        },
+        {
+          "text": "达斡尔族",
+          "value": "24"
+        },
+        {
+          "text": "藏族",
+          "value": "25"
+        },
+        {
+          "text": "毛南族",
+          "value": "26"
+        },
+        {
+          "text": "裕固族",
+          "value": "27"
+        },
+        {
+          "text": "俄罗斯族",
+          "value": "28"
+        },
+        {
+          "text": "德昂族",
+          "value": "29"
+        },
+        {
+          "text": "傈僳族",
+          "value": "30"
+        },
+        {
+          "text": "瑶族",
+          "value": "31"
+        },
+        {
+          "text": "朝鲜族",
+          "value": "32"
+        },
+        {
+          "text": "布朗族",
+          "value": "33"
+        },
+        {
+          "text": "满族",
+          "value": "34"
+        },
+        {
+          "text": "彝族",
+          "value": "35"
+        },
+        {
+          "text": "门巴族",
+          "value": "36"
+        },
+        {
+          "text": "侗族",
+          "value": "37"
+        },
+        {
+          "text": "苗族",
+          "value": "38"
+        },
+        {
+          "text": "佤族",
+          "value": "39"
+        },
+        {
+          "text": "羌族",
+          "value": "40"
+        },
+        {
+          "text": "独龙族",
+          "value": "41"
+        },
+        {
+          "text": "怒族",
+          "value": "42"
+        },
+        {
+          "text": "珞巴族",
+          "value": "43"
+        },
+        {
+          "text": "普米族",
+          "value": "44"
+        },
+        {
+          "text": "傣族",
+          "value": "45"
+        },
+        {
+          "text": "纳西族",
+          "value": "46"
+        },
+        {
+          "text": "高山族",
+          "value": "47"
+        },
+        {
+          "text": "壮族",
+          "value": "48"
+        },
+        {
+          "text": "鄂伦春族",
+          "value": "49"
+        },
+        {
+          "text": "塔吉克族",
+          "value": "50"
+        },
+        {
+          "text": "京族",
+          "value": "51"
+        },
+        {
+          "text": "仡佬族",
+          "value": "52"
+        },
+        {
+          "text": "鄂温克族",
+          "value": "53"
+        },
+        {
+          "text": "撒拉族",
+          "value": "54"
+        },
+        {
+          "text": "柯尔克孜族",
+          "value": "55"
+        },
+        {
+          "text": "水族",
+          "value": "56"
+        },
+        {
+          "text": "穿青人",
+          "value": "58"
+        },
+        {
+          "text": "其他",
+          "value": "57"
+        },
+        {
+          "text": "革族",
+          "value": "59"
+        },
+        {
+          "text": "革家人",
+          "value": "114"
+        }
+      ],
+      "required": true,
+      "row": 0,
+      "type": "BC_PopConstant"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "8c3b9605-a8fa-4d24-83e7-8527c2e66db1",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentPersonProfile",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentPersonProfile_Polity",
+      "key": "RecruitmentPersonProfile_Polity|0",
+      "label": "政治面貌",
+      "options": [
+        {
+          "text": "群众",
+          "value": "4"
+        },
+        {
+          "text": "中共党员",
+          "value": "1"
+        },
+        {
+          "text": "中共预备党员",
+          "value": "6"
+        },
+        {
+          "text": "入党积极分子",
+          "value": "28"
+        },
+        {
+          "text": "共青团员",
+          "value": "2"
+        },
+        {
+          "text": "民革党员",
+          "value": "7"
+        },
+        {
+          "text": "民盟盟员",
+          "value": "8"
+        },
+        {
+          "text": "民建会员",
+          "value": "9"
+        },
+        {
+          "text": "民进会员",
+          "value": "10"
+        },
+        {
+          "text": "农工党党员",
+          "value": "11"
+        },
+        {
+          "text": "致公党党员",
+          "value": "12"
+        },
+        {
+          "text": "九三学社社员",
+          "value": "13"
+        },
+        {
+          "text": "台盟盟员",
+          "value": "14"
+        },
+        {
+          "text": "无党派人士",
+          "value": "15"
+        },
+        {
+          "text": "其他",
+          "value": "5"
+        }
+      ],
+      "required": true,
+      "row": 0,
+      "type": "BC_DropDownList"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "7103aadc-ec09-4d68-82a0-2becdbdc3eba",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentPersonProfile",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentPersonProfile_NativeArea",
+      "key": "RecruitmentPersonProfile_NativeArea|0",
+      "label": "籍贯",
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "BC_PopArea"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "59fe5994-95d4-4736-b3b0-d485f2975669",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentPersonProfile",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentPersonProfile_LivingArea",
+      "key": "RecruitmentPersonProfile_LivingArea|0",
+      "label": "现居住地",
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "BC_PopArea"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "3b9e1dfe-57f5-4818-8ba9-168225f15125",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentPersonProfile",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentPersonProfile_Height",
+      "key": "RecruitmentPersonProfile_Height|0",
+      "label": "身高",
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "BC_DigitText"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "85e48a57-9f2e-443e-9746-e9d37fb8ecc4",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentPersonProfile",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentPersonProfile_Weight",
+      "key": "RecruitmentPersonProfile_Weight|0",
+      "label": "体重",
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "BC_DigitText"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "d5e3adad-1602-4122-ae33-584d04118706",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentPersonProfile",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentPersonProfile_EducationLevel",
+      "key": "RecruitmentPersonProfile_EducationLevel|0",
+      "label": "最高学历",
+      "options": [
+        {
+          "text": "小学",
+          "value": "9"
+        },
+        {
+          "text": "初中",
+          "value": "8"
+        },
+        {
+          "text": "高中",
+          "value": "3"
+        },
+        {
+          "text": "中技（中专/技校/职高）",
+          "value": "4"
+        },
+        {
+          "text": "高技",
+          "value": "11"
+        },
+        {
+          "text": "大专",
+          "value": "5"
+        },
+        {
+          "text": "本科",
+          "value": "1"
+        },
+        {
+          "text": "硕士研究生",
+          "value": "2"
+        },
+        {
+          "text": "MBA",
+          "value": "6"
+        },
+        {
+          "text": "博士研究生",
+          "value": "7"
+        },
+        {
+          "text": "EMBA",
+          "value": "120"
+        },
+        {
+          "text": "MPA",
+          "value": "130"
+        }
+      ],
+      "required": true,
+      "row": 0,
+      "type": "BC_DropDownList"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "3b866c4a-c89e-4f49-9902-7559ee246b43",
+      "disabled": false,
+      "format": "yyyy/MM/dd",
+      "group": "RecruitmentPersonProfile",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentPersonProfile_GraduationDate",
+      "key": "RecruitmentPersonProfile_GraduationDate|0",
+      "label": "毕业时间",
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "BC_DateTime"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "331b02bb-d264-403d-a709-2b203045f01e",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentPersonProfile",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentPersonProfile_Email",
+      "key": "RecruitmentPersonProfile_Email|0",
+      "label": "邮箱",
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "BC_Email"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "6fdc0bba-c03f-420a-bfb9-62a410bd96ee",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentPersonProfile",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentPersonProfile_Mobile",
+      "key": "RecruitmentPersonProfile_Mobile|0",
+      "label": "手机号",
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "BC_TextBox"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "7dd55686-e89f-40ae-ac7f-ebe007c3beb7",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentPersonProfile",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentPersonProfile_CertificateNumber",
+      "key": "RecruitmentPersonProfile_CertificateNumber|0",
+      "label": "证件号码",
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "BC_TextBox"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "84236ee7-5f8e-433a-9398-922d36bca31f",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentPersonProfile",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "证件照 重新上传 photo.jpg",
+      "id": "RecruitmentPersonProfile_IDPhoto",
+      "key": "RecruitmentPersonProfile_IDPhoto|0",
+      "label": "证件照",
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "BC_PictureUploader"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "3ce30fcd-2edc-4f4f-8d45-211be8a851b1",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentPersonProfile",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentPersonProfile_EmergencyContact",
+      "key": "RecruitmentPersonProfile_EmergencyContact|0",
+      "label": "紧急联系人",
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "BC_TextBox"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "2c86512a-fd8f-4a1e-9d7d-dda7dfa67705",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentPersonProfile",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentPersonProfile_EmergencyPhone",
+      "key": "RecruitmentPersonProfile_EmergencyPhone|0",
+      "label": "紧急联系电话",
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "BC_TextBox"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "be4c0cae-f106-4ac1-ac89-74854d1759ca",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentPersonProfile",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentPersonProfile_extxxly824_101193_1109545704",
+      "key": "RecruitmentPersonProfile_extxxly824_101193_1109545704|0",
+      "label": "招聘信息来源",
+      "options": [
+        {
+          "text": "智联招聘",
+          "value": "231821007"
+        },
+        {
+          "text": "前程无忧",
+          "value": "1357437973"
+        },
+        {
+          "text": "应届生网",
+          "value": "1389421732"
+        },
+        {
+          "text": "校园宣讲会",
+          "value": "1014470337"
+        },
+        {
+          "text": "空中宣讲",
+          "value": "1759397886"
+        },
+        {
+          "text": "保利发展官网",
+          "value": "1091512089"
+        },
+        {
+          "text": "校园海报",
+          "value": "249501172"
+        },
+        {
+          "text": "校园BBS",
+          "value": "1249721017"
+        },
+        {
+          "text": "微博、微信",
+          "value": "431772704"
+        },
+        {
+          "text": "学校老师推荐",
+          "value": "616600170"
+        },
+        {
+          "text": "员工内部推荐",
+          "value": "580790408"
+        },
+        {
+          "text": "B站",
+          "value": "429464109"
+        },
+        {
+          "text": "抖音",
+          "value": "890180897"
+        },
+        {
+          "text": "其他",
+          "value": "700478926"
+        }
+      ],
+      "required": true,
+      "row": 0,
+      "type": "BC_DropDownList"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "aa2d330e-443c-48de-8cca-43bae0f9af8d",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentPersonProfile",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentPersonProfile_extcjgkcs2020_101193_1351288569",
+      "key": "RecruitmentPersonProfile_extcjgkcs2020_101193_1351288569|0",
+      "label": "参加高考城市",
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "BC_TextArea"
+    },
+    {
+      "areaUrl": "//const.italent.cn/resource/Areas-chs-417-101193.js",
+      "cmpId": "89f69c07-8959-4a0a-8a5f-1cf1bd621aa8",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentApplicantObjective",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentApplicantObjective_ExpectWorkAreas",
+      "key": "RecruitmentApplicantObjective_ExpectWorkAreas|0",
+      "label": "期望工作城市",
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "BC_PopArea"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "ccc15531-7a78-4a78-aaf4-4628f593d246",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentApplicantObjective",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentApplicantObjective_extshifoufucongdiaoji_101193_2129119311",
+      "key": "RecruitmentApplicantObjective_extshifoufucongdiaoji_101193_2129119311|0",
+      "label": "是否服从调剂",
+      "options": [
+        {
+          "text": "可服从岗位调剂",
+          "value": "1"
+        },
+        {
+          "text": "可服从地点调剂",
+          "value": "2"
+        },
+        {
+          "text": "可服从岗位及地点调剂",
+          "value": "3"
+        },
+        {
+          "text": "不服从调剂",
+          "value": "4"
+        }
+      ],
+      "required": true,
+      "row": 0,
+      "type": "BC_RadioList"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "07b6e33e-2c58-4f49-ae38-a049e4a9f76a",
+      "disabled": false,
+      "format": "yyyy/MM/dd",
+      "group": "RecruitmentApplicantEducation",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentApplicantEducation_StartDate",
+      "key": "RecruitmentApplicantEducation_StartDate|0",
+      "label": "开始时间",
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "BC_DateTime"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "bc2bdeb1-ef3b-4706-9f5a-d11cf417c84d",
+      "disabled": false,
+      "format": "yyyy/MM/dd",
+      "group": "RecruitmentApplicantEducation",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentApplicantEducation_EndDate",
+      "key": "RecruitmentApplicantEducation_EndDate|0",
+      "label": "结束时间",
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "BC_DateTime"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "0bddcc6f-6356-42a3-b2d6-e7a6bb2df11d",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentApplicantEducation",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentApplicantEducation_SchoolName",
+      "key": "RecruitmentApplicantEducation_SchoolName|0",
+      "label": "学校名称",
+      "options": [
+        {
+          "text": "北京大学",
+          "value": "10001"
+        },
+        {
+          "text": "中国人民大学",
+          "value": "10002"
+        },
+        {
+          "text": "清华大学",
+          "value": "10003"
+        },
+        {
+          "text": "北京交通大学",
+          "value": "10004"
+        },
+        {
+          "text": "北京工业大学",
+          "value": "10005"
+        },
+        {
+          "text": "北京航空航天大学",
+          "value": "10006"
+        },
+        {
+          "text": "北京理工大学",
+          "value": "10007"
+        },
+        {
+          "text": "北京科技大学",
+          "value": "10008"
+        },
+        {
+          "text": "北方工业大学",
+          "value": "10009"
+        },
+        {
+          "text": "北京化工大学",
+          "value": "10010"
+        },
+        {
+          "text": "北京工商大学",
+          "value": "10011"
+        },
+        {
+          "text": "北京服装学院",
+          "value": "10012"
+        },
+        {
+          "text": "北京邮电大学",
+          "value": "10013"
+        },
+        {
+          "text": "北京印刷学院",
+          "value": "10015"
+        },
+        {
+          "text": "北京建筑大学",
+          "value": "10016"
+        },
+        {
+          "text": "北京石油化工学院",
+          "value": "10017"
+        },
+        {
+          "text": "北京电子科技学院",
+          "value": "10018"
+        },
+        {
+          "text": "中国农业大学",
+          "value": "10019"
+        },
+        {
+          "text": "北京农学院",
+          "value": "10020"
+        },
+        {
+          "text": "北京林业大学",
+          "value": "10022"
+        },
+        {
+          "text": "北京协和医学院",
+          "value": "10023"
+        },
+        {
+          "text": "首都医科大学",
+          "value": "10025"
+        },
+        {
+          "text": "北京中医药大学",
+          "value": "10026"
+        },
+        {
+          "text": "北京师范大学",
+          "value": "10027"
+        },
+        {
+          "text": "首都师范大学",
+          "value": "10028"
+        },
+        {
+          "text": "首都体育学院",
+          "value": "10029"
+        },
+        {
+          "text": "北京外国语大学",
+          "value": "10030"
+        },
+        {
+          "text": "北京第二外国语学院",
+          "value": "10031"
+        },
+        {
+          "text": "北京语言大学",
+          "value": "10032"
+        },
+        {
+          "text": "中国传媒大学",
+          "value": "10033"
+        },
+        {
+          "text": "中央财经大学",
+          "value": "10034"
+        },
+        {
+          "text": "对外经济贸易大学",
+          "value": "10036"
+        },
+        {
+          "text": "北京物资学院",
+          "value": "10037"
+        },
+        {
+          "text": "首都经济贸易大学",
+          "value": "10038"
+        },
+        {
+          "text": "外交学院",
+          "value": "10040"
+        },
+        {
+          "text": "中国人民公安大学",
+          "value": "10041"
+        },
+        {
+          "text": "国际关系学院",
+          "value": "10042"
+        },
+        {
+          "text": "北京体育大学",
+          "value": "10043"
+        },
+        {
+          "text": "中央音乐学院",
+          "value": "10045"
+        },
+        {
+          "text": "中国音乐学院",
+          "value": "10046"
+        },
+        {
+          "text": "中央美术学院",
+          "value": "10047"
+        },
+        {
+          "text": "中央戏剧学院",
+          "value": "10048"
+        },
+        {
+          "text": "中国戏曲学院",
+          "value": "10049"
+        },
+        {
+          "text": "北京电影学院",
+          "value": "10050"
+        },
+        {
+          "text": "北京舞蹈学院",
+          "value": "10051"
+        },
+        {
+          "text": "中央民族大学",
+          "value": "10052"
+        },
+        {
+          "text": "中国政法大学",
+          "value": "10053"
+        },
+        {
+          "text": "华北电力大学",
+          "value": "10054"
+        },
+        {
+          "text": "北京工业职业技术学院",
+          "value": "10853"
+        },
+        {
+          "text": "北京信息职业技术学院",
+          "value": "10857"
+        },
+        {
+          "text": "北京科技职业大学",
+          "value": "10858"
+        },
+        {
+          "text": "北京京北职业技术学院",
+          "value": "11090"
+        },
+        {
+          "text": "北京交通职业技术学院",
+          "value": "11092"
+        },
+        {
+          "text": "中华女子学院",
+          "value": "11149"
+        },
+        {
+          "text": "北京信息科技大学",
+          "value": "11232"
+        },
+        {
+          "text": "中国矿业大学（北京）",
+          "value": "11413"
+        },
+        {
+          "text": "中国石油大学（北京）",
+          "value": "11414"
+        },
+        {
+          "text": "中国地质大学（北京）",
+          "value": "11415"
+        },
+        {
+          "text": "北京联合大学",
+          "value": "11417"
+        },
+        {
+          "text": "北京城市学院",
+          "value": "11418"
+        },
+        {
+          "text": "中国青年政治学院",
+          "value": "11625"
+        },
+        {
+          "text": "北京青年政治学院",
+          "value": "11626"
+        },
+        {
+          "text": "首钢工学院",
+          "value": "11831"
+        },
+        {
+          "text": "北京农业职业学院",
+          "value": "12448"
+        },
+        {
+          "text": "北京政法职业学院",
+          "value": "12451"
+        },
+        {
+          "text": "中国劳动关系学院",
+          "value": "12453"
+        },
+        {
+          "text": "北京财贸职业学院",
+          "value": "12561"
+        },
+        {
+          "text": "北京北大方正软件职业技术学院",
+          "value": "12564"
+        },
+        {
+          "text": "北京经贸职业学院",
+          "value": "12565"
+        },
+        {
+          "text": "北京经济技术职业学院",
+          "value": "12566"
+        },
+        {
+          "text": "北京戏曲艺术职业学院",
+          "value": "12567"
+        },
+        {
+          "text": "北京汇佳职业学院",
+          "value": "12568"
+        },
+        {
+          "text": "北京现代职业技术学院",
+          "value": "12569"
+        },
+        {
+          "text": "北京科技经营管理学院",
+          "value": "12733"
+        },
+        {
+          "text": "吉利学院",
+          "value": "12802"
+        },
+        {
+          "text": "北京科技职业学院",
+          "value": "13703"
+        },
+        {
+          "text": "北京培黎职业学院",
+          "value": "13728"
+        },
+        {
+          "text": "北京警察学院",
+          "value": "14019"
+        },
+        {
+          "text": "北京经济管理职业学院",
+          "value": "14073"
+        },
+        {
+          "text": "北京劳动保障职业学院",
+          "value": "14075"
+        },
+        {
+          "text": "民政职业大学",
+          "value": "14139"
+        },
+        {
+          "text": "北京艺术传媒职业学院",
+          "value": "14140"
+        },
+        {
+          "text": "北京体育职业学院",
+          "value": "14215"
+        },
+        {
+          "text": "北京交通运输职业学院",
+          "value": "14279"
+        },
+        {
+          "text": "南开大学",
+          "value": "10055"
+        },
+        {
+          "text": "天津大学",
+          "value": "10056"
+        },
+        {
+          "text": "天津科技大学",
+          "value": "10057"
+        },
+        {
+          "text": "天津工业大学",
+          "value": "10058"
+        },
+        {
+          "text": "中国民航大学",
+          "value": "10059"
+        },
+        {
+          "text": "天津理工大学",
+          "value": "10060"
+        },
+        {
+          "text": "天津农学院",
+          "value": "10061"
+        },
+        {
+          "text": "天津医科大学",
+          "value": "10062"
+        },
+        {
+          "text": "天津中医药大学",
+          "value": "10063"
+        },
+        {
+          "text": "天津师范大学",
+          "value": "10065"
+        },
+        {
+          "text": "天津职业技术师范大学",
+          "value": "10066"
+        },
+        {
+          "text": "天津外国语大学",
+          "value": "10068"
+        },
+        {
+          "text": "天津商业大学",
+          "value": "10069"
+        },
+        {
+          "text": "天津财经大学",
+          "value": "10070"
+        },
+        {
+          "text": "天津体育学院",
+          "value": "10071"
+        },
+        {
+          "text": "天津音乐学院",
+          "value": "10072"
+        }
+      ],
+      "required": true,
+      "row": 0,
+      "type": "BC_PopConstant"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "c4f236b2-899a-48ec-9ad3-d1397928d142",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentApplicantEducation",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentApplicantEducation_CollegeName",
+      "key": "RecruitmentApplicantEducation_CollegeName|0",
+      "label": "学院名称",
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "BC_TextBox"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "22e175ba-bc8a-41e4-a752-ffe209462b3f",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentApplicantEducation",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentApplicantEducation_MajorName",
+      "key": "RecruitmentApplicantEducation_MajorName|0",
+      "label": "专业名称",
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "BC_TextBox"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "49bb0f25-ec93-4d23-9402-be8a8ecf0a88",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentApplicantEducation",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentApplicantEducation_LearningForm",
+      "key": "RecruitmentApplicantEducation_LearningForm|0",
+      "label": "学习形式",
+      "options": [
+        {
+          "text": "全国普通高等院校全日制",
+          "value": "1"
+        },
+        {
+          "text": "统招专升本",
+          "value": "3"
+        },
+        {
+          "text": "海外留学生",
+          "value": "7"
+        },
+        {
+          "text": "全国普通高等院校非全日制",
+          "value": "8"
+        },
+        {
+          "text": "非统招专升本",
+          "value": "6"
+        },
+        {
+          "text": "成人高等教育",
+          "value": "2"
+        },
+        {
+          "text": "网络教育",
+          "value": "9"
+        },
+        {
+          "text": "自学考试",
+          "value": "4"
+        },
+        {
+          "text": "开放教育",
+          "value": "10"
+        },
+        {
+          "text": "义务教育",
+          "value": "11"
+        },
+        {
+          "text": "高中全日制",
+          "value": "12"
+        },
+        {
+          "text": "全日制中专",
+          "value": "13"
+        },
+        {
+          "text": "非全日制中专",
+          "value": "14"
+        },
+        {
+          "text": "其他",
+          "value": "5"
+        }
+      ],
+      "required": true,
+      "row": 0,
+      "type": "BC_DropDownList"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "44b93877-6236-40e8-b49d-b1e724a58bd8",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentApplicantEducation",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentApplicantEducation_EducationLevel",
+      "key": "RecruitmentApplicantEducation_EducationLevel|0",
+      "label": "学历",
+      "options": [
+        {
+          "text": "小学",
+          "value": "9"
+        },
+        {
+          "text": "初中",
+          "value": "8"
+        },
+        {
+          "text": "高中",
+          "value": "3"
+        },
+        {
+          "text": "中技（中专/技校/职高）",
+          "value": "4"
+        },
+        {
+          "text": "高技",
+          "value": "11"
+        },
+        {
+          "text": "大专",
+          "value": "5"
+        },
+        {
+          "text": "本科",
+          "value": "1"
+        },
+        {
+          "text": "硕士研究生",
+          "value": "2"
+        },
+        {
+          "text": "MBA",
+          "value": "6"
+        },
+        {
+          "text": "博士研究生",
+          "value": "7"
+        },
+        {
+          "text": "EMBA",
+          "value": "120"
+        },
+        {
+          "text": "MPA",
+          "value": "130"
+        }
+      ],
+      "required": true,
+      "row": 0,
+      "type": "BC_DropDownList"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "85414bc9-8611-49bd-a0ac-b49487e5e136",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentApplicantEducation",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentApplicantEducation_Degree",
+      "key": "RecruitmentApplicantEducation_Degree|0",
+      "label": "学位",
+      "options": [
+        {
+          "text": "无",
+          "value": "1"
+        },
+        {
+          "text": "学士",
+          "value": "2"
+        },
+        {
+          "text": "双学士",
+          "value": "3"
+        },
+        {
+          "text": "硕士",
+          "value": "4"
+        },
+        {
+          "text": "博士",
+          "value": "6"
+        },
+        {
+          "text": "双硕士",
+          "value": "7"
+        },
+        {
+          "text": "MBA",
+          "value": "5"
+        },
+        {
+          "text": "EMBA",
+          "value": "8"
+        },
+        {
+          "text": "DBA",
+          "value": "9"
+        },
+        {
+          "text": "MEM",
+          "value": "10"
+        },
+        {
+          "text": "MPA",
+          "value": "11"
+        },
+        {
+          "text": "MPAcc",
+          "value": "12"
+        }
+      ],
+      "required": true,
+      "row": 0,
+      "type": "BC_DropDownList"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "64f55e04-5906-472f-9cb7-a4e54d6f194d",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentApplicantEducation",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentApplicantEducation_MajorCourses",
+      "key": "RecruitmentApplicantEducation_MajorCourses|0",
+      "label": "专业课程",
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "BC_TextArea"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "d36a26e0-a1de-4610-89d6-3442da38d07c",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentApplicantEducation",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentApplicantEducation_GPA",
+      "key": "RecruitmentApplicantEducation_GPA|0",
+      "label": "成绩（GPA）",
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "BC_TextBox"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "d4da3252-1911-4252-b48f-1c15c2309f66",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentApplicantEducation",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentApplicantEducation_extzyrs8_101193_267040975",
+      "key": "RecruitmentApplicantEducation_extzyrs8_101193_267040975|0",
+      "label": "专业人数",
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "BC_DigitText"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "9d3c9309-5c4d-45ab-9e25-25df717b7503",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentApplicantEducation",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentApplicantEducation_MajorRank",
+      "key": "RecruitmentApplicantEducation_MajorRank|0",
+      "label": "专业排名",
+      "options": [
+        {
+          "text": "前5%",
+          "value": "1"
+        },
+        {
+          "text": "前10%",
+          "value": "2"
+        },
+        {
+          "text": "前20%",
+          "value": "3"
+        },
+        {
+          "text": "前30%",
+          "value": "4"
+        },
+        {
+          "text": "前50%",
+          "value": "6"
+        },
+        {
+          "text": "其他",
+          "value": "5"
+        }
+      ],
+      "required": true,
+      "row": 0,
+      "type": "BC_DropDownList"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "07b6e33e-2c58-4f49-ae38-a049e4a9f76a",
+      "disabled": false,
+      "format": "yyyy/MM/dd",
+      "group": "RecruitmentApplicantEducation",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentApplicantEducation_StartDate",
+      "key": "RecruitmentApplicantEducation_StartDate|1",
+      "label": "开始时间",
+      "options": [],
+      "required": true,
+      "row": 1,
+      "type": "BC_DateTime"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "bc2bdeb1-ef3b-4706-9f5a-d11cf417c84d",
+      "disabled": false,
+      "format": "yyyy/MM/dd",
+      "group": "RecruitmentApplicantEducation",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentApplicantEducation_EndDate",
+      "key": "RecruitmentApplicantEducation_EndDate|1",
+      "label": "结束时间",
+      "options": [],
+      "required": true,
+      "row": 1,
+      "type": "BC_DateTime"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "0bddcc6f-6356-42a3-b2d6-e7a6bb2df11d",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentApplicantEducation",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentApplicantEducation_SchoolName",
+      "key": "RecruitmentApplicantEducation_SchoolName|1",
+      "label": "学校名称",
+      "options": [
+        {
+          "text": "北京大学",
+          "value": "10001"
+        },
+        {
+          "text": "中国人民大学",
+          "value": "10002"
+        },
+        {
+          "text": "清华大学",
+          "value": "10003"
+        },
+        {
+          "text": "北京交通大学",
+          "value": "10004"
+        },
+        {
+          "text": "北京工业大学",
+          "value": "10005"
+        },
+        {
+          "text": "北京航空航天大学",
+          "value": "10006"
+        },
+        {
+          "text": "北京理工大学",
+          "value": "10007"
+        },
+        {
+          "text": "北京科技大学",
+          "value": "10008"
+        },
+        {
+          "text": "北方工业大学",
+          "value": "10009"
+        },
+        {
+          "text": "北京化工大学",
+          "value": "10010"
+        },
+        {
+          "text": "北京工商大学",
+          "value": "10011"
+        },
+        {
+          "text": "北京服装学院",
+          "value": "10012"
+        },
+        {
+          "text": "北京邮电大学",
+          "value": "10013"
+        },
+        {
+          "text": "北京印刷学院",
+          "value": "10015"
+        },
+        {
+          "text": "北京建筑大学",
+          "value": "10016"
+        },
+        {
+          "text": "北京石油化工学院",
+          "value": "10017"
+        },
+        {
+          "text": "北京电子科技学院",
+          "value": "10018"
+        },
+        {
+          "text": "中国农业大学",
+          "value": "10019"
+        },
+        {
+          "text": "北京农学院",
+          "value": "10020"
+        },
+        {
+          "text": "北京林业大学",
+          "value": "10022"
+        },
+        {
+          "text": "北京协和医学院",
+          "value": "10023"
+        },
+        {
+          "text": "首都医科大学",
+          "value": "10025"
+        },
+        {
+          "text": "北京中医药大学",
+          "value": "10026"
+        },
+        {
+          "text": "北京师范大学",
+          "value": "10027"
+        },
+        {
+          "text": "首都师范大学",
+          "value": "10028"
+        },
+        {
+          "text": "首都体育学院",
+          "value": "10029"
+        },
+        {
+          "text": "北京外国语大学",
+          "value": "10030"
+        },
+        {
+          "text": "北京第二外国语学院",
+          "value": "10031"
+        },
+        {
+          "text": "北京语言大学",
+          "value": "10032"
+        },
+        {
+          "text": "中国传媒大学",
+          "value": "10033"
+        },
+        {
+          "text": "中央财经大学",
+          "value": "10034"
+        },
+        {
+          "text": "对外经济贸易大学",
+          "value": "10036"
+        },
+        {
+          "text": "北京物资学院",
+          "value": "10037"
+        },
+        {
+          "text": "首都经济贸易大学",
+          "value": "10038"
+        },
+        {
+          "text": "外交学院",
+          "value": "10040"
+        },
+        {
+          "text": "中国人民公安大学",
+          "value": "10041"
+        },
+        {
+          "text": "国际关系学院",
+          "value": "10042"
+        },
+        {
+          "text": "北京体育大学",
+          "value": "10043"
+        },
+        {
+          "text": "中央音乐学院",
+          "value": "10045"
+        },
+        {
+          "text": "中国音乐学院",
+          "value": "10046"
+        },
+        {
+          "text": "中央美术学院",
+          "value": "10047"
+        },
+        {
+          "text": "中央戏剧学院",
+          "value": "10048"
+        },
+        {
+          "text": "中国戏曲学院",
+          "value": "10049"
+        },
+        {
+          "text": "北京电影学院",
+          "value": "10050"
+        },
+        {
+          "text": "北京舞蹈学院",
+          "value": "10051"
+        },
+        {
+          "text": "中央民族大学",
+          "value": "10052"
+        },
+        {
+          "text": "中国政法大学",
+          "value": "10053"
+        },
+        {
+          "text": "华北电力大学",
+          "value": "10054"
+        },
+        {
+          "text": "北京工业职业技术学院",
+          "value": "10853"
+        },
+        {
+          "text": "北京信息职业技术学院",
+          "value": "10857"
+        },
+        {
+          "text": "北京科技职业大学",
+          "value": "10858"
+        },
+        {
+          "text": "北京京北职业技术学院",
+          "value": "11090"
+        },
+        {
+          "text": "北京交通职业技术学院",
+          "value": "11092"
+        },
+        {
+          "text": "中华女子学院",
+          "value": "11149"
+        },
+        {
+          "text": "北京信息科技大学",
+          "value": "11232"
+        },
+        {
+          "text": "中国矿业大学（北京）",
+          "value": "11413"
+        },
+        {
+          "text": "中国石油大学（北京）",
+          "value": "11414"
+        },
+        {
+          "text": "中国地质大学（北京）",
+          "value": "11415"
+        },
+        {
+          "text": "北京联合大学",
+          "value": "11417"
+        },
+        {
+          "text": "北京城市学院",
+          "value": "11418"
+        },
+        {
+          "text": "中国青年政治学院",
+          "value": "11625"
+        },
+        {
+          "text": "北京青年政治学院",
+          "value": "11626"
+        },
+        {
+          "text": "首钢工学院",
+          "value": "11831"
+        },
+        {
+          "text": "北京农业职业学院",
+          "value": "12448"
+        },
+        {
+          "text": "北京政法职业学院",
+          "value": "12451"
+        },
+        {
+          "text": "中国劳动关系学院",
+          "value": "12453"
+        },
+        {
+          "text": "北京财贸职业学院",
+          "value": "12561"
+        },
+        {
+          "text": "北京北大方正软件职业技术学院",
+          "value": "12564"
+        },
+        {
+          "text": "北京经贸职业学院",
+          "value": "12565"
+        },
+        {
+          "text": "北京经济技术职业学院",
+          "value": "12566"
+        },
+        {
+          "text": "北京戏曲艺术职业学院",
+          "value": "12567"
+        },
+        {
+          "text": "北京汇佳职业学院",
+          "value": "12568"
+        },
+        {
+          "text": "北京现代职业技术学院",
+          "value": "12569"
+        },
+        {
+          "text": "北京科技经营管理学院",
+          "value": "12733"
+        },
+        {
+          "text": "吉利学院",
+          "value": "12802"
+        },
+        {
+          "text": "北京科技职业学院",
+          "value": "13703"
+        },
+        {
+          "text": "北京培黎职业学院",
+          "value": "13728"
+        },
+        {
+          "text": "北京警察学院",
+          "value": "14019"
+        },
+        {
+          "text": "北京经济管理职业学院",
+          "value": "14073"
+        },
+        {
+          "text": "北京劳动保障职业学院",
+          "value": "14075"
+        },
+        {
+          "text": "民政职业大学",
+          "value": "14139"
+        },
+        {
+          "text": "北京艺术传媒职业学院",
+          "value": "14140"
+        },
+        {
+          "text": "北京体育职业学院",
+          "value": "14215"
+        },
+        {
+          "text": "北京交通运输职业学院",
+          "value": "14279"
+        },
+        {
+          "text": "南开大学",
+          "value": "10055"
+        },
+        {
+          "text": "天津大学",
+          "value": "10056"
+        },
+        {
+          "text": "天津科技大学",
+          "value": "10057"
+        },
+        {
+          "text": "天津工业大学",
+          "value": "10058"
+        },
+        {
+          "text": "中国民航大学",
+          "value": "10059"
+        },
+        {
+          "text": "天津理工大学",
+          "value": "10060"
+        },
+        {
+          "text": "天津农学院",
+          "value": "10061"
+        },
+        {
+          "text": "天津医科大学",
+          "value": "10062"
+        },
+        {
+          "text": "天津中医药大学",
+          "value": "10063"
+        },
+        {
+          "text": "天津师范大学",
+          "value": "10065"
+        },
+        {
+          "text": "天津职业技术师范大学",
+          "value": "10066"
+        },
+        {
+          "text": "天津外国语大学",
+          "value": "10068"
+        },
+        {
+          "text": "天津商业大学",
+          "value": "10069"
+        },
+        {
+          "text": "天津财经大学",
+          "value": "10070"
+        },
+        {
+          "text": "天津体育学院",
+          "value": "10071"
+        },
+        {
+          "text": "天津音乐学院",
+          "value": "10072"
+        }
+      ],
+      "required": true,
+      "row": 1,
+      "type": "BC_PopConstant"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "c4f236b2-899a-48ec-9ad3-d1397928d142",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentApplicantEducation",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentApplicantEducation_CollegeName",
+      "key": "RecruitmentApplicantEducation_CollegeName|1",
+      "label": "学院名称",
+      "options": [],
+      "required": true,
+      "row": 1,
+      "type": "BC_TextBox"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "22e175ba-bc8a-41e4-a752-ffe209462b3f",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentApplicantEducation",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentApplicantEducation_MajorName",
+      "key": "RecruitmentApplicantEducation_MajorName|1",
+      "label": "专业名称",
+      "options": [],
+      "required": true,
+      "row": 1,
+      "type": "BC_TextBox"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "49bb0f25-ec93-4d23-9402-be8a8ecf0a88",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentApplicantEducation",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentApplicantEducation_LearningForm",
+      "key": "RecruitmentApplicantEducation_LearningForm|1",
+      "label": "学习形式",
+      "options": [
+        {
+          "text": "全国普通高等院校全日制",
+          "value": "1"
+        },
+        {
+          "text": "统招专升本",
+          "value": "3"
+        },
+        {
+          "text": "海外留学生",
+          "value": "7"
+        },
+        {
+          "text": "全国普通高等院校非全日制",
+          "value": "8"
+        },
+        {
+          "text": "非统招专升本",
+          "value": "6"
+        },
+        {
+          "text": "成人高等教育",
+          "value": "2"
+        },
+        {
+          "text": "网络教育",
+          "value": "9"
+        },
+        {
+          "text": "自学考试",
+          "value": "4"
+        },
+        {
+          "text": "开放教育",
+          "value": "10"
+        },
+        {
+          "text": "义务教育",
+          "value": "11"
+        },
+        {
+          "text": "高中全日制",
+          "value": "12"
+        },
+        {
+          "text": "全日制中专",
+          "value": "13"
+        },
+        {
+          "text": "非全日制中专",
+          "value": "14"
+        },
+        {
+          "text": "其他",
+          "value": "5"
+        }
+      ],
+      "required": true,
+      "row": 1,
+      "type": "BC_DropDownList"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "44b93877-6236-40e8-b49d-b1e724a58bd8",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentApplicantEducation",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentApplicantEducation_EducationLevel",
+      "key": "RecruitmentApplicantEducation_EducationLevel|1",
+      "label": "学历",
+      "options": [
+        {
+          "text": "小学",
+          "value": "9"
+        },
+        {
+          "text": "初中",
+          "value": "8"
+        },
+        {
+          "text": "高中",
+          "value": "3"
+        },
+        {
+          "text": "中技（中专/技校/职高）",
+          "value": "4"
+        },
+        {
+          "text": "高技",
+          "value": "11"
+        },
+        {
+          "text": "大专",
+          "value": "5"
+        },
+        {
+          "text": "本科",
+          "value": "1"
+        },
+        {
+          "text": "硕士研究生",
+          "value": "2"
+        },
+        {
+          "text": "MBA",
+          "value": "6"
+        },
+        {
+          "text": "博士研究生",
+          "value": "7"
+        },
+        {
+          "text": "EMBA",
+          "value": "120"
+        },
+        {
+          "text": "MPA",
+          "value": "130"
+        }
+      ],
+      "required": true,
+      "row": 1,
+      "type": "BC_DropDownList"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "85414bc9-8611-49bd-a0ac-b49487e5e136",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentApplicantEducation",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentApplicantEducation_Degree",
+      "key": "RecruitmentApplicantEducation_Degree|1",
+      "label": "学位",
+      "options": [
+        {
+          "text": "无",
+          "value": "1"
+        },
+        {
+          "text": "学士",
+          "value": "2"
+        },
+        {
+          "text": "双学士",
+          "value": "3"
+        },
+        {
+          "text": "硕士",
+          "value": "4"
+        },
+        {
+          "text": "博士",
+          "value": "6"
+        },
+        {
+          "text": "双硕士",
+          "value": "7"
+        },
+        {
+          "text": "MBA",
+          "value": "5"
+        },
+        {
+          "text": "EMBA",
+          "value": "8"
+        },
+        {
+          "text": "DBA",
+          "value": "9"
+        },
+        {
+          "text": "MEM",
+          "value": "10"
+        },
+        {
+          "text": "MPA",
+          "value": "11"
+        },
+        {
+          "text": "MPAcc",
+          "value": "12"
+        }
+      ],
+      "required": true,
+      "row": 1,
+      "type": "BC_DropDownList"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "64f55e04-5906-472f-9cb7-a4e54d6f194d",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentApplicantEducation",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentApplicantEducation_MajorCourses",
+      "key": "RecruitmentApplicantEducation_MajorCourses|1",
+      "label": "专业课程",
+      "options": [],
+      "required": true,
+      "row": 1,
+      "type": "BC_TextArea"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "d36a26e0-a1de-4610-89d6-3442da38d07c",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentApplicantEducation",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentApplicantEducation_GPA",
+      "key": "RecruitmentApplicantEducation_GPA|1",
+      "label": "成绩（GPA）",
+      "options": [],
+      "required": true,
+      "row": 1,
+      "type": "BC_TextBox"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "d4da3252-1911-4252-b48f-1c15c2309f66",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentApplicantEducation",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentApplicantEducation_extzyrs8_101193_267040975",
+      "key": "RecruitmentApplicantEducation_extzyrs8_101193_267040975|1",
+      "label": "专业人数",
+      "options": [],
+      "required": true,
+      "row": 1,
+      "type": "BC_DigitText"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "9d3c9309-5c4d-45ab-9e25-25df717b7503",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentApplicantEducation",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentApplicantEducation_MajorRank",
+      "key": "RecruitmentApplicantEducation_MajorRank|1",
+      "label": "专业排名",
+      "options": [
+        {
+          "text": "前5%",
+          "value": "1"
+        },
+        {
+          "text": "前10%",
+          "value": "2"
+        },
+        {
+          "text": "前20%",
+          "value": "3"
+        },
+        {
+          "text": "前30%",
+          "value": "4"
+        },
+        {
+          "text": "前50%",
+          "value": "6"
+        },
+        {
+          "text": "其他",
+          "value": "5"
+        }
+      ],
+      "required": true,
+      "row": 1,
+      "type": "BC_DropDownList"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "15e6ca38-6ef7-4da6-8e6d-91d3c73473ea",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentSchoolCadre",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentSchoolCadre_extzxzw824_101193_803874826",
+      "key": "RecruitmentSchoolCadre_extzxzw824_101193_803874826|0",
+      "label": "在校职务类别",
+      "options": [
+        {
+          "text": "学生会主席/副主席",
+          "value": "1398146623"
+        },
+        {
+          "text": "社团主席/副主席",
+          "value": "534469508"
+        },
+        {
+          "text": "部长/副部长",
+          "value": "1009268668"
+        },
+        {
+          "text": "班长/团支书",
+          "value": "1064592574"
+        },
+        {
+          "text": "其他",
+          "value": "700478926"
+        }
+      ],
+      "required": false,
+      "row": 0,
+      "type": "BC_DropDownList"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "26839717-1e97-47b7-8597-fae39b337a98",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentSchoolCadre",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentSchoolCadre_CadreName",
+      "key": "RecruitmentSchoolCadre_CadreName|0",
+      "label": "在校职务名称",
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "BC_TextBox"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "75b2414e-46ae-4ee5-8791-2927bcac122f",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentSchoolCadre",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentSchoolCadre_CadreDescription",
+      "key": "RecruitmentSchoolCadre_CadreDescription|0",
+      "label": "在校职务描述",
+      "options": [],
+      "required": false,
+      "row": 0,
+      "type": "BC_TextArea"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "ba7e57cd-6412-474f-85b2-3285071b1626",
+      "disabled": false,
+      "format": "yyyy/MM",
+      "group": "RecruitmentSchoolCadre",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentSchoolCadre_CadreStartDateTime",
+      "key": "RecruitmentSchoolCadre_CadreStartDateTime|0",
+      "label": "开始时间",
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "BC_DateTime"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "5119f970-62ee-4a3c-bdf6-35e3c3ff0309",
+      "disabled": false,
+      "format": "yyyy/MM",
+      "group": "RecruitmentSchoolCadre",
+      "groupTitle": "",
+      "hasNow": true,
+      "hint": "",
+      "id": "RecruitmentSchoolCadre_CadreEndDateTime",
+      "key": "RecruitmentSchoolCadre_CadreEndDateTime|0",
+      "label": "结束时间",
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "BC_DateTime"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "ea468e17-c9ce-480e-bb05-5ace02d8e9cb",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentSchoolPractice",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentSchoolPractice_PracticeName",
+      "key": "RecruitmentSchoolPractice_PracticeName|0",
+      "label": "在校科研及实践项目",
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "BC_TextBox"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "a642a89d-6db3-47e8-8798-482d0a7bcb51",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentSchoolPractice",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentSchoolPractice_extdrjs824_101193_1947179812",
+      "key": "RecruitmentSchoolPractice_extdrjs824_101193_1947179812|0",
+      "label": "担任角色",
+      "options": [
+        {
+          "text": "组长",
+          "value": "1516232861"
+        },
+        {
+          "text": "副组长",
+          "value": "1405133638"
+        },
+        {
+          "text": "核心成员",
+          "value": "1975229923"
+        },
+        {
+          "text": "普通成员",
+          "value": "275290046"
+        }
+      ],
+      "required": false,
+      "row": 0,
+      "type": "BC_DropDownList"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "50ba8868-8420-4af2-8071-4b125ef63f1c",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentSchoolPractice",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentSchoolPractice_PracticeDescription",
+      "key": "RecruitmentSchoolPractice_PracticeDescription|0",
+      "label": "实践描述",
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "BC_TextArea"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "a61e699e-9ce2-4678-9c09-0fb720c6638b",
+      "disabled": false,
+      "format": "yyyy/MM",
+      "group": "RecruitmentSchoolPractice",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentSchoolPractice_PracticeStartDateTime",
+      "key": "RecruitmentSchoolPractice_PracticeStartDateTime|0",
+      "label": "开始时间",
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "BC_DateTime"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "0fae1ca9-3d1c-40d0-b6b9-2ed083ed9f89",
+      "disabled": false,
+      "format": "yyyy/MM",
+      "group": "RecruitmentSchoolPractice",
+      "groupTitle": "",
+      "hasNow": true,
+      "hint": "",
+      "id": "RecruitmentSchoolPractice_PracticeEndDateTime",
+      "key": "RecruitmentSchoolPractice_PracticeEndDateTime|0",
+      "label": "结束时间",
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "BC_DateTime"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "02378890-f07c-453a-9114-4e5e5889da51",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentAwards",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentAwards_AwardLevel",
+      "key": "RecruitmentAwards_AwardLevel|0",
+      "label": "获奖级别",
+      "options": [
+        {
+          "text": "班组级",
+          "value": "1"
+        },
+        {
+          "text": "院校级",
+          "value": "2"
+        },
+        {
+          "text": "县市级",
+          "value": "3"
+        },
+        {
+          "text": "省区级",
+          "value": "4"
+        },
+        {
+          "text": "国家级",
+          "value": "5"
+        },
+        {
+          "text": "国际级",
+          "value": "6"
+        },
+        {
+          "text": "公司级",
+          "value": "7"
+        },
+        {
+          "text": "集团级",
+          "value": "8"
+        }
+      ],
+      "required": true,
+      "row": 0,
+      "type": "BC_DropDownList"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "8934045c-bfd4-496f-a997-9adc645e044e",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentAwards",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentAwards_AwardName",
+      "key": "RecruitmentAwards_AwardName|0",
+      "label": "奖项",
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "BC_TextBox"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "fd0e5b28-bc97-469d-8b0b-aea4984361fe",
+      "disabled": false,
+      "format": "yyyy/MM/dd",
+      "group": "RecruitmentAwards",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentAwards_AwardTime",
+      "key": "RecruitmentAwards_AwardTime|0",
+      "label": "获奖时间",
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "BC_DateTime"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "5d6e67d0-78bf-4b73-9649-7d82c1998cbb",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentWritings",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentWritings_WritingsTitle",
+      "key": "RecruitmentWritings_WritingsTitle|0",
+      "label": "名称",
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "BC_TextBox"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "2a082303-042a-444d-8f3d-1bce97a43554",
+      "disabled": false,
+      "format": "yyyy/MM/dd",
+      "group": "RecruitmentWritings",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentWritings_WritingsPublishDate",
+      "key": "RecruitmentWritings_WritingsPublishDate|0",
+      "label": "发布时间",
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "BC_DateTime"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "d4f106c7-d898-472d-b096-6e7005254ed1",
+      "disabled": false,
+      "format": "yyyy/MM",
+      "group": "RecruitmentApplicantInternship",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentApplicantInternship_StartDate",
+      "key": "RecruitmentApplicantInternship_StartDate|0",
+      "label": "开始时间",
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "BC_DateTime"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "49e15ec0-4fba-423a-b5d1-f3cf11949172",
+      "disabled": false,
+      "format": "yyyy/MM",
+      "group": "RecruitmentApplicantInternship",
+      "groupTitle": "",
+      "hasNow": true,
+      "hint": "",
+      "id": "RecruitmentApplicantInternship_EndDate",
+      "key": "RecruitmentApplicantInternship_EndDate|0",
+      "label": "结束时间",
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "BC_DateTime"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "7a577b89-1b3b-4762-9974-554eff5844ae",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentApplicantInternship",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentApplicantInternship_CompanyName",
+      "key": "RecruitmentApplicantInternship_CompanyName|0",
+      "label": "单位名称",
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "BC_TextBox"
+    },
+    {
+      "areaUrl": "//const.italent.cn/resource/Areas-chs-417-101193.js",
+      "cmpId": "9b47c6fb-326b-40fe-8cd2-d7340df456f0",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentApplicantInternship",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentApplicantInternship_PlaceArea",
+      "key": "RecruitmentApplicantInternship_PlaceArea|0",
+      "label": "实习地点",
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "BC_PopArea"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "60272505-a0c4-45db-95af-1a6474417c48",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentApplicantInternship",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentApplicantInternship_Duty",
+      "key": "RecruitmentApplicantInternship_Duty|0",
+      "label": "实习内容",
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "BC_TextArea"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "d4f106c7-d898-472d-b096-6e7005254ed1",
+      "disabled": false,
+      "format": "yyyy/MM",
+      "group": "RecruitmentApplicantInternship",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentApplicantInternship_StartDate",
+      "key": "RecruitmentApplicantInternship_StartDate|1",
+      "label": "开始时间",
+      "options": [],
+      "required": true,
+      "row": 1,
+      "type": "BC_DateTime"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "49e15ec0-4fba-423a-b5d1-f3cf11949172",
+      "disabled": false,
+      "format": "yyyy/MM",
+      "group": "RecruitmentApplicantInternship",
+      "groupTitle": "",
+      "hasNow": true,
+      "hint": "",
+      "id": "RecruitmentApplicantInternship_EndDate",
+      "key": "RecruitmentApplicantInternship_EndDate|1",
+      "label": "结束时间",
+      "options": [],
+      "required": true,
+      "row": 1,
+      "type": "BC_DateTime"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "7a577b89-1b3b-4762-9974-554eff5844ae",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentApplicantInternship",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentApplicantInternship_CompanyName",
+      "key": "RecruitmentApplicantInternship_CompanyName|1",
+      "label": "单位名称",
+      "options": [],
+      "required": true,
+      "row": 1,
+      "type": "BC_TextBox"
+    },
+    {
+      "areaUrl": "//const.italent.cn/resource/Areas-chs-417-101193.js",
+      "cmpId": "9b47c6fb-326b-40fe-8cd2-d7340df456f0",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentApplicantInternship",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentApplicantInternship_PlaceArea",
+      "key": "RecruitmentApplicantInternship_PlaceArea|1",
+      "label": "实习地点",
+      "options": [],
+      "required": true,
+      "row": 1,
+      "type": "BC_PopArea"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "60272505-a0c4-45db-95af-1a6474417c48",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentApplicantInternship",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentApplicantInternship_Duty",
+      "key": "RecruitmentApplicantInternship_Duty|1",
+      "label": "实习内容",
+      "options": [],
+      "required": true,
+      "row": 1,
+      "type": "BC_TextArea"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "d4f106c7-d898-472d-b096-6e7005254ed1",
+      "disabled": false,
+      "format": "yyyy/MM",
+      "group": "RecruitmentApplicantInternship",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentApplicantInternship_StartDate",
+      "key": "RecruitmentApplicantInternship_StartDate|2",
+      "label": "开始时间",
+      "options": [],
+      "required": true,
+      "row": 2,
+      "type": "BC_DateTime"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "49e15ec0-4fba-423a-b5d1-f3cf11949172",
+      "disabled": false,
+      "format": "yyyy/MM",
+      "group": "RecruitmentApplicantInternship",
+      "groupTitle": "",
+      "hasNow": true,
+      "hint": "",
+      "id": "RecruitmentApplicantInternship_EndDate",
+      "key": "RecruitmentApplicantInternship_EndDate|2",
+      "label": "结束时间",
+      "options": [],
+      "required": true,
+      "row": 2,
+      "type": "BC_DateTime"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "7a577b89-1b3b-4762-9974-554eff5844ae",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentApplicantInternship",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentApplicantInternship_CompanyName",
+      "key": "RecruitmentApplicantInternship_CompanyName|2",
+      "label": "单位名称",
+      "options": [],
+      "required": true,
+      "row": 2,
+      "type": "BC_TextBox"
+    },
+    {
+      "areaUrl": "//const.italent.cn/resource/Areas-chs-417-101193.js",
+      "cmpId": "9b47c6fb-326b-40fe-8cd2-d7340df456f0",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentApplicantInternship",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentApplicantInternship_PlaceArea",
+      "key": "RecruitmentApplicantInternship_PlaceArea|2",
+      "label": "实习地点",
+      "options": [],
+      "required": true,
+      "row": 2,
+      "type": "BC_PopArea"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "60272505-a0c4-45db-95af-1a6474417c48",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentApplicantInternship",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentApplicantInternship_Duty",
+      "key": "RecruitmentApplicantInternship_Duty|2",
+      "label": "实习内容",
+      "options": [],
+      "required": true,
+      "row": 2,
+      "type": "BC_TextArea"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "89c4c70f-9c85-4baa-95ef-c7e47154c9e6",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentLang",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentLang_LanguageType",
+      "key": "RecruitmentLang_LanguageType|0",
+      "label": "语言类型",
+      "options": [
+        {
+          "text": "中文",
+          "value": "13"
+        },
+        {
+          "text": "英语",
+          "value": "0"
+        },
+        {
+          "text": "日语",
+          "value": "1"
+        },
+        {
+          "text": "韩语",
+          "value": "2"
+        },
+        {
+          "text": "法语",
+          "value": "3"
+        },
+        {
+          "text": "德语",
+          "value": "4"
+        },
+        {
+          "text": "西班牙语",
+          "value": "5"
+        },
+        {
+          "text": "意大利语",
+          "value": "6"
+        },
+        {
+          "text": "阿拉伯语",
+          "value": "7"
+        },
+        {
+          "text": "俄语",
+          "value": "8"
+        },
+        {
+          "text": "泰语",
+          "value": "10"
+        },
+        {
+          "text": "印度尼西亚语",
+          "value": "11"
+        },
+        {
+          "text": "拉丁语",
+          "value": "12"
+        },
+        {
+          "text": "其他",
+          "value": "9"
+        }
+      ],
+      "required": false,
+      "row": 0,
+      "type": "BC_DropDownList"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "b9135b94-00c6-41fd-a5ef-5451ac609c3c",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentLang",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentLang_extzslx824_101193_50917734",
+      "key": "RecruitmentLang_extzslx824_101193_50917734|0",
+      "label": "证书类型",
+      "options": [
+        {
+          "text": "未参加",
+          "value": "855919218"
+        },
+        {
+          "text": "未通过",
+          "value": "2007153405"
+        },
+        {
+          "text": "四级",
+          "value": "134680904"
+        },
+        {
+          "text": "六级",
+          "value": "134681234"
+        },
+        {
+          "text": "托福",
+          "value": "160943473"
+        },
+        {
+          "text": "雅思",
+          "value": "630498056"
+        },
+        {
+          "text": "专四",
+          "value": "1946409364"
+        },
+        {
+          "text": "专八",
+          "value": "271784700"
+        },
+        {
+          "text": "托业",
+          "value": "1937186984"
+        },
+        {
+          "text": "其他",
+          "value": "700478926"
+        }
+      ],
+      "required": false,
+      "row": 0,
+      "type": "BC_DropDownList"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "c742a9f0-7fc5-45af-a14a-f8a478e97fde",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentLang",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentLang_extyycj919_101193_2077322898",
+      "key": "RecruitmentLang_extyycj919_101193_2077322898|0",
+      "label": "语言成绩",
+      "options": [],
+      "required": false,
+      "row": 0,
+      "type": "BC_DigitText"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "ef392f75-daf6-4b22-a4b7-d71d4ac52710",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentFamily",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentFamily_Name",
+      "key": "RecruitmentFamily_Name|0",
+      "label": "姓名",
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "BC_TextBox"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "89ff91e4-bb3f-411d-b4c4-0c1d84e1750b",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentFamily",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentFamily_relation",
+      "key": "RecruitmentFamily_relation|0",
+      "label": "与本人关系",
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "BC_TextBox"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "c122bb73-d1e2-4788-ac95-b347f8c6a91c",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentFamily",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentFamily_CompanyName",
+      "key": "RecruitmentFamily_CompanyName|0",
+      "label": "工作单位",
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "BC_TextBox"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "b20e878d-d9e0-4acf-96db-dc1f44adc137",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentFamily",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentFamily_JobTitle",
+      "key": "RecruitmentFamily_JobTitle|0",
+      "label": "职务",
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "BC_TextBox"
+    },
+    {
+      "areaUrl": "//const.italent.cn/resource/Areas-chs-417-101193.js",
+      "cmpId": "0ba73711-bc4c-4bad-9ae9-16af7a5d39c1",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentFamily",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentFamily_WorkPlace",
+      "key": "RecruitmentFamily_WorkPlace|0",
+      "label": "工作所在地",
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "BC_PopArea"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "a93bdaa1-8bdd-40b6-9c7f-a0c8d3e550dc",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentApplicantAdditionalInfo",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentApplicantAdditionalInfo_Interest",
+      "key": "RecruitmentApplicantAdditionalInfo_Interest|0",
+      "label": "兴趣爱好",
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "BC_TextArea"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "592f02f8-a70a-454d-8bff-d4e87af0248a",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentApplicantAdditionalInfo",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentApplicantAdditionalInfo_SpecialSkill",
+      "key": "RecruitmentApplicantAdditionalInfo_SpecialSkill|0",
+      "label": "特殊技能",
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "BC_TextArea"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "6d84071a-9d01-43cc-b0bd-da0129816c52",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentApplicantAdditionalInfo",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "",
+      "id": "RecruitmentApplicantAdditionalInfo_extysbz_101193_1661949308",
+      "key": "RecruitmentApplicantAdditionalInfo_extysbz_101193_1661949308|0",
+      "label": "评价自身的优势和不足",
+      "options": [],
+      "required": true,
+      "row": 0,
+      "type": "BC_TextArea"
+    },
+    {
+      "areaUrl": "",
+      "cmpId": "1c1634b1-e0ae-4615-8272-b0711329641d",
+      "disabled": false,
+      "format": "",
+      "group": "RecruitmentAttachments",
+      "groupTitle": "",
+      "hasNow": false,
+      "hint": "附件 上传文件",
+      "id": "RecruitmentAttachments_Attachment",
+      "key": "RecruitmentAttachments_Attachment|0",
+      "label": "附件",
+      "options": [],
+      "required": false,
+      "row": 0,
+      "type": "BC_FileUploader"
+    }
+  ]
+}

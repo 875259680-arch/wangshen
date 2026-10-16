@@ -1,0 +1,108 @@
+{
+  "fields": [
+    {
+      "editStyle": "3",
+      "group": "3",
+      "groupTitle": "科研项目经历",
+      "id": "CCC1",
+      "idx": 0,
+      "key": "CCC1|3|0",
+      "label": "开始日期",
+      "options": [],
+      "required": false,
+      "row": 0,
+      "type": "t"
+    },
+    {
+      "editStyle": "3",
+      "group": "3",
+      "groupTitle": "科研项目经历",
+      "id": "CCC2",
+      "idx": 1,
+      "key": "CCC2|3|0",
+      "label": "结束日期",
+      "options": [],
+      "required": false,
+      "row": 0,
+      "type": "t"
+    },
+    {
+      "editStyle": "5",
+      "group": "6",
+      "groupTitle": "科研项目经历",
+      "id": "CCF1",
+      "idx": 2,
+      "key": "CCF1|6|0",
+      "label": "科研项目名称",
+      "options": [],
+      "required": false,
+      "row": 0,
+      "type": "t"
+    },
+    {
+      "editStyle": "6",
+      "group": "6",
+      "groupTitle": "科研项目经历",
+      "id": "CCF2",
+      "idx": 3,
+      "key": "CCF2|6|0",
+      "label": "项目描述",
+      "options": [],
+      "required": false,
+      "row": 0,
+      "type": "a"
+    },
+    {
+      "editStyle": "3",
+      "group": "3",
+      "groupTitle": "科研项目经历",
+      "id": "CCC1",
+      "idx": 4,
+      "key": "CCC1|3|1",
+      "label": "开始日期",
+      "options": [],
+      "required": false,
+      "row": 1,
+      "type": "t"
+    },
+    {
+      "editStyle": "3",
+      "group": "3",
+      "groupTitle": "科研项目经历",
+      "id": "CCC2",
+      "idx": 5,
+      "key": "CCC2|3|1",
+      "label": "结束日期",
+      "options": [],
+      "required": false,
+      "row": 1,
+      "type": "t"
+    },
+    {
+      "editStyle": "5",
+      "group": "6",
+      "groupTitle": "科研项目经历",
+      "id": "CCF1",
+      "idx": 6,
+      "key": "CCF1|6|1",
+      "label": "科研项目名称",
+      "options": [],
+      "required": false,
+      "row": 1,
+      "type": "t"
+    },
+    {
+      "editStyle": "6",
+      "group": "6",
+      "groupTitle": "科研项目经历",
+      "id": "CCF2",
+      "idx": 7,
+      "key": "CCF2|6|1",
+      "label": "项目描述",
+      "options": [],
+      "required": false,
+      "row": 1,
+      "type": "a"
+    }
+  ]
+}
